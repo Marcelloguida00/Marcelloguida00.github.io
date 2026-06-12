@@ -5,14 +5,14 @@ export default function Navigation({ scrolled }) {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <div className="nav-logo">
-          <a href="#hero">MG</a>
+          <a href="#hero">Marcello</a>
         </div>
         <ul className="nav-menu">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact" className="nav-cta">Contact</a></li>
+          <li><a href="#hero">#home</a></li>
+          <li><a href="#projects">#projects</a></li>
+          <li><a href="#skills">#skills</a></li>
+          <li><a href="#about">#about-me</a></li>
+          <li><a href="#contact">#contact-me</a></li>
         </ul>
       </div>
     </nav>

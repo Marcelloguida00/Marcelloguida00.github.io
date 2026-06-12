@@ -1,50 +1,32 @@
 import './Skills.css'
 
 export default function Skills() {
-  const skillCategories = [
-    {
-      category: 'Languages',
-      skills: ['Swift', 'Python', 'JavaScript', 'C']
-    },
-    {
-      category: 'Concepts',
-      skills: ['OOP', 'Algorithms & Data Structures', 'Databases', 'OS & Networks']
-    },
-    {
-      category: 'Tools',
-      skills: ['Xcode', 'Git', 'Linux Shell', 'Arduino', 'Office Suite']
-    },
-    {
-      category: 'Exploring',
-      skills: ['Machine Learning', 'REST APIs', 'Data Pipelines', 'scikit-learn', 'pandas']
-    },
-    {
-      category: 'Soft Skills',
-      skills: ['Team Collaboration', 'Public Speaking', 'Time Management', 'Mentoring']
-    }
+  const skills = [
+    'swift', 'python', 'javascript', 'c',
+    'oop', 'algorithms', 'databases', 'os-networks',
+    'xcode', 'git', 'linux', 'arduino',
+    'machine-learning', 'rest-api', 'scikit', 'pandas'
   ]
 
   return (
     <section id="skills" className="skills">
       <div className="container">
-        <h2 className="section-title">Skills & Technologies</h2>
+        <h2 className="section-title">skills</h2>
 
         <div className="skills-grid">
-          {skillCategories.map((category, idx) => (
-            <div key={idx} className="skill-card">
-              <h3 className="skill-category">{category.category}</h3>
-              <div className="skill-list">
-                {category.skills.map((skill, i) => (
-                  <span key={i} className="skill-tag">{skill}</span>
-                ))}
+          {skills.map((skill, idx) => (
+            <div key={idx} className="skill-square">
+              <div className="skill-icon-placeholder">
+                {/* Simulated icon using first letter or bracket syntax */}
+                <span className="skill-bracket">[</span>
+                <span className="skill-letter">{skill.charAt(0)}</span>
+                <span className="skill-bracket">]</span>
               </div>
+              <span className="skill-name">{skill}</span>
             </div>
           ))}
         </div>
 
-        <div className="skills-note">
-          <p>Always learning. Currently exploring iOS optimization, ML systems, and data pipelines.</p>
-        </div>
       </div>
     </section>
   )

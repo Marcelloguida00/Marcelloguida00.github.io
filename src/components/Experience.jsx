@@ -31,7 +31,7 @@ export default function Experience() {
   return (
     <section id="experience" className="experience">
       <div className="container">
-        <h2 className="section-title">Experience</h2>
+        <h2 className="section-title">experience</h2>
 
         <div className="timeline">
           {experiences.map((exp, idx) => (
@@ -43,13 +43,11 @@ export default function Experience() {
                     <h3 className="timeline-title">{exp.title}</h3>
                     <p className="timeline-company">{exp.company} • {exp.location}</p>
                   </div>
-                  <span className="timeline-period">{exp.period}</span>
+                  <span className="timeline-period">[{exp.period}]</span>
                 </div>
                 <p className="timeline-description">{exp.description}</p>
                 <div className="timeline-tags">
-                  {exp.highlights.map((tag, i) => (
-                    <span key={i} className="tag">{tag}</span>
-                  ))}
+                  {exp.highlights.join('  ')}
                 </div>
               </div>
             </div>

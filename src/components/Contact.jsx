@@ -1,119 +1,41 @@
-import { useState } from 'react'
 import './Contact.css'
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => {
-      setFormData({ name: '', email: '', subject: '', message: '' })
-      setSubmitted(false)
-    }, 3000)
-  }
-
   return (
     <section id="contact" className="contact">
       <div className="container">
-        <h2 className="section-title">Get In Touch</h2>
+        <h2 className="section-title">contacts</h2>
 
-        <div className="contact-content">
-          <div className="contact-info">
-            <p>I'm always interested in connecting with fellow developers, discussing iOS development, or exploring new opportunities.</p>
-
-            <div className="contact-methods">
-              <div className="contact-method">
-                <h4>Email</h4>
-                <a href="mailto:mguida2604@gmail.com">mguida2604@gmail.com</a>
-              </div>
-              <div className="contact-method">
-                <h4>Phone</h4>
-                <p>+39 345 668 3621</p>
-              </div>
-              <div className="contact-method">
-                <h4>Location</h4>
-                <p>Arienzo (CE), Italia</p>
-              </div>
-            </div>
-
-            <div className="contact-social">
-              <a href="https://github.com/Marcelloguida00" target="_blank" rel="noopener noreferrer" className="social-link">GitHub</a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">LinkedIn</a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link">Twitter</a>
-            </div>
+        <div className="contact-grid">
+          <div className="contact-text-area">
+            <p className="contact-text">
+              I'm interested in freelance opportunities and exciting projects. However, 
+              if you have any other requests or questions, don't hesitate to contact me!
+            </p>
           </div>
 
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                placeholder="Your name"
-              />
+          <div className="contact-box-area">
+            <div className="message-box">
+              <h3 className="message-box-title">Message me here</h3>
+              
+              <div className="contact-methods-list">
+                <a href="mailto:mguida2604@gmail.com" className="contact-method-item">
+                  <span className="contact-icon">✉️</span>
+                  <span className="contact-detail">mguida2604@gmail.com</span>
+                </a>
+                
+                <a href="https://linkedin.com/in/marcelloguida00" target="_blank" rel="noopener noreferrer" className="contact-method-item">
+                  <span className="contact-icon">💼</span>
+                  <span className="contact-detail">LinkedIn</span>
+                </a>
+                
+                <div className="contact-method-item">
+                  <span className="contact-icon">📱</span>
+                  <span className="contact-detail">+39 345 668 3621</span>
+                </div>
+              </div>
             </div>
-
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                placeholder="your@email.com"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="subject">Subject</label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-                placeholder="What's this about?"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows="5"
-                placeholder="Your message..."
-              ></textarea>
-            </div>
-
-            <button type="submit" className="btn btn-primary">Send Message</button>
-            {submitted && <p className="form-success">Thanks! I'll get back to you soon.</p>}
-          </form>
+          </div>
         </div>
       </div>
     </section>

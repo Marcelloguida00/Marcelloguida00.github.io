@@ -4,48 +4,37 @@ export default function About() {
   return (
     <section id="about" className="about">
       <div className="container">
-        <h2 className="section-title">About Me</h2>
+        <h2 className="section-title">about-me</h2>
 
         <div className="about-grid">
           <div className="about-content">
+            <p className="about-greeting">Hello, I'm Marcello!</p>
             <p className="about-text">
-              I'm an engineering student at Università Guglielmo Marconi and Apple Developer Academy at Federico II University, passionate about building real products with growing interest in data-driven and ML systems.
+              I'm an engineering student at Università Guglielmo Marconi and Apple Developer Academy at Federico II University. 
+              I develop responsive and beautiful iOS applications from scratch and raise them into modern user-friendly experiences.
             </p>
-
-            <div className="about-highlights">
-              <div className="highlight-item">
-                <h3>Swift Student Challenge 2026 Winner</h3>
-                <p>One of ~350 developers selected globally by Apple from thousands of applicants</p>
-              </div>
-
-              <div className="highlight-item">
-                <h3>Apple Developer Academy</h3>
-                <p>Selective program with ~150 admitted students. Built and shipped iOS apps using Swift and Xcode</p>
-              </div>
-
-              <div className="highlight-item">
-                <h3>Teaching Experience</h3>
-                <p>Freelance STEM tutor explaining complex technical concepts to secondary school students</p>
-              </div>
-            </div>
+            <p className="about-text">
+              I am very passionate about improving my coding skills & developing applications. 
+              I always strive to learn about the newest technologies and frameworks. Swift Student Challenge 2026 Winner.
+            </p>
+            
+            <a href="#" className="btn btn-secondary resume-btn">
+              Resume <span className="download-icon">📥</span>
+            </a>
           </div>
 
-          <div className="about-stats">
-            <div className="stat">
-              <span className="stat-number">350+</span>
-              <p>Global winners (2026)</p>
-            </div>
-            <div className="stat">
-              <span className="stat-number">150</span>
-              <p>Academy cohort</p>
-            </div>
-            <div className="stat">
-              <span className="stat-number">4</span>
-              <p>Core languages</p>
-            </div>
-            <div className="stat">
-              <span className="stat-number">9+</span>
-              <p>Years of music</p>
+          <div className="about-illustration-container">
+            <div className="about-illustration">
+              <div className="programmer-avatar-placeholder">
+                <div className="screen">
+                  <span className="code-symbol">{`</>`}</span>
+                </div>
+                <div className="user-icon">👤</div>
+              </div>
+              
+              {/* Decorative dots to match the design */}
+              <div className="decorative-dots left-dots"></div>
+              <div className="decorative-dots right-dots"></div>
             </div>
           </div>
         </div>
