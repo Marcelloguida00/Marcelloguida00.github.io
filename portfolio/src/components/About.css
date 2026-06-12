@@ -1,0 +1,163 @@
+.about {
+  background-color: var(--color-secondary);
+  padding: 80px 0;
+}
+
+.about .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about-content {
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-foreground);
+  margin-bottom: 32px;
+}
+
+.about-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.highlight-item {
+  padding: 20px;
+  background-color: var(--color-primary);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.highlight-item:hover {
+  transform: translateX(8px);
+}
+
+.highlight-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--color-accent);
+}
+
+.highlight-item p {
+  font-size: 0.95rem;
+  color: var(--color-foreground);
+  opacity: 0.9;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.stat {
+  padding: 24px;
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+  font-family: var(--font-heading);
+}
+
+.stat p {
+  font-size: 0.9rem;
+  color: var(--color-foreground);
+  opacity: 0.8;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+
+  .about {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-grid {
+    gap: 20px;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat {
+    padding: 16px;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .highlight-item {
+    padding: 16px;
+  }
+
+  .about {
+    padding: 40px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-content {
+    animation: none;
+  }
+
+  .highlight-item:hover {
+    transform: none;
+  }
+
+  .stat:hover {
+    box-shadow: none;
+  }
+}
