@@ -4,10 +4,10 @@ export default function Hero() {
   return (
     <section id="hero" className="hero">
       <div className="hero-container">
-        
+
         <div className="hero-content">
           <h1 className="hero-title">
-            Hi, I'm an <span className="highlight">iOS developer</span> and <br/>
+            Hi, I'm an <span className="highlight">iOS developer</span> and <br />
             <span className="highlight">Apple Academy student</span>
           </h1>
           <p className="hero-description">
@@ -38,7 +38,7 @@ export default function Hero() {
         <div className="quote-box">
           <span className="quote-icon-top">“</span>
           <p className="quote-text">
-            Control can sometimes be an illusion. <br/>
+            Control can sometimes be an illusion. <br />
             But sometimes you need illusion to gain control.
           </p>
           <span className="quote-icon-bottom">”</span>
