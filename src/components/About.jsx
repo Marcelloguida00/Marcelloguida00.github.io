@@ -2,39 +2,27 @@ import './About.css'
 
 export default function About() {
   return (
-    <section id="about" className="about">
+    <section id="about" className="about-wow">
       <div className="container">
-        <h2 className="section-title">about-me</h2>
+        <h2 className="section-title">About Me</h2>
 
-        <div className="about-grid">
-          <div className="about-content">
-            <p className="about-greeting">Hello, I'm Marcello!</p>
+        <div className="about-grid-wow">
+          <div className="about-glass-card">
+            <h3 className="about-greeting">Hello, I'm Marcello</h3>
             <p className="about-text">
               I'm an engineering student at Università Guglielmo Marconi and Apple Developer Academy at Federico II University. 
               I develop responsive and beautiful iOS applications from scratch and raise them into modern user-friendly experiences.
             </p>
             <p className="about-text">
               I am very passionate about improving my coding skills & developing applications. 
-              I always strive to learn about the newest technologies and frameworks. Swift Student Challenge 2026 Winner.
+              I always strive to learn about the newest technologies and frameworks.
             </p>
             
-            <a href="#" className="btn btn-secondary resume-btn">
-              Resume <span className="download-icon">📥</span>
-            </a>
-          </div>
-
-          <div className="about-illustration-container">
-            <div className="about-illustration">
-              <div className="programmer-avatar-placeholder">
-                <div className="screen">
-                  <span className="code-symbol">{`</>`}</span>
-                </div>
-                <div className="user-icon">👤</div>
+            <div className="about-highlights">
+              <div className="highlight-item">
+                <span className="highlight-icon">🏆</span>
+                <span>Swift Student Challenge 2026 Winner</span>
               </div>
-              
-              {/* Decorative dots to match the design */}
-              <div className="decorative-dots left-dots"></div>
-              <div className="decorative-dots right-dots"></div>
             </div>
           </div>
         </div>

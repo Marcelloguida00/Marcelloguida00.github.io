@@ -2,31 +2,36 @@ import './Skills.css'
 
 export default function Skills() {
   const skills = [
-    'swift', 'python', 'javascript', 'c',
-    'oop', 'algorithms', 'databases', 'os-networks',
-    'xcode', 'git', 'linux', 'arduino',
-    'machine-learning', 'rest-api', 'scikit', 'pandas'
+    { name: 'Swift', icon: '⚡' },
+    { name: 'Python', icon: '🐍' },
+    { name: 'JavaScript', icon: '🚀' },
+    { name: 'UI/UX Design', icon: '✨' },
+    { name: 'Machine Learning', icon: '🧠' },
+    { name: 'Databases', icon: '💾' },
+    { name: 'Algorithms', icon: '⚙️' },
+    { name: 'Git', icon: '🐙' }
   ]
 
   return (
-    <section id="skills" className="skills">
+    <section id="skills" className="skills-wow">
       <div className="container">
-        <h2 className="section-title">skills</h2>
+        <h2 className="section-title">My Expertise</h2>
 
-        <div className="skills-grid">
+        <div className="skills-grid-wow">
           {skills.map((skill, idx) => (
-            <div key={idx} className="skill-square">
-              <div className="skill-icon-placeholder">
-                {/* Simulated icon using first letter or bracket syntax */}
-                <span className="skill-bracket">[</span>
-                <span className="skill-letter">{skill.charAt(0)}</span>
-                <span className="skill-bracket">]</span>
+            skill.url ? (
+              <a href={skill.url} target="_blank" rel="noopener noreferrer" key={idx} className={`skill-card ${skill.featured ? 'featured' : ''}`}>
+                <div className="skill-icon">{skill.icon}</div>
+                <span className="skill-name">{skill.name}</span>
+              </a>
+            ) : (
+              <div key={idx} className={`skill-card ${skill.featured ? 'featured' : ''}`}>
+                <div className="skill-icon">{skill.icon}</div>
+                <span className="skill-name">{skill.name}</span>
               </div>
-              <span className="skill-name">{skill}</span>
-            </div>
+            )
           ))}
         </div>
-
       </div>
     </section>
   )

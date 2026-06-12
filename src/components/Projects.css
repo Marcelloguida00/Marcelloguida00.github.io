@@ -4,77 +4,182 @@
   gap: 30px;
 }
 
-.section-header-row {
+.projects-wow {
   position: relative;
+}
+
+.section-header-wow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   margin-bottom: 60px;
 }
 
-.view-all-link {
-  position: absolute;
-  right: 0;
-  top: 0;
-  color: var(--color-foreground);
-  font-size: 0.9rem;
+.section-header-wow .section-title {
+  margin-bottom: 0;
+  left: 0;
+  transform: none;
 }
 
-.view-all-link:hover {
-  color: var(--color-accent);
+.section-header-wow .section-title::after {
+  left: 0;
+  transform: none;
 }
 
-.project-card {
-  border: 1px solid var(--color-border);
+.view-all-btn {
   display: flex;
-  flex-direction: column;
-  transition: border-color 0.3s ease;
-  background-color: transparent;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  padding-bottom: 10px;
 }
 
-.project-card:hover {
-  border-color: var(--color-accent);
+.view-all-btn span {
+  transition: transform 0.3s ease;
 }
 
-.project-image-placeholder {
-  height: 180px;
-  border-bottom: 1px solid var(--color-border);
-  padding: 1px; /* To prevent border overlap */
+.view-all-btn:hover {
+  color: #fff;
 }
 
-.project-image-inner {
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-secondary);
+.view-all-btn:hover span {
+  transform: translateX(5px);
+}
+
+.projects-grid-wow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+.project-card-wow {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card-wow:hover {
+  transform: translateY(-10px);
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 240, 255, 0.1);
+}
+
+.project-image-glass {
+  height: 220px;
+  background: linear-gradient(135deg, rgba(112, 0, 255, 0.2), rgba(0, 240, 255, 0.1));
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-muted);
-  font-size: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
 }
 
-.project-card:hover .project-image-inner {
-  background-color: rgba(208, 113, 240, 0.05); /* very light purple tint */
+.project-card-wow:hover .project-image-glass {
+  background: linear-gradient(135deg, rgba(112, 0, 255, 0.4), rgba(0, 240, 255, 0.3));
 }
 
-.project-tags {
-  padding: 12px 16px;
-  font-size: 0.8rem;
-  color: var(--color-muted);
-  border-bottom: 1px solid var(--color-border);
-  word-spacing: 10px;
+.project-image-text {
+  font-size: 5rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.1);
+  transition: all 0.5s ease;
 }
 
-.project-content {
-  padding: 20px 16px;
+.project-card-wow:hover .project-image-text {
+  transform: scale(1.2);
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.project-content-wow {
+  padding: 35px 30px;
+}
+
+.project-tags-wow {
   display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.project-tag-glass {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  letter-spacing: 0.5px;
+}
+
+.project-title-wow {
+  font-size: 1.5rem;
+  color: var(--color-foreground);
+  margin-bottom: 15px;
+}
+
+.project-description-wow {
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.project-link-wow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.project-link-wow span {
+  transition: transform 0.3s ease;
+  color: var(--accent-color);
+}
+
+.project-link-wow:hover {
+  color: var(--accent-color);
+}
+
+.project-link-wow:hover span {
+  transform: translate(3px, -3px);
+}
+
+@media (max-width: 768px) {
+  .section-header-wow {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .section-header-wow .section-title {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .section-header-wow .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .projects-grid-wow {
+    grid-template-columns: 1fr;
+  }
 }
 
 .project-title {
   font-size: 1.2rem;
   color: var(--color-foreground);
   margin-bottom: 12px;
-}
-
 .project-description {
   font-size: 0.9rem;
   color: var(--color-muted);

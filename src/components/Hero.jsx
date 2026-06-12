@@ -2,47 +2,29 @@ import './Hero.css'
 
 export default function Hero() {
   return (
-    <section id="hero" className="hero">
-      <div className="hero-container">
-
-        <div className="hero-content">
-          <h1 className="hero-title">
-            Hi, I'm an <span className="highlight">iOS developer</span> and <br />
-            <span className="highlight">Apple Academy student</span>
-          </h1>
-          <p className="hero-description">
-            I'm currently building beautiful, performant iOS apps and exploring data-driven systems. Swift Student Challenge 2026 Winner.
-          </p>
-          <div className="hero-cta">
-            <a href="#projects" className="btn btn-secondary">Scroll Down ↓</a>
-          </div>
+    <section id="hero" className="hero-wow">
+      
+      {/* Dynamic Background Elements */}
+      <div className="hero-glow-orb"></div>
+      
+      <div className="hero-content-wow">
+        <div className="hero-badge">
+          <span className="live-dot"></span>
+          Available for New Projects
         </div>
-
-        <div className="hero-image-container">
-          <div className="hero-image-box">
-            <div className="abstract-border top-left"></div>
-            <div className="abstract-border bottom-right"></div>
-            {/* Placeholder for actual image */}
-            <div className="image-placeholder">
-              <img src="https://avatars.githubusercontent.com/u/108918231?v=4" alt="Marcello Guida" />
-            </div>
-            <div className="status-box">
-              <span className="status-dot"></span> Currently working on <b>Portfolio</b>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div className="hero-quote-container">
-        <div className="quote-box">
-          <span className="quote-icon-top">“</span>
-          <p className="quote-text">
-            Control can sometimes be an illusion. <br />
-            But sometimes you need illusion to gain control.
-          </p>
-          <span className="quote-icon-bottom">”</span>
-          <p className="quote-author">- Mr. Robot</p>
+        
+        <h1 className="hero-title-wow">
+          Crafting <span className="text-gradient">Digital</span><br/>
+          Experiences
+        </h1>
+        
+        <p className="hero-subtitle-wow">
+          Hi, I'm Marcello. An iOS developer & designer passionate about building bold, intuitive, and highly functional applications that leave a lasting impression.
+        </p>
+        
+        <div className="hero-actions">
+          <a href="#projects" className="btn btn-primary">View My Work</a>
+          <a href="#contact" className="btn btn-secondary">Get in Touch</a>
         </div>
       </div>
 
