@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility and Languages | World of Fables</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-body">
+
+    <header class="navbar solid-bg">
+        <div class="logo">
+            <a href="index.html" style="display:flex; align-items:center; text-decoration:none; color:inherit;">
+                <img src="assets/appicon.png" alt="World of Fables Logo">
+                <span>World of Fables</span>
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="team.html">The Team</a>
+            <a href="accessibility.html" style="color:var(--accent-color);">Accessibility</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        <button class="menu-btn" aria-label="Menu" id="menuToggle">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-nav">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="features.html" class="mobile-link">Features</a>
+            <a href="team.html" class="mobile-link">The Team</a>
+            <a href="accessibility.html" class="mobile-link" style="color:var(--accent-color);">Accessibility</a>
+            <a href="contact.html" class="mobile-link">Contact Us</a>
+            <a href="privacy-policy.html" class="mobile-link">Privacy Policy</a>
+        </div>
+    </div>
+
+    <!-- Accessibility Content -->
+    <section style="padding-top: 150px; padding-bottom: 80px;" class="dark-section">
+        <div class="container text-center reveal-up">
+            <h1 class="page-title">Accessibility <span class="highlight">First</span></h1>
+            <p style="max-width:800px; margin:0 auto;">World of Fables is designed from the ground up with accessibility and inclusivity at its core. Because the magic of fables should be experienced by all children, without barriers.</p>
+        </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="section light-section">
+        <div class="container text-center reveal-up">
+            <h2 class="section-title">9 Supported Languages</h2>
+            <p>We have fully localized the app to allow children from all over the world to experience this magical adventure.</p>
+            <div class="lang-grid">
+                <div class="lang-badge">🇬🇧 English</div>
+                <div class="lang-badge">🇮🇹 Italian</div>
+                <div class="lang-badge">🇪🇸 Spanish</div>
+                <div class="lang-badge">🇫🇷 French</div>
+                <div class="lang-badge">🇵🇹 Portuguese</div>
+                <div class="lang-badge">🇷🇺 Russian</div>
+                <div class="lang-badge">🇦🇱 Albanian</div>
+                <div class="lang-badge">🇮🇷 Persian (Full RTL Support)</div>
+                <div class="lang-badge">🇨🇳 Simplified Chinese</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accessibility Features -->
+    <section class="section dark-section">
+        <div class="container two-col">
+            <div class="text-col reveal-left">
+                <h2 class="section-title">Inclusive Design</h2>
+                <ul class="styled-list">
+                    <li><strong>OpenDyslexic Font:</strong> A dedicated toggle allows you to instantly activate the OpenDyslexic font to facilitate reading.</li>
+                    <li><strong>Spoken Narration:</strong> Native VoiceOver support and an in-app option to read all dialogues aloud.</li>
+                    <li><strong>Contrast and Colour:</strong> Full WCAG compliance. Support for increasing or reducing contrast. Furthermore, we distinguish elements without ever relying solely on colour, using dedicated visual patterns for colour blindness.</li>
+                    <li><strong>Reduce Motion:</strong> Animations sync with system settings to reduce motion, helping more sensitive children.</li>
+                    <li><strong>Math Gate:</strong> All advanced settings are protected by a math quiz, preventing accidental changes by children.</li>
+                    <li><strong>Dynamic Type:</strong> All fonts scale natively with your iPad preferences.</li>
+                </ul>
+            </div>
+            <div class="img-col reveal-right">
+                <img src="assets/worldmap.png" alt="World Map" class="shadow-img glass-panel">
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="assets/appicon.png" alt="Logo" class="footer-logo">
+                <h2>World of Fables</h2>
+            </div>
+            <div class="footer-links">
+                <h3>Explore</h3>
+                <a href="index.html">Home</a>
+                <a href="features.html">Features</a>
+                <a href="team.html">The Team</a>
+                <a href="accessibility.html">Accessibility</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 World of Fables. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

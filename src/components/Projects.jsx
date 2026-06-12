@@ -3,6 +3,12 @@ import './Projects.css'
 export default function Projects() {
   const projects = [
     {
+      title: 'World of Fables (Lumi)',
+      description: 'An interactive iPad app landing page showcasing Lumi, a journey through fables that teaches logical sequencing to children. Designed with accessibility and learning in mind.',
+      tags: ['HTML', 'CSS', 'JavaScript', 'Web Design'],
+      link: '/world-of-fables/index.html'
+    },
+    {
       title: 'Swift Student Challenge Submission',
       description: 'Selected as one of ~350 winners globally. Developed an innovative iOS application showcasing Swift expertise and creative problem-solving.',
       tags: ['Swift', 'iOS', 'Xcode', 'Award-Winning'],
