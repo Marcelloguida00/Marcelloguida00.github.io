@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -13,11 +13,27 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
+      setScrolled(window.scrollY > 40)
     }
-
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const revealEls = document.querySelectorAll('.reveal')
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+    )
+    revealEls.forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
   }, [])
 
   return (
@@ -33,10 +49,10 @@ function App() {
       </main>
       <footer className="footer">
         <div className="footer-content">
-          <p>&copy; 2026 Marcello Guida. Built with React.</p>
+          <p>© 2026 Marcello Guida — built with React &amp; Swift ambition.</p>
           <div className="footer-links">
             <a href="https://github.com/Marcelloguida00" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://linkedin.com/in/marcelloguida00" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="mailto:mguida2604@gmail.com">Email</a>
           </div>
         </div>

@@ -5,7 +5,7 @@
   --color-accent: var(--accent-color);
   --color-background: var(--bg-color);
   --color-foreground: var(--text-color);
-  --color-muted: #a0a0a0;
+  --color-muted: var(--text-muted);
   --color-border: var(--border-color);
 }
 
@@ -15,30 +15,23 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  background:
+    linear-gradient(var(--border-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-color) 1px, transparent 1px),
+    var(--bg-color);
+  background-size: 48px 48px, 48px 48px, auto;
+  background-position: -1px -1px;
 }
 
-/* Ambient Glowing Orbs */
+/* Ambient glow, faint and singular — not a purple-cyan double orb */
 .app::before {
   content: '';
   position: fixed;
-  top: -10%;
-  left: -10%;
-  width: 50vw;
-  height: 50vw;
-  background: radial-gradient(circle, rgba(112, 0, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
-  border-radius: 50%;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.app::after {
-  content: '';
-  position: fixed;
-  bottom: -20%;
+  top: -15%;
   right: -10%;
-  width: 60vw;
-  height: 60vw;
-  background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+  width: 55vw;
+  height: 55vw;
+  background: radial-gradient(circle, rgba(250, 115, 67, 0.09) 0%, rgba(0, 0, 0, 0) 70%);
   border-radius: 50%;
   z-index: -1;
   pointer-events: none;
@@ -50,51 +43,84 @@ main {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 0 5%;
 }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.5px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-foreground);
 }
 
-h1 { font-size: 3.5rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 1.5rem; }
+h1 { font-size: 3.75rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.4rem; }
 p { color: var(--color-muted); }
 
-/* Glassmorphism Buttons */
+/* Signature structural device: a file tab, echoing Xcode's editor tabs.
+   Each section is introduced as if it were a source file being opened. */
+.file-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  background: var(--glass-bg);
+  border: 1px solid var(--border-color);
+  border-bottom: 2px solid var(--dot-color, var(--accent-color));
+  padding: 8px 16px;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 24px;
+}
+
+.file-tab .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--dot-color, var(--accent-color));
+  flex-shrink: 0;
+}
+
+.section-title {
+  margin: 0 0 60px;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+/* Glassmorphism / editor-chrome buttons */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 28px;
-  font-size: 1rem;
+  gap: 8px;
+  padding: 13px 26px;
+  font-size: 0.95rem;
   font-weight: 600;
+  font-family: var(--font-main);
   text-decoration: none;
   cursor: pointer;
-  border-radius: 30px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  font-family: var(--font-main);
+  border-radius: 10px;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
   position: relative;
-  overflow: hidden;
-  z-index: 1;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent-secondary), var(--accent-color));
-  color: #fff;
-  border: none;
-  box-shadow: 0 10px 20px rgba(0, 240, 255, 0.2);
+  background: var(--accent-color);
+  color: #10110f;
+  border: 1px solid var(--accent-color);
+  box-shadow: 0 0 0 0 rgba(250, 115, 67, 0);
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 15px 25px rgba(0, 240, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -8px rgba(250, 115, 67, 0.5);
+  color: #10110f;
 }
 
 .btn-secondary {
@@ -102,72 +128,56 @@ p { color: var(--color-muted); }
   backdrop-filter: blur(10px);
   border: 1px solid var(--color-border);
   color: var(--color-foreground);
+  font-family: var(--font-mono);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-3px);
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: var(--border-color-strong);
+  transform: translateY(-2px);
+  color: var(--color-foreground);
 }
 
 /* Sections */
 section {
-  padding: 120px 0;
+  padding: 130px 0;
   position: relative;
-}
-
-.section-title {
-  margin-bottom: 80px;
-  font-size: 3rem;
-  font-weight: 800;
-  text-align: center;
-  color: var(--color-foreground);
-  position: relative;
-  display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent-secondary), var(--accent-color));
-  border-radius: 2px;
 }
 
 /* Footer */
 .footer {
-  padding: 60px 0;
+  padding: 48px 0;
   margin-top: auto;
   border-top: 1px solid var(--color-border);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
 }
 
 .footer-content {
-  max-width: 1200px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 0 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.9rem;
-  color: var(--color-muted);
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-content p {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-dim);
 }
 
 .footer-links {
   display: flex;
-  gap: 30px;
+  gap: 28px;
 }
 
 .footer-links a {
-  color: var(--color-foreground);
+  color: var(--color-muted);
   font-weight: 500;
+  font-size: 0.9rem;
 }
 
 .footer-links a:hover {
@@ -177,12 +187,13 @@ section {
 /* Responsive */
 @media (max-width: 768px) {
   h1 { font-size: 2.5rem; }
-  h2 { font-size: 2rem; }
-  section { padding: 80px 0; }
-  .section-title { margin-bottom: 50px; font-size: 2.5rem; }
+  h2 { font-size: 1.9rem; }
+  section { padding: 90px 0; }
+  .section-title { margin-bottom: 40px; font-size: 2rem; }
+  .app { background-size: 32px 32px, 32px 32px, auto; }
   .footer-content {
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
     text-align: center;
   }
 }

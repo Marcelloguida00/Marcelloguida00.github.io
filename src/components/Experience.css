@@ -1,105 +1,123 @@
-.experience .container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
 .timeline-wow {
   position: relative;
-  max-width: 900px;
+  max-width: 780px;
   margin: 0 auto;
-  padding-left: 30px;
-}
-
-.timeline-wow::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--accent-color), rgba(0, 240, 255, 0));
+  padding-left: 8px;
 }
 
 .timeline-item-wow {
   position: relative;
-  margin-bottom: 50px;
+  padding-left: 44px;
+  padding-bottom: 4px;
 }
 
-.timeline-item-wow:last-child {
-  margin-bottom: 0;
+.timeline-item-wow::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 24px;
+  bottom: -4px;
+  width: 1px;
+  background: var(--border-color);
+}
+
+.timeline-item-wow:last-child::before {
+  display: none;
 }
 
 .timeline-marker-glass {
   position: absolute;
-  top: 0;
-  left: -37.5px;
-  width: 16px;
-  height: 16px;
+  left: 0;
+  top: 6px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   background: var(--bg-color);
-  border: 4px solid var(--accent-color);
-  box-shadow: 0 0 15px var(--accent-color);
-  transition: all 0.3s ease;
+  border: 2px solid var(--accent-color);
 }
 
-.timeline-item-wow:hover .timeline-marker-glass {
-  background: var(--accent-color);
-  transform: scale(1.3);
+.timeline-item-wow.current .timeline-marker-glass {
+  border-color: var(--accent-green);
+}
+
+.marker-pulse {
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-green);
+  animation: ring 1.8s ease-out infinite;
+}
+
+@keyframes ring {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.4); opacity: 0; }
 }
 
 .timeline-content-glass {
   background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 30px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 28px 30px;
+  transition: border-color 0.25s ease;
 }
 
 .timeline-content-glass:hover {
-  transform: translateX(10px);
-  border-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border-color: var(--border-color-strong);
 }
 
 .timeline-header-wow {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.timeline-title-wow {
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.timeline-company-wow {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.timeline-period-wow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  padding: 5px 11px;
+  border-radius: 100px;
   white-space: nowrap;
 }
 
-.timeline-description {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--color-muted);
-  margin-bottom: 16px;
+.timeline-description-wow {
+  font-size: 0.96rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
 }
 
-.timeline-tags {
-  font-size: 0.8rem;
-  color: var(--color-muted);
-  border-top: 1px solid var(--color-border);
-  padding-top: 12px;
-  word-spacing: 10px;
+.timeline-tags-wow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-@media (max-width: 768px) {
-  .timeline {
-    padding-left: 20px;
-  }
+.glass-tag {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--accent-secondary);
+  background: rgba(77, 163, 255, 0.08);
+  border: 1px solid rgba(77, 163, 255, 0.22);
+  padding: 5px 11px;
+  border-radius: 6px;
+}
 
-  .timeline-marker {
-    left: -24.5px;
-  }
-
-  .timeline-header {
-    flex-direction: column;
-  }
-
-  .timeline-period {
-    white-space: normal;
-  }
+@media (max-width: 600px) {
+  .timeline-content-glass { padding: 22px; }
 }

@@ -5,27 +5,35 @@ export default function Experience() {
     {
       title: 'Apple Developer Academy',
       company: 'Federico II University × Apple',
-      location: 'Napoli',
+      location: 'Naples, Italy',
       period: 'Sep 2025 – Jun 2026',
-      description: 'Selective program focused on iOS development, product design, and entrepreneurial thinking. Built and shipped iOS apps using Swift and Xcode in Agile-style team sprints.',
-      highlights: ['iOS Development', 'Product Design', 'Swift', 'Xcode', 'Team Collaboration']
-    }
+      description:
+        'Selective program focused on iOS development, product design, and entrepreneurial thinking. Building and shipping iOS apps with Swift and Xcode inside Agile-style team sprints.',
+      highlights: ['iOS Development', 'Product Design', 'Swift', 'Xcode', 'Team Collaboration'],
+      current: true,
+    },
   ]
 
   return (
-    <section id="experience" className="experience-wow">
+    <section id="experience" className="experience-wow reveal">
       <div className="container">
-        <h2 className="section-title">Experience</h2>
+        <div className="file-tab" style={{ '--dot-color': 'var(--accent-green)' }}>
+          <span className="dot"></span> Experience.log
+        </div>
 
         <div className="timeline-wow">
           {experiences.map((exp, idx) => (
-            <div key={idx} className="timeline-item-wow">
-              <div className="timeline-marker-glass"></div>
+            <div key={idx} className={`timeline-item-wow ${exp.current ? 'current' : ''}`}>
+              <div className="timeline-marker-glass">
+                {exp.current && <span className="marker-pulse"></span>}
+              </div>
               <div className="timeline-content-glass">
                 <div className="timeline-header-wow">
                   <div>
                     <h3 className="timeline-title-wow">{exp.title}</h3>
-                    <p className="timeline-company-wow">{exp.company} • {exp.location}</p>
+                    <p className="timeline-company-wow">
+                      {exp.company} · {exp.location}
+                    </p>
                   </div>
                   <span className="timeline-period-wow">{exp.period}</span>
                 </div>

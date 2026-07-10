@@ -1,13 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg-color: #030305;
-  --text-color: #f0f0f0;
-  --accent-color: #00f0ff; /* Bright Cyan */
-  --accent-secondary: #7000ff; /* Deep Violet */
-  --border-color: rgba(255, 255, 255, 0.1);
-  --glass-bg: rgba(20, 20, 25, 0.6);
-  --font-main: 'Outfit', sans-serif;
+  /* Base */
+  --bg-color: #0b0d10;
+  --bg-color-alt: #0f1216;
+  --text-color: #eceef1;
+  --text-muted: #8992a1;
+  --text-dim: #5b636f;
+
+  /* Signature accents — grounded in Swift/Xcode's own palette */
+  --accent-color: #fa7343;   /* Swift orange */
+  --accent-secondary: #4da3ff; /* Xcode keyword blue */
+  --accent-green: #63d38a;   /* Xcode string / "online" green */
+
+  --border-color: rgba(255, 255, 255, 0.09);
+  --border-color-strong: rgba(255, 255, 255, 0.16);
+  --glass-bg: rgba(18, 20, 24, 0.72);
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-main: 'Sora', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 * {
@@ -44,7 +56,12 @@ body {
 }
 
 ::selection {
-  background-color: rgba(0, 240, 255, 0.3);
+  background-color: rgba(250, 115, 67, 0.3);
+  color: #fff;
+}
+
+::-moz-selection {
+  background-color: rgba(250, 115, 67, 0.3);
   color: #fff;
 }
 
@@ -74,4 +91,36 @@ a:hover {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-color);
+}
+
+/* Accessibility */
+:focus-visible {
+  outline: 2px solid var(--accent-secondary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+section[id] {
+  scroll-margin-top: 90px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Scroll-reveal utility, driven by IntersectionObserver in App.jsx */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }

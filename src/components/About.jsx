@@ -1,28 +1,49 @@
 import './About.css'
 
+const FACTS = [
+  { label: 'Based in', value: 'Naples, Italy' },
+  { label: 'Studying', value: 'Engineering, Uni. G. Marconi' },
+  { label: 'Academy', value: 'Apple Developer Academy · Federico II' },
+  { label: 'Award', value: 'Swift Student Challenge 2026' },
+]
+
 export default function About() {
   return (
-    <section id="about" className="about-wow">
+    <section id="about" className="about-wow reveal">
       <div className="container">
-        <h2 className="section-title">About Me</h2>
+        <div className="file-tab" style={{ '--dot-color': 'var(--accent-secondary)' }}>
+          <span className="dot"></span> About.swift
+        </div>
 
         <div className="about-grid-wow">
-          <div className="about-glass-card">
-            <h3 className="about-greeting">Hello, I'm Marcello</h3>
+          <div className="about-main">
+            <h2 className="about-greeting">
+              Hi, I'm Marcello —<br />I build software that respects people.
+            </h2>
             <p className="about-text">
-              I'm an engineering student at Università Guglielmo Marconi and Apple Developer Academy at Federico II University. 
-              I develop responsive and beautiful iOS applications from scratch and raise them into modern user-friendly experiences.
+              I'm an engineering student and an iOS developer currently sharpening my
+              craft at the Apple Developer Academy, a joint program with Federico II
+              University in Naples. I design and build responsive, native iOS
+              applications from first sketch to shipped product.
             </p>
             <p className="about-text">
-              I am very passionate about improving my coding skills & developing applications. 
-              I always strive to learn about the newest technologies and frameworks.
+              What keeps me at the keyboard is the gap between an idea and a working
+              app: I like closing it carefully, with attention to performance,
+              accessibility, and the small interactions most people never notice —
+              but always feel.
             </p>
-            
-            <div className="about-highlights">
-              <div className="highlight-item">
-                <span className="highlight-icon">🏆</span>
-                <span>Swift Student Challenge 2026 Winner</span>
+          </div>
+
+          <div className="about-facts">
+            {FACTS.map((fact) => (
+              <div className="fact-row" key={fact.label}>
+                <span className="fact-label">{fact.label}</span>
+                <span className="fact-value">{fact.value}</span>
               </div>
+            ))}
+            <div className="fact-highlight">
+              <span className="fact-highlight-icon">🏆</span>
+              <span>Swift Student Challenge 2026 Winner</span>
             </div>
           </div>
         </div>

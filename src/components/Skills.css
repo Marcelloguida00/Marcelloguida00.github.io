@@ -1,85 +1,77 @@
-.skills-grid-wow {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 30px;
-  justify-items: center;
+.skills-wow {
+  background: var(--bg-color-alt);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
-.skill-card {
-  width: 100%;
-  padding: 30px 20px;
-  border-radius: 20px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+.skills-json-card {
+  max-width: 780px;
+  margin: 0 auto;
+  background: #101216;
+  border: 1px solid var(--border-color-strong);
+  border-radius: 12px;
+  padding: 28px 32px;
+  font-family: var(--font-mono);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.6);
+}
+
+.json-brace {
+  color: var(--text-dim);
+  font-size: 1rem;
+}
+
+.skills-groups {
+  padding-left: 22px;
+  margin: 10px 0;
+}
+
+.skills-group {
+  margin-bottom: 18px;
+}
+
+.skills-group-key {
+  color: var(--accent-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.json-colon, .json-comma {
+  color: var(--text-dim);
+}
+
+.json-bracket {
+  color: var(--text-dim);
+}
+
+.skills-chips {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  text-decoration: none;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-left: 22px;
+  margin-bottom: 8px;
 }
 
-.skill-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0));
-  z-index: 1;
-  pointer-events: none;
+.skill-chip {
+  font-size: 0.86rem;
+  color: var(--accent-color);
+  background: rgba(250, 115, 67, 0.08);
+  border: 1px solid rgba(250, 115, 67, 0.22);
+  padding: 7px 14px;
+  border-radius: 7px;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
-.skill-card:hover {
-  transform: translateY(-10px) scale(1.05);
-  border-color: var(--accent-color);
-  box-shadow: 0 15px 30px rgba(0, 240, 255, 0.15);
+.skill-chip:hover {
+  transform: translateY(-2px);
+  border-color: rgba(250, 115, 67, 0.5);
+  background: rgba(250, 115, 67, 0.13);
 }
 
-.skill-card.featured {
-  border-color: rgba(112, 0, 255, 0.5);
-  box-shadow: 0 0 20px rgba(112, 0, 255, 0.2);
+.skills-group-close {
+  padding-left: 22px;
+  font-size: 0.9rem;
 }
 
-.skill-card.featured:hover {
-  border-color: var(--accent-color);
-  box-shadow: 0 15px 40px rgba(0, 240, 255, 0.4);
-}
-
-.skill-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  z-index: 2;
-  position: relative;
-}
-
-.skill-name {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--color-foreground);
-  z-index: 2;
-  position: relative;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .skills-grid-wow {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px;
-  }
-  .skill-card {
-    padding: 20px 10px;
-  }
-  .skill-icon {
-    font-size: 2.5rem;
-  }
-  .skill-name {
-    font-size: 1rem;
-  }
+@media (max-width: 600px) {
+  .skills-json-card { padding: 22px 20px; }
 }
