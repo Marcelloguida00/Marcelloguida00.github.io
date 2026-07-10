@@ -9,7 +9,7 @@ export default function Projects() {
         'An immersive iPad experience that turns classic fables into interactive games, built to teach logical sequencing to children with a deep focus on accessibility — removing barriers so every young mind can play.',
       tags: ['Swift', 'iPadOS', 'Accessibility', 'Game Design'],
       link: '/world-of-fables/index.html',
-      status: 'Swift Student Challenge 2026',
+      cover: '/projects/world-of-fables-cover.jpg',
     },
   ]
 
@@ -34,15 +34,15 @@ export default function Projects() {
           {projects.map((project, idx) => (
             <a href={project.link} className="project-card-wow" key={idx}>
               <div className="project-card-top">
+                <img src={project.cover} alt={`${project.title} preview`} className="project-cover-img" />
+                <div className="project-cover-scrim"></div>
                 <div className="project-window">
                   <div className="editor-dots small">
                     <span className="dot red"></span>
                     <span className="dot yellow"></span>
                     <span className="dot green"></span>
                   </div>
-                  <span className="project-status">{project.status}</span>
                 </div>
-                <div className="project-mark">{project.title.charAt(0)}</div>
               </div>
 
               <div className="project-content-wow">

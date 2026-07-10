@@ -2,7 +2,7 @@ import './About.css'
 
 const FACTS = [
   { label: 'Based in', value: 'Naples, Italy' },
-  { label: 'Studying', value: 'Engineering, Uni. G. Marconi' },
+  { label: 'Studying', value: 'Computer Science · Fisciano (UNISA)' },
   { label: 'Academy', value: 'Apple Developer Academy · Federico II' },
   { label: 'Award', value: 'Swift Student Challenge 2026' },
 ]
@@ -21,10 +21,11 @@ export default function About() {
               Hi, I'm Marcello —<br />I build software that respects people.
             </h2>
             <p className="about-text">
-              I'm an engineering student and an iOS developer currently sharpening my
-              craft at the Apple Developer Academy, a joint program with Federico II
-              University in Naples. I design and build responsive, native iOS
-              applications from first sketch to shipped product.
+              I'm a Computer Science student at the University of Salerno (Fisciano)
+              and an iOS developer currently sharpening my craft at the Apple
+              Developer Academy, a joint program with Federico II University in
+              Naples. I design and build responsive, native iOS applications from
+              first sketch to shipped product.
             </p>
             <p className="about-text">
               What keeps me at the keyboard is the gap between an idea and a working

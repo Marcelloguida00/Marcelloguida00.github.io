@@ -66,9 +66,10 @@ export default function Hero() {
           </h1>
 
           <p className="hero-subtitle-wow">
-            I'm Marcello, an iOS developer and designer. Engineering student, Apple
-            Developer Academy alumnus, and Swift Student Challenge 2026 winner —
-            building apps that are as considered under the hood as they are on screen.
+            I'm Marcello, an iOS developer and designer. Computer Science student
+            at Fisciano, Apple Developer Academy alumnus, and Swift Student
+            Challenge 2026 winner — building apps that are as considered under the
+            hood as they are on screen.
           </p>
 
           <div className="hero-actions">
