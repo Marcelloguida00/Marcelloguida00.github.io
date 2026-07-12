@@ -3,6 +3,15 @@ import './Projects.css'
 export default function Projects() {
   const projects = [
     {
+      title: 'SetPoint',
+      subtitle: 'Tennis & Padel',
+      description:
+        'Segnapunti per Tennis e Padel su Apple Watch e iPhone: punteggio al polso, tabellone live, statistiche, Apple Salute e partite condivise con gli avversari.',
+      tags: ['Swift', 'watchOS', 'iOS', 'HealthKit'],
+      link: '/setpoint/index.html',
+      cover: '/projects/setpoint-cover.jpg',
+    },
+    {
       title: 'World of Fables',
       subtitle: 'Lumi',
       description:
