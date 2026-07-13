@@ -36,17 +36,6 @@ export default function Experience() {
       marker: 'education',
       current: false,
     },
-    {
-      title: 'Independent iOS Projects',
-      company: 'Personal · Open source',
-      location: 'Naples, Italy',
-      period: '2022 – Present',
-      description:
-        'Designing and shipping apps end to end — from Polly and SyncPoint to World of Fables — with a focus on native Swift, accessibility, and thoughtful UX.',
-      highlights: ['Swift', 'watchOS', 'iPadOS', 'Product Design', 'GitHub Pages'],
-      marker: 'project',
-      current: false,
-    },
   ]
 
   return (
@@ -74,9 +63,6 @@ export default function Experience() {
                 )}
                 {!exp.current && exp.marker === 'education' && (
                   <span className="marker-icon">⌁</span>
-                )}
-                {!exp.current && exp.marker === 'project' && (
-                  <span className="marker-icon">◆</span>
                 )}
               </div>
               <div className="timeline-content-glass">
