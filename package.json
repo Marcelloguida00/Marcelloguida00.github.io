@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "sync:syncpoint": "cp -r sITO/* public/syncpoint/",
+    "dev": "npm run sync:syncpoint && vite",
+    "build": "npm run sync:syncpoint && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

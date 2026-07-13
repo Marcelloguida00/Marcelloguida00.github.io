@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react'
 import './Hero.css'
 
 const CODE_LINES = [
@@ -10,44 +9,6 @@ const CODE_LINES = [
 ]
 
 export default function Hero() {
-  const [visibleLines, setVisibleLines] = useState(0)
-  const [charCount, setCharCount] = useState(0)
-  const hasRun = useRef(false)
-
-  useEffect(() => {
-    if (hasRun.current) return
-    hasRun.current = true
-
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (prefersReduced) {
-      setVisibleLines(CODE_LINES.length)
-      setCharCount(CODE_LINES[CODE_LINES.length - 1].text.length)
-      return
-    }
-
-    let line = 0
-    let char = 0
-    let timeoutId
-
-    const typeNext = () => {
-      if (line >= CODE_LINES.length) return
-      const current = CODE_LINES[line]
-      if (char <= current.text.length) {
-        setVisibleLines(line + 1)
-        setCharCount(char)
-        char += 1
-        timeoutId = setTimeout(typeNext, 14 + Math.random() * 22)
-      } else {
-        line += 1
-        char = 0
-        timeoutId = setTimeout(typeNext, 160)
-      }
-    }
-
-    timeoutId = setTimeout(typeNext, 500)
-    return () => clearTimeout(timeoutId)
-  }, [])
-
   return (
     <section id="hero" className="hero-wow">
       <div className="hero-glow-orb"></div>
@@ -78,7 +39,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-editor" aria-hidden="true">
+        <div className="hero-editor">
           <div className="editor-titlebar">
             <div className="editor-dots">
               <span className="dot red"></span>
@@ -88,18 +49,21 @@ export default function Hero() {
             <span className="editor-filename">Marcello.swift</span>
           </div>
           <div className="editor-body">
-            {CODE_LINES.slice(0, visibleLines).map((lineObj, idx) => {
-              const isCurrent = idx === visibleLines - 1
-              const text = isCurrent ? lineObj.text.slice(0, charCount) : lineObj.text
+            {CODE_LINES.map((lineObj, idx) => {
+              const isLast = idx === CODE_LINES.length - 1
               return (
-                <div className="editor-line" key={idx}>
+                <div
+                  className="editor-line"
+                  key={lineObj.text}
+                  style={{ animationDelay: `${idx * 120}ms` }}
+                >
                   <span className="line-number">{idx + 1}</span>
                   <span
                     className="line-code"
                     style={{ paddingLeft: `${lineObj.indent * 20}px` }}
                   >
-                    {text}
-                    {isCurrent && <span className="type-cursor"></span>}
+                    {lineObj.text}
+                    {isLast && <span className="type-cursor" aria-hidden="true"></span>}
                   </span>
                 </div>
               )

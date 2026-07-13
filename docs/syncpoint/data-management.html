@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestione dati — SetPoint</title>
+  <meta name="description" content="Gestisci i tuoi dati su SetPoint: elimina l'account, modifica le informazioni personali, richiedi l'esportazione dei dati e gestisci i permessi di Apple Salute.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎾</text></svg>">
+</head>
+<body>
+<style>
+  :root {
+    --bg: #EFF6EF;
+    --surface: #FFFFFF;
+    --text: #152019;
+    --muted: #56675C;
+    --accent: #176B43;
+    --accent-ink: #FFFFFF;
+    --border: rgba(21, 32, 25, 0.14);
+    --court: #1A4D33;
+    --court-deep: #0D3321;
+    --lime: #C7EB40;
+    --shadow: 0 3px 12px rgba(13, 51, 33, 0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0F1412; --surface: #1B2620; --text: #E8F0E9; --muted: #9AAA9F;
+      --accent: #C7EB40; --accent-ink: #12241A; --border: rgba(232, 240, 233, 0.15);
+      --shadow: 0 3px 12px rgba(0, 0, 0, 0.35);
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #EFF6EF; --surface: #FFFFFF; --text: #152019; --muted: #56675C;
+    --accent: #176B43; --accent-ink: #FFFFFF; --border: rgba(21, 32, 25, 0.14);
+    --shadow: 0 3px 12px rgba(13, 51, 33, 0.08);
+  }
+  :root[data-theme="dark"] {
+    --bg: #0F1412; --surface: #1B2620; --text: #E8F0E9; --muted: #9AAA9F;
+    --accent: #C7EB40; --accent-ink: #12241A; --border: rgba(232, 240, 233, 0.15);
+    --shadow: 0 3px 12px rgba(0, 0, 0, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Segoe UI", Roboto, sans-serif;
+    font-size: 17px; line-height: 1.6; -webkit-text-size-adjust: 100%;
+  }
+  a { color: var(--accent); }
+  a:focus-visible, summary:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+  .hero {
+    background: linear-gradient(160deg, var(--court) 0%, var(--court-deep) 100%);
+    color: #F2F8F0; padding: 48px 0 52px;
+  }
+  .eyebrow {
+    display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--lime); margin: 0 0 12px;
+  }
+  .hero h1 {
+    font-size: clamp(30px, 5vw, 42px); font-weight: 800; letter-spacing: -0.02em;
+    line-height: 1.1; margin: 0 0 12px; text-wrap: balance;
+  }
+  .hero p.lead { color: rgba(242, 248, 240, 0.85); max-width: 34em; margin: 0; }
+  .hero .back { display: inline-block; margin-top: 18px; color: var(--lime); font-weight: 700; font-size: 15px; text-decoration: none; }
+  .hero .back:hover { text-decoration: underline; }
+
+  main { padding: 44px 0 24px; }
+
+  .summary {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 18px;
+    box-shadow: var(--shadow); padding: 24px 24px 10px; margin-bottom: 40px;
+  }
+  .summary h2 {
+    font-size: 15px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 12px;
+  }
+  .summary ul { margin: 0 0 14px; padding-left: 22px; }
+  .summary li { margin-bottom: 8px; color: var(--muted); }
+  .summary li strong { color: var(--text); }
+
+  .section { margin-bottom: 36px; }
+  .section-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .section-head .icon {
+    width: 40px; height: 40px; border-radius: 12px; background: var(--accent); color: var(--accent-ink);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .section-head .icon svg { width: 21px; height: 21px; }
+  .section-head h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; margin: 0; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    box-shadow: var(--shadow); padding: 20px 22px; margin-bottom: 12px;
+  }
+  .card p { margin: 0 0 10px; color: var(--muted); }
+  .card p:last-child { margin-bottom: 0; }
+  .card strong { color: var(--text); font-weight: 650; }
+
+  .steps { margin: 0; padding-left: 20px; }
+  .steps li { margin-bottom: 8px; color: var(--muted); }
+  .steps li strong { color: var(--text); }
+
+  .action-row {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 14px;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; font-size: 15.5px; font-weight: 700;
+    text-decoration: none; padding: 12px 20px; border-radius: 13px; min-height: 46px;
+    cursor: pointer; transition: transform 0.2s ease, filter 0.2s ease;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-accent { background: var(--accent); color: var(--accent-ink); }
+  .btn-accent:hover { filter: brightness(1.08); }
+  @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+
+  .contact {
+    background: var(--court); color: #F2F8F0; border-radius: 22px; padding: 36px 28px; margin: 48px 0 40px;
+  }
+  .contact h2 { font-size: 26px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 10px; text-wrap: balance; }
+  .contact p { color: rgba(242, 248, 240, 0.85); margin: 0 0 22px; max-width: 36em; }
+  .contact .hint { font-size: 14px; color: rgba(242, 248, 240, 0.6); margin-top: 18px; margin-bottom: 0; }
+  .contact .btn-lime { background: var(--lime); color: #12241A; }
+  .contact .btn-lime:hover { filter: brightness(1.06); }
+
+  footer { border-top: 1px solid var(--border); padding: 28px 0 48px; font-size: 14px; color: var(--muted); }
+  footer p { margin: 0 0 8px; max-width: 52em; }
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Gestione dati &middot; SetPoint</p>
+    <h1>I tuoi dati restano in mano tua.</h1>
+    <p class="lead">Qui trovi tutto quello che ti serve per gestire l'account, correggere le tue informazioni, esportare i tuoi dati o eliminarli definitivamente.</p>
+    <a class="back" href="index.html">&larr; Torna al supporto</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="summary">
+    <h2>In breve</h2>
+    <ul>
+      <li>Puoi <strong>eliminare l'account</strong> in autonomia, direttamente dall'app, in qualsiasi momento.</li>
+      <li>Puoi <strong>modificare nome utente e foto profilo</strong> dalla schermata Profilo, senza scrivere a nessuno.</li>
+      <li>Per <strong>esportazione dati, rettifiche particolari o altre richieste privacy</strong>, scrivici via email: rispondiamo entro 30 giorni.</li>
+      <li>I permessi su <strong>Apple Salute</strong> si gestiscono dalle Impostazioni di iOS, in qualsiasi momento.</li>
+    </ul>
+  </div>
+
+  <section class="section">
+    <div class="section-head">
+      <div class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path><path d="M10 11v6"></path><path d="M14 11v6"></path></svg>
+      </div>
+      <h2>Elimina il tuo account</h2>
+    </div>
+    <div class="card">
+      <p>La cancellazione dell'account è <strong>self-service</strong>, non serve contattare nessuno:</p>
+      <ol class="steps">
+        <li>Apri SetPoint sull'iPhone e vai alla scheda <strong>Profilo</strong>.</li>
+        <li>Scorri fino in fondo e tocca <strong>Elimina account</strong>.</li>
+        <li>Conferma la scelta: l'operazione è <strong>immediata e irreversibile</strong>.</li>
+      </ol>
+      <p>Alla conferma, il tuo nome utente, la foto profilo e i dati collegati al tuo account su iCloud (CloudKit) vengono rimossi. Le partite salvate localmente sul dispositivo restano tue e non vengono toccate: puoi eliminarle separatamente dallo storico.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+      </div>
+      <h2>Modifica le tue informazioni</h2>
+    </div>
+    <div class="card">
+      <p><strong>Nome utente e foto profilo</strong> si aggiornano in autonomia dalla schermata Profilo: le modifiche si sincronizzano su iCloud e compaiono subito nel tabellone e nelle card condivise.</p>
+      <p>Le <strong>singole partite</strong> (nomi dei giocatori, punteggi, note) possono essere modificate o eliminate dallo storico, partita per partita.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+      </div>
+      <h2>Richiedi l'esportazione o la cancellazione completa dei dati</h2>
+    </div>
+    <div class="card">
+      <p>Per ricevere una <strong>copia dei tuoi dati</strong>, chiedere la <strong>cancellazione di informazioni specifiche</strong> non gestibili dall'app, o esercitare gli altri diritti previsti dal GDPR (accesso, rettifica, limitazione, portabilità), scrivici indicando la richiesta e, se possibile, il nome utente collegato al tuo account.</p>
+      <p>Rispondiamo entro <strong>30 giorni</strong>.</p>
+      <div class="action-row">
+        <a class="btn btn-accent" href="mailto:mguida2604@gmail.com?subject=Richiesta%20dati%20SetPoint">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
+          Richiedi i tuoi dati
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+      </div>
+      <h2>Gestisci l'accesso ad Apple Salute</h2>
+    </div>
+    <div class="card">
+      <p>SetPoint scrive e legge i dati di allenamento (battito, calorie, tipo di attività) solo con il tuo <strong>permesso esplicito</strong>. Puoi rivedere o revocare l'accesso in qualsiasi momento da:</p>
+      <p><strong>Impostazioni &rsaquo; Privacy e sicurezza &rsaquo; Salute &rsaquo; SetPoint</strong></p>
+      <p>Revocare il permesso non elimina gli allenamenti già registrati in Apple Salute: per rimuoverli, gestiscili direttamente dall'app Salute di Apple.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+      </div>
+      <h2>Partite condivise e visibilità agli altri giocatori</h2>
+    </div>
+    <div class="card">
+      <p>Le partite in cui inviti giocatori collegati al loro profilo restano visibili nello storico di tutti i partecipanti, anche dopo l'eliminazione del tuo account, così ognuno mantiene lo storico delle proprie partite. Se vuoi che una partita specifica non compaia più nello storico condiviso, scrivici indicando quale.</p>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Serve una mano con i tuoi dati?</h2>
+    <p>Scrivi direttamente allo sviluppatore: leggo personalmente ogni richiesta relativa a privacy e dati personali.</p>
+    <a class="btn btn-lime" href="mailto:mguida2604@gmail.com?subject=Gestione%20dati%20SetPoint">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
+      mguida2604@gmail.com
+    </a>
+    <p class="hint">Per velocizzare la richiesta, indica il nome utente collegato al tuo account e il tipo di richiesta (esportazione, rettifica, cancellazione o altro).</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>SetPoint</strong> &mdash; segnapunti Tennis &amp; Padel per Apple&nbsp;Watch e iPhone.</p>
+    <p>Questa pagina riassume in pratica i tuoi diritti. Per i dettagli completi su cosa raccogliamo e perché, leggi la <a href="privacy.html">Privacy Policy</a>.</p>
+    <p>&copy; 2026 Marcello Guida &middot; Apple, Apple&nbsp;Watch, iPhone e iCloud sono marchi di Apple&nbsp;Inc.</p>
+  </div>
+</footer>
+</body>
+</html>

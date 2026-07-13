@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Supporto SetPoint — Segnapunti Tennis &amp; Padel per Apple Watch</title>
-  <meta name="description" content="Assistenza per SetPoint, il segnapunti Tennis e Padel per Apple Watch e iPhone: domande frequenti su punteggio, sincronizzazione, Apple Salute, account e contatti.">
+  <title>SetPoint — Segnapunti Tennis &amp; Padel per Apple Watch e iPhone</title>
+  <meta name="description" content="SetPoint è il segnapunti Tennis e Padel per Apple Watch e iPhone: punteggio dal polso, tabellone sul telefono, Live Activity, statistiche testa a testa e supporto con FAQ e contatti.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎾</text></svg>">
 </head>
 <body>
@@ -176,6 +176,112 @@
     color: rgba(242, 248, 240, 0.55);
   }
 
+  /* ---------- Sezione marketing ---------- */
+  .marketing { padding: 56px 0 8px; }
+  .marketing .kicker {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  .marketing h2.title {
+    font-size: clamp(28px, 4.5vw, 38px);
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    line-height: 1.12;
+    margin: 0 0 12px;
+    text-wrap: balance;
+  }
+  .marketing p.intro {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 38em;
+    margin: 0 0 32px;
+  }
+  .features {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  @media (max-width: 640px) {
+    .features { grid-template-columns: 1fr; }
+  }
+  .feature {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 22px 20px;
+  }
+  .feature .f-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+  }
+  .feature .f-icon svg { width: 22px; height: 22px; }
+  .feature h3 {
+    font-size: 18px;
+    font-weight: 750;
+    letter-spacing: -0.01em;
+    margin: 0 0 6px;
+  }
+  .feature p { margin: 0; font-size: 15.5px; color: var(--muted); }
+
+  .rules-band {
+    background: var(--court-deep);
+    color: #F2F8F0;
+    border-radius: 18px;
+    padding: 22px 22px 18px;
+    margin-bottom: 28px;
+  }
+  .rules-band h3 {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--lime);
+    margin: 0 0 12px;
+  }
+  .rules-band .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .rules-band .chip {
+    background: var(--plate);
+    color: #17261C;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 7px 13px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .store-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 22px;
+  }
+  .store-cta p { margin: 0; color: var(--muted); font-size: 15.5px; flex: 1 1 260px; }
+  .store-cta p strong { color: var(--text); }
+  .btn-store {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+  .btn-store:hover { filter: brightness(1.08); }
+
   /* ---------- Sezioni FAQ ---------- */
   main { padding: 52px 0 24px; }
   .section { margin-bottom: 44px; }
@@ -278,6 +384,7 @@
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
         Scrivici
       </a>
+      <a class="btn btn-ghost" href="#app">Scopri l&rsquo;app</a>
       <a class="btn btn-ghost" href="#faq">Leggi le FAQ</a>
     </div>
     <div class="board" role="img" aria-label="Tabellone di esempio: Tu conduci contro I dubbi per 6 a 2, 4 a 1, 40 a 0">
@@ -293,6 +400,80 @@
     <p class="board-caption">Match point: la risposta che cerchi &egrave; qui sotto.</p>
   </div>
 </header>
+
+<section id="app" class="marketing">
+  <div class="wrap">
+    <p class="kicker">L&rsquo;app</p>
+    <h2 class="title">Il tuo arbitro personale, al polso e in tasca.</h2>
+    <p class="intro">SetPoint segue il match punto dopo punto: tu pensi a giocare, lui tiene il punteggio, il servizio, i cambi campo e le statistiche. In campo con l&rsquo;Apple&nbsp;Watch, a bordo campo con l&rsquo;iPhone.</p>
+
+    <div class="features">
+      <div class="feature">
+        <div class="f-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="5" width="12" height="14" rx="3"></rect><path d="M9 2h6"></path><path d="M9 22h6"></path><path d="M12 10v3l2 1"></path></svg>
+        </div>
+        <h3>Punteggio dal polso</h3>
+        <p>Due pulsanti grandi, vibrazioni distinte per punto, game e set, undo con la Corona Digitale e gesto Doppio Tap per segnare senza toccare lo schermo.</p>
+      </div>
+      <div class="feature">
+        <div class="f-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"></rect><path d="M11 18h2"></path></svg>
+        </div>
+        <h3>Tabellone gigante su iPhone</h3>
+        <p>Punteggio in stile segnapunti da campo, visibile da lontano. Con motore di gioco completo: funziona anche senza Watch, con modifica punti e undo dal telefono.</p>
+      </div>
+      <div class="feature">
+        <div class="f-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"></path></svg>
+        </div>
+        <h3>Live Activity e Dynamic Island</h3>
+        <p>Il tabellone in tempo reale sulla schermata di blocco: chi &egrave; fuori campo segue il match a colpo d&rsquo;occhio, senza aprire l&rsquo;app.</p>
+      </div>
+      <div class="feature">
+        <div class="f-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+        </div>
+        <h3>Allenamento ufficiale</h3>
+        <p>Ogni partita &egrave; un workout in Apple Salute: calorie, battito in tempo reale e Anelli di Attivit&agrave; che si chiudono mentre giochi.</p>
+      </div>
+      <div class="feature">
+        <div class="f-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="M7 15v3"></path><path d="M11 11v7"></path><path d="M15 7v11"></path><path d="M19 4v14"></path></svg>
+        </div>
+        <h3>Statistiche e testa a testa</h3>
+        <p>Storico filtrabile, percentuale vittorie contro ogni avversario, analisi di coppia nel doppio e grafico dell&rsquo;inerzia del match, punto per punto.</p>
+      </div>
+      <div class="feature">
+        <div class="f-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><path d="m8.6 10.5 6.8-4"></path><path d="m8.6 13.5 6.8 4"></path></svg>
+        </div>
+        <h3>Vittorie da condividere</h3>
+        <p>Card grafiche del risultato in formato Storia e Post, personalizzabili con le tue foto. E con le partite condivise, il match finisce nello storico di tutti i giocatori.</p>
+      </div>
+    </div>
+
+    <div class="rules-band">
+      <h3>Le tue regole, il tuo gioco</h3>
+      <div class="chips">
+        <span class="chip">Tennis</span>
+        <span class="chip">Padel</span>
+        <span class="chip">Singolare</span>
+        <span class="chip">Doppio</span>
+        <span class="chip">1, 2 o 3 set</span>
+        <span class="chip">Fast4</span>
+        <span class="chip">Golden Point</span>
+        <span class="chip">Tie-break a 7</span>
+        <span class="chip">Super Tie-Break a 10</span>
+      </div>
+    </div>
+
+    <div class="store-cta">
+      <p><strong>Gratis, senza pubblicit&agrave;.</strong> Richiede iPhone con iOS&nbsp;17 o successivo; Apple&nbsp;Watch consigliato per l&rsquo;esperienza in campo.</p>
+      <!-- Al rilascio: sostituire href con il link reale del prodotto, es. https://apps.apple.com/it/app/setpoint/id0000000000 -->
+      <a class="btn btn-store" href="#contatti">Presto sull&rsquo;App&nbsp;Store</a>
+    </div>
+  </div>
+</section>
 
 <main id="faq" class="wrap">
 
@@ -491,7 +672,7 @@
 <footer>
   <div class="wrap">
     <p><strong>SetPoint</strong> &mdash; segnapunti Tennis &amp; Padel per Apple&nbsp;Watch e iPhone.</p>
-    <p>Le tue partite sono salvate sul dispositivo e, se scegli di usare le funzioni condivise, nel tuo iCloud. I dati di allenamento restano in Apple Salute. Nessun dato viene venduto o condiviso con terze parti.</p>
+    <p>Le tue partite sono salvate sul dispositivo e, se scegli di usare le funzioni condivise, nel tuo iCloud. I dati di allenamento restano in Apple Salute. Nessun dato viene venduto o condiviso con terze parti. Leggi la <a href="privacy.html">Privacy Policy completa</a>.</p>
     <p>&copy; 2026 Marcello Guida &middot; Apple, Apple&nbsp;Watch e iPhone sono marchi di Apple&nbsp;Inc.</p>
   </div>
 </footer>
