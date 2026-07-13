@@ -3,6 +3,15 @@ import './Projects.css'
 export default function Projects() {
   const projects = [
     {
+      title: 'Polly',
+      subtitle: 'Digital Eco-Companion',
+      description:
+        'Eco-companion digitale che ti aiuta a capire e ridurre la Data Pollution: pulisci la libreria foto, impara i fatti e chatta con Apple Intelligence on-device — tutto in privato.',
+      tags: ['Swift', 'iOS', 'Apple Intelligence', 'Sustainability'],
+      link: '/marcelloguida-polly/indexPolly.html',
+      cover: '/projects/marcelloguida-polly-cover.jpg',
+    },
+    {
       title: 'SyncPoint',
       subtitle: 'Tennis & Padel',
       description:

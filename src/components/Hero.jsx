@@ -39,16 +39,29 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-editor">
-          <div className="editor-titlebar">
+        <div className="hero-visual">
+          <div className="hero-photo-wrap">
+            <img
+              src="/profile/marcello-guida.jpg"
+              alt="Marcello Guida, iOS developer"
+              className="hero-photo"
+              width={420}
+              height={560}
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+
+          <div className="hero-editor">
+            <div className="editor-titlebar">
             <div className="editor-dots">
               <span className="dot red"></span>
               <span className="dot yellow"></span>
               <span className="dot green"></span>
             </div>
             <span className="editor-filename">Marcello.swift</span>
-          </div>
-          <div className="editor-body">
+            </div>
+            <div className="editor-body">
             {CODE_LINES.map((lineObj, idx) => {
               const isLast = idx === CODE_LINES.length - 1
               return (
@@ -68,6 +81,7 @@ export default function Hero() {
                 </div>
               )
             })}
+            </div>
           </div>
         </div>
       </div>

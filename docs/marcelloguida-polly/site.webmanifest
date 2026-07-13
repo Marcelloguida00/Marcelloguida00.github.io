@@ -1,0 +1,11 @@
+{
+  "name": "Polly — Your Digital Eco-Companion",
+  "short_name": "Polly",
+  "icons": [
+    { "src": "/marcelloguida-polly/assets/app-icon.png", "sizes": "1024x1024", "type": "image/png" }
+  ],
+  "theme_color": "#0B0A08",
+  "background_color": "#0B0A08",
+  "display": "standalone",
+  "start_url": "/marcelloguida-polly/indexPolly.html"
+}

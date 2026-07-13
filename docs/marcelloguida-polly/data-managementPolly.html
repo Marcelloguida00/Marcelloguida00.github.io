@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Management — Polly</title>
+<meta name="description" content="Manage your Polly data: request an export, edit your information, revoke consent, or permanently delete your account and data.">
+<link rel="canonical" href="https://marcelloguida00.github.io/marcelloguida-polly/data-managementPolly.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Polly">
+<meta property="og:title" content="Data Management — Polly">
+<meta property="og:description" content="Export, edit, revoke consent, or delete your Polly data and account.">
+<meta property="og:image" content="https://marcelloguida00.github.io/marcelloguida-polly/assets/og-cover.png">
+<meta property="og:url" content="https://marcelloguida00.github.io/marcelloguida-polly/data-managementPolly.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/marcelloguida-polly/assets/favicon.png">
+<link rel="apple-touch-icon" href="/marcelloguida-polly/assets/app-icon.png">
+<link rel="manifest" href="/marcelloguida-polly/site.webmanifest">
+<meta name="theme-color" content="#0B0A08">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/marcelloguida-polly/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/marcelloguida-polly/indexPolly.html" class="brand"><img src="/marcelloguida-polly/assets/app-icon.png" alt="Polly app icon"> Polly</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/marcelloguida-polly/#features">Features</a>
+      <a href="/marcelloguida-polly/#how-it-works">How it works</a>
+      <a href="/marcelloguida-polly/#faq">FAQ</a>
+      <a href="/marcelloguida-polly/supportPolly.html">Support</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://apps.apple.com/us/app/polly-companion/id6759916379" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get Polly</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M0 1H18M0 7H18M0 13H18" stroke="currentColor" stroke-width="2"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/marcelloguida-polly/#features">Features</a>
+    <a href="/marcelloguida-polly/#how-it-works">How it works</a>
+    <a href="/marcelloguida-polly/#faq">FAQ</a>
+    <a href="/marcelloguida-polly/supportPolly.html">Support</a>
+    <a href="/marcelloguida-polly/privacyPolly.html">Privacy</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Your data, your control</span>
+      <h1>Data Management</h1>
+      <p>Because Polly stores almost everything locally, most of these actions take effect immediately on your device. Use the options below to export, edit, or permanently delete your data.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:20px;">
+    <div class="wrap">
+
+      <div class="card reveal" style="margin-bottom:32px;background:var(--signal-wash);border-color:var(--signal-dim);">
+        <p style="color:var(--ink);font-size:14.5px;">
+          <strong>How this works:</strong> Polly doesn't require an account, and your photo library, chat history, and app stats live on your device, not on our servers. The requests below are handled by our support team and, where an action can only be completed on-device, we'll point you to the exact place in the app to do it.
+        </p>
+      </div>
+
+      <div class="action-grid reveal">
+
+        <div class="action-card">
+          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Request a data export</h3>
+          <p>Get a copy of any information we hold about you (such as past support conversations). Most in-app stats can be viewed directly inside Polly under Settings → Your Stats.</p>
+          <button id="btn-export" class="btn btn-ghost">Request export</button>
+          <span class="status-line" id="status-export"></span>
+        </div>
+
+        <div class="action-card">
+          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.5 2.5a2.1 2.1 0 013 3L12 15l-4 1 1-4 9.5-9.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Edit your data</h3>
+          <p>Update the information Polly has stored, including your support contact details or in-app preferences. In-app stats and settings are editable directly from the app.</p>
+          <button id="btn-edit" class="btn btn-ghost">Edit my data</button>
+          <span class="status-line" id="status-edit"></span>
+        </div>
+
+        <div class="action-card">
+          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Revoke consent</h3>
+          <p>Withdraw consent for optional data uses, such as sharing crash and performance diagnostics with the developer. You can also manage this anytime in iOS Settings → Privacy &amp; Security → Analytics &amp; Improvements.</p>
+          <button id="btn-consent" class="btn btn-ghost">Manage consent</button>
+          <span class="status-line" id="status-consent"></span>
+        </div>
+
+        <div class="action-card danger">
+          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6h14z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Delete account &amp; data</h3>
+          <p>Permanently delete any data associated with you, including support history. This does not delete your photo library — that remains fully under your control on your device.</p>
+          <button id="btn-delete" class="btn btn-danger">Delete my account</button>
+          <span class="status-line" id="status-delete"></span>
+        </div>
+
+      </div>
+
+      <hr class="divider" style="margin:56px 0;">
+
+      <div class="reveal" style="max-width:720px;">
+        <h2 style="font-family:var(--font-display);font-size:22px;margin-bottom:16px;">Removing local data yourself</h2>
+        <p style="color:var(--ink-dim);font-size:15px;margin-bottom:14px;">Since most Polly data never leaves your device, you can wipe it immediately without waiting on a request:</p>
+        <ul style="color:var(--ink-dim);font-size:15px;padding-left:20px;list-style:disc;display:flex;flex-direction:column;gap:8px;margin-bottom:14px;">
+          <li>Open Settings → Polly → Reset Stats to clear Hunger, Education, and Fun progress.</li>
+          <li>Delete the Polly app from your device to remove all locally stored app data, including quiz history and chat logs.</li>
+          <li>Photos deleted through Polly follow standard iOS deletion — they move to "Recently Deleted" before permanent removal.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- Delete confirmation modal -->
+<div class="modal-backdrop" id="delete-modal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <h3 id="modal-title">Delete your account &amp; data?</h3>
+    <p>This permanently removes any data we hold about you (such as support history) within 30 days. This action can't be undone. Your on-device photo library and app stats are not affected — manage those directly in the app.</p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" id="delete-cancel">Cancel</button>
+      <button class="btn btn-danger" id="delete-confirm">Yes, delete</button>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a href="/marcelloguida-polly/indexPolly.html" class="footer-brand"><img src="/marcelloguida-polly/assets/app-icon.png" alt="Polly app icon"> Polly</a>
+        <p class="desc">A digital eco-companion helping you understand and reduce your Data Pollution, one swipe at a time.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/marcelloguida-polly/#features">Features</a></li>
+          <li><a href="/marcelloguida-polly/#how-it-works">How it works</a></li>
+          <li><a href="/marcelloguida-polly/#faq">FAQ</a></li>
+          <li><a href="https://apps.apple.com/us/app/polly-companion/id6759916379" target="_blank" rel="noopener noreferrer">App Store</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/">Portfolio</a></li>
+          <li><a href="/marcelloguida-polly/supportPolly.html">Support</a></li>
+          <li><a href="mailto:mguida2604@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/marcelloguida-polly/privacyPolly.html">Privacy Policy</a></li>
+          <li><a href="/marcelloguida-polly/data-managementPolly.html">Data Management</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span class="js-year">2026</span> Polly. All rights reserved.</span>
+      <div class="social-row">
+        <a href="#" aria-label="Polly on X"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="2"/></svg></a>
+        <a href="#" aria-label="Polly on Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/marcelloguida-polly/js/main.js"></script>
+</body>
+</html>

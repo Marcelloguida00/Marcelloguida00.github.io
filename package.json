@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "sync:syncpoint": "node scripts/apply-syncpoint-branding.mjs sITO && cp -r sITO/* public/syncpoint/ && node scripts/apply-syncpoint-branding.mjs public/syncpoint",
-    "dev": "npm run sync:syncpoint && vite",
-    "build": "npm run sync:syncpoint && vite build",
+    "sync:polly": "rm -rf public/marcelloguida-polly && cp -r marcelloguida-polly public/marcelloguida-polly && node scripts/apply-polly-paths.mjs public/marcelloguida-polly",
+    "dev": "npm run sync:syncpoint && npm run sync:polly && vite",
+    "build": "npm run sync:syncpoint && npm run sync:polly && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
