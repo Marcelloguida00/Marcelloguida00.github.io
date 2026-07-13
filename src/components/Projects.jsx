@@ -8,7 +8,7 @@ export default function Projects() {
       description:
         'Segnapunti per Tennis e Padel su Apple Watch e iPhone: punteggio al polso, tabellone live, statistiche, Apple Salute e partite condivise con gli avversari.',
       tags: ['Swift', 'watchOS', 'iOS', 'HealthKit'],
-      link: '/syncpoint/index.html',
+      link: '/syncpoint/syncpoint.html',
       cover: '/projects/syncpoint-cover.jpg',
     },
     {
