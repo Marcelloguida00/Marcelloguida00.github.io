@@ -37,6 +37,7 @@ const replacements = [
   [/"start_url": "\/"/g, `"start_url": "${BASE}/indexPolly.html"`],
   [/"src": "\/assets\//g, `"src": "${BASE}/assets/`],
   [/href="\/marcelloguida-polly\/">Portfolio/g, 'href="/">Portfolio'],
+  [/\/marcelloguida-polly\/#/g, `${BASE}/indexPolly.html#`],
 ]
 
 async function walk(dir) {

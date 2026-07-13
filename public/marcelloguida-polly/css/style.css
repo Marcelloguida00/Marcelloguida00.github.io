@@ -38,7 +38,7 @@
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
+html{ scroll-behavior:smooth; scroll-padding-top:88px; }
 html,body{ background:var(--bg); }
 
 body{
