@@ -7,6 +7,7 @@ const LINKS = [
   { href: '#experience', label: 'experience' },
   { href: '#skills', label: 'skills' },
   { href: '#projects', label: 'work' },
+  { href: '#contact', label: 'contact' },
 ]
 
 export default function Navigation({ scrolled }) {

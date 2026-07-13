@@ -1,3 +1,4 @@
+import SectionTab from './SectionTab'
 import './Skills.css'
 
 const GROUPS = [
@@ -17,6 +18,11 @@ const GROUPS = [
     items: ['UI/UX Design', 'Accessibility', 'Product Thinking'],
   },
   {
+    key: 'shipped_apps',
+    label: '"shipped_apps"',
+    items: ['Polly', 'SyncPoint', 'World of Fables'],
+  },
+  {
     key: 'foundations',
     label: '"foundations"',
     items: ['Machine Learning', 'Algorithms', 'Databases', 'Git'],
@@ -27,9 +33,11 @@ export default function Skills() {
   return (
     <section id="skills" className="skills-wow reveal">
       <div className="container">
-        <div className="file-tab" style={{ '--dot-color': '#f1c453' }}>
-          <span className="dot"></span> Skills.json
-        </div>
+        <SectionTab
+          file="Skills.json"
+          comment="// what I use"
+          dotColor="#f1c453"
+        />
 
         <div className="skills-json-card">
           <span className="json-brace">{'{'}</span>

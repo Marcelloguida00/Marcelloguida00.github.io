@@ -1,3 +1,4 @@
+import SectionTab from './SectionTab'
 import './About.css'
 
 const FACTS = [
@@ -11,9 +12,11 @@ export default function About() {
   return (
     <section id="about" className="about-wow reveal">
       <div className="container">
-        <div className="file-tab" style={{ '--dot-color': 'var(--accent-secondary)' }}>
-          <span className="dot"></span> About.swift
-        </div>
+        <SectionTab
+          file="About.swift"
+          comment="// who I am"
+          dotColor="var(--accent-secondary)"
+        />
 
         <div className="about-grid-wow">
           <div className="about-main">

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import SectionTab from './SectionTab'
 import './Contact.css'
 
 export default function Contact() {
@@ -36,9 +37,11 @@ export default function Contact() {
   return (
     <section id="contact" className="contact-wow reveal">
       <div className="container">
-        <div className="file-tab" style={{ '--dot-color': 'var(--accent-green)' }}>
-          <span className="dot"></span> Contact.swift
-        </div>
+        <SectionTab
+          file="Contact.swift"
+          comment="// say hello"
+          dotColor="var(--accent-green)"
+        />
 
         <div className="contact-grid-wow">
           <div className="contact-info-glass">

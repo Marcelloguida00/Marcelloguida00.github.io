@@ -1,3 +1,4 @@
+import SectionTab from './SectionTab'
 import './Projects.css'
 
 export default function Projects() {
@@ -35,9 +36,11 @@ export default function Projects() {
     <section id="projects" className="projects-wow reveal">
       <div className="container">
         <div className="section-header-wow">
-          <div className="file-tab" style={{ '--dot-color': 'var(--accent-color)', marginBottom: 0 }}>
-            <span className="dot"></span> Projects.swift
-          </div>
+          <SectionTab
+            file="Projects.swift"
+            comment="// shipped work"
+            dotColor="var(--accent-color)"
+          />
           <a
             href="https://github.com/Marcelloguida00"
             target="_blank"

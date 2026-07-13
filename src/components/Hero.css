@@ -93,6 +93,47 @@
   flex-wrap: wrap;
 }
 
+.hero-markers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.hero-marker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 7px 12px;
+  border-radius: 100px;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.02);
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-marker:hover {
+  color: var(--text-color);
+  border-color: var(--border-color-strong);
+  transform: translateY(-1px);
+}
+
+.hero-marker-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  flex-shrink: 0;
+}
+
+.hero-marker:nth-child(2) .hero-marker-dot { background: var(--accent-green); }
+.hero-marker:nth-child(3) .hero-marker-dot { background: #f1c453; }
+.hero-marker:nth-child(4) .hero-marker-dot { background: var(--accent-secondary); }
+.hero-marker:nth-child(5) .hero-marker-dot { background: var(--accent-color); }
+
 .hero-visual {
   display: flex;
   flex-direction: column;

@@ -7,6 +7,10 @@
   margin-bottom: 48px;
 }
 
+.section-header-wow .file-tab {
+  margin-bottom: 0;
+}
+
 .view-all-btn {
   display: inline-flex;
   align-items: center;

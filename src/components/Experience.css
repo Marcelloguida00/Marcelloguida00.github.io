@@ -8,7 +8,7 @@
 .timeline-item-wow {
   position: relative;
   padding-left: 44px;
-  padding-bottom: 4px;
+  padding-bottom: 28px;
 }
 
 .timeline-item-wow::before {
@@ -16,9 +16,17 @@
   position: absolute;
   left: 5px;
   top: 24px;
-  bottom: -4px;
+  bottom: 0;
   width: 1px;
-  background: var(--border-color);
+  background: linear-gradient(
+    180deg,
+    var(--border-color-strong) 0%,
+    var(--border-color) 100%
+  );
+}
+
+.timeline-item-wow:last-child {
+  padding-bottom: 0;
 }
 
 .timeline-item-wow:last-child::before {
@@ -34,10 +42,66 @@
   border-radius: 50%;
   background: var(--bg-color);
   border: 2px solid var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-marker-glass.marker-work {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 4px rgba(250, 115, 67, 0.08);
+}
+
+.timeline-marker-glass.marker-education {
+  border-radius: 3px;
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 0 4px rgba(77, 163, 255, 0.08);
+}
+
+.timeline-marker-glass.marker-award {
+  border-color: #f1c453;
+  background: rgba(241, 196, 83, 0.12);
+  box-shadow: 0 0 0 4px rgba(241, 196, 83, 0.08);
+}
+
+.timeline-marker-glass.marker-project {
+  border-radius: 2px;
+  transform: rotate(45deg);
+  width: 10px;
+  height: 10px;
+  top: 7px;
+  left: 1px;
+  border-color: var(--accent-green);
+  box-shadow: 0 0 0 4px rgba(99, 211, 138, 0.08);
 }
 
 .timeline-item-wow.current .timeline-marker-glass {
   border-color: var(--accent-green);
+}
+
+.marker-icon {
+  position: absolute;
+  font-size: 7px;
+  line-height: 1;
+  color: inherit;
+  transform: rotate(0deg);
+}
+
+.timeline-marker-glass.marker-project .marker-icon {
+  transform: rotate(-45deg);
+  color: var(--accent-green);
+  font-size: 6px;
+}
+
+.timeline-marker-glass.marker-award .marker-icon {
+  color: #f1c453;
+  font-size: 8px;
+}
+
+.timeline-marker-glass.marker-education .marker-icon {
+  color: var(--accent-secondary);
+  font-size: 9px;
+  transform: translateY(-0.5px);
 }
 
 .marker-pulse {

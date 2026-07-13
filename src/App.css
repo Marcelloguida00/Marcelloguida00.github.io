@@ -67,7 +67,8 @@ p { color: var(--color-muted); }
 .file-tab {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  flex-wrap: wrap;
   font-family: var(--font-mono);
   font-size: 0.82rem;
   color: var(--text-muted);
@@ -77,6 +78,23 @@ p { color: var(--color-muted); }
   padding: 8px 16px;
   border-radius: 8px 8px 0 0;
   margin-bottom: 24px;
+}
+
+.file-tab-path {
+  color: var(--text-dim);
+  font-size: 0.74rem;
+  opacity: 0.85;
+}
+
+.file-tab-name {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.file-tab-comment {
+  color: var(--text-dim);
+  font-size: 0.74rem;
+  font-style: italic;
 }
 
 .file-tab .dot {

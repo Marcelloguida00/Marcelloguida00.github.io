@@ -8,6 +8,14 @@ const CODE_LINES = [
   { indent: 0, text: '}' },
 ]
 
+const SECTION_MARKERS = [
+  { href: '#about', label: 'about' },
+  { href: '#experience', label: 'experience' },
+  { href: '#skills', label: 'skills' },
+  { href: '#projects', label: 'work' },
+  { href: '#contact', label: 'contact' },
+]
+
 export default function Hero() {
   return (
     <section id="hero" className="hero-wow">
@@ -37,6 +45,15 @@ export default function Hero() {
             <a href="#projects" className="btn btn-primary">View my work</a>
             <a href="#contact" className="btn btn-secondary">Get in touch</a>
           </div>
+
+          <nav className="hero-markers" aria-label="Jump to section">
+            {SECTION_MARKERS.map((item) => (
+              <a key={item.href} href={item.href} className="hero-marker">
+                <span className="hero-marker-dot" aria-hidden="true"></span>
+                {item.label}
+              </a>
+            ))}
+          </nav>
         </div>
 
         <div className="hero-visual">
