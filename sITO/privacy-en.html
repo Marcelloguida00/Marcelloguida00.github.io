@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — SyncPoint</title>
+  <meta name="description" content="SyncPoint privacy policy (iOS + watchOS): controller, data processed, CloudKit, Apple Health, shared matches, international transfers, GDPR rights and contact.">
+  <link rel="alternate" hreflang="it" href="privacy.html">
+  <link rel="alternate" hreflang="en" href="privacy-en.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎾</text></svg>">
+</head>
+<body>
+<style>
+  :root {
+    --bg: #EFF6EF; --surface: #FFFFFF; --text: #152019; --muted: #56675C;
+    --accent: #176B43; --accent-ink: #FFFFFF; --border: rgba(21, 32, 25, 0.14);
+    --court: #1A4D33; --court-deep: #0D3321; --lime: #C7EB40;
+    --shadow: 0 3px 12px rgba(13, 51, 33, 0.08);
+    --warn-bg: rgba(23, 107, 67, 0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0F1412; --surface: #1B2620; --text: #E8F0E9; --muted: #9AAA9F;
+      --accent: #C7EB40; --accent-ink: #12241A; --border: rgba(232, 240, 233, 0.15);
+      --shadow: 0 3px 12px rgba(0, 0, 0, 0.35); --warn-bg: rgba(199, 235, 64, 0.08);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Segoe UI", Roboto, sans-serif;
+    font-size: 17px; line-height: 1.65; -webkit-text-size-adjust: 100%;
+  }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  .hero {
+    background: linear-gradient(160deg, var(--court) 0%, var(--court-deep) 100%);
+    color: #F2F8F0; padding: 44px 0 48px;
+  }
+  .eyebrow {
+    display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--lime); margin: 0 0 12px;
+  }
+  .hero h1 {
+    font-size: clamp(30px, 5vw, 42px); font-weight: 800; letter-spacing: -0.02em;
+    line-height: 1.1; margin: 0 0 10px; text-wrap: balance;
+  }
+  .hero .updated { color: rgba(242, 248, 240, 0.65); font-size: 15px; margin: 0; }
+  .hero .back, .lang-switch a {
+    color: var(--lime); font-weight: 700; font-size: 15px; text-decoration: none;
+  }
+  .hero .back { display: inline-block; margin-top: 18px; }
+  .hero .back:hover, .lang-switch a:hover { text-decoration: underline; }
+  .lang-switch { margin-top: 14px; font-size: 14px; color: rgba(242, 248, 240, 0.75); }
+  main { padding: 44px 0 24px; }
+  .summary {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 18px;
+    box-shadow: var(--shadow); padding: 24px 24px 10px; margin-bottom: 40px;
+  }
+  .summary h2 {
+    font-size: 15px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 12px;
+  }
+  .summary ul { margin: 0 0 14px; padding-left: 22px; }
+  .summary li { margin-bottom: 8px; color: var(--muted); }
+  .summary li strong { color: var(--text); }
+  article h2 { font-size: 23px; font-weight: 800; letter-spacing: -0.01em; margin: 36px 0 12px; }
+  article h3 { font-size: 18px; font-weight: 700; margin: 24px 0 8px; }
+  article p, article li { color: var(--muted); }
+  article p strong, article li strong { color: var(--text); font-weight: 650; }
+  article ul { padding-left: 22px; margin: 0 0 16px; }
+  article li { margin-bottom: 8px; }
+  .note, .warn {
+    background: var(--surface); border-left: 4px solid var(--accent);
+    border-radius: 0 12px 12px 0; padding: 14px 18px; margin: 16px 0 20px; font-size: 15px;
+  }
+  .warn { border-left-color: #B8860B; background: var(--warn-bg); }
+  .note p, .warn p { margin: 0; color: var(--muted); }
+  .table-wrap {
+    overflow-x: auto; margin: 12px 0 24px; border: 1px solid var(--border);
+    border-radius: 12px; background: var(--surface); box-shadow: var(--shadow);
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.5; }
+  th, td { padding: 10px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
+  th { font-weight: 700; color: var(--text); background: rgba(23, 107, 67, 0.06); }
+  tr:last-child td { border-bottom: none; }
+  td { color: var(--muted); }
+  footer {
+    border-top: 1px solid var(--border); margin-top: 48px; padding: 28px 0 48px;
+    font-size: 14px; color: var(--muted);
+  }
+  footer p { margin: 0 0 8px; }
+  footer nav { margin: 0 0 16px; }
+  footer nav a { color: var(--muted); text-decoration: underline; margin-right: 16px; }
+  footer nav a:hover { color: var(--accent); }
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Privacy Policy &middot; SyncPoint</p>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: 14 July 2026</p>
+    <p class="lang-switch">Italian version: <a href="privacy.html">Informativa privacy (IT)</a></p>
+    <a class="back" href="syncpoint.html">&larr; Back to support</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="summary">
+    <h2>At a glance</h2>
+    <ul>
+      <li>We collect only data necessary to run the app.</li>
+      <li>We do <strong>not</strong> sell your data or use it for advertising tracking.</li>
+      <li>We do <strong>not</strong> use third-party analytics or crash-reporting SDKs.</li>
+      <li>Cloud data is stored in <strong>your iCloud account</strong> via <strong>CloudKit</strong> (Apple infrastructure on our behalf).</li>
+      <li>Health and location in <strong>completed shared matches</strong> depend on iOS permissions; <strong>not</strong> on live matches (score only).</li>
+    </ul>
+  </div>
+
+  <article>
+
+    <h2>1. Data controller</h2>
+    <p>The data controller under Regulation (EU) 2016/679 (&ldquo;GDPR&rdquo;) is:</p>
+    <p><strong>Marcello Guida</strong><br>
+    Via Cappella 4C<br>
+    81021 Arienzo (CE), Italy<br>
+    Email: <a href="mailto:mguida2604@gmail.com?subject=SyncPoint%20Privacy">mguida2604@gmail.com</a></p>
+    <p>No Data Protection Officer (DPO) has been appointed, as the conditions of Article 37 GDPR are not met.</p>
+
+    <h2>2. Scope and nature of the service</h2>
+    <p>SyncPoint is an iOS and watchOS app to track tennis and padel matches, sync data between iPhone and Apple Watch, and share results with other registered players. The app is distributed <strong>globally</strong> on the App Store and sold as a <strong>one-time purchase of &euro;0.99</strong>, with no subscriptions or recurring in-app purchases. Payment is handled entirely by <strong>Apple</strong>; we do not receive or store payment data.</p>
+    <p>This policy applies to processing through the SyncPoint app and linked support web pages. The policy is accessible from the app via link; there is currently <strong>no</strong> dedicated in-app privacy screen.</p>
+
+    <h2>3. Data we collect</h2>
+
+    <h3>3.1 Identity and profile</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Data</th><th>When</th><th>Where</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Apple User ID</strong></td><td>Sign in with Apple</td><td>Device + CloudKit</td><td>Authentication, sync, invites, community</td></tr>
+          <tr><td><strong>Username (@handle)</strong></td><td>Profile creation</td><td>CloudKit (public database)</td><td>Player search, identification</td></tr>
+          <tr><td><strong>First and last name</strong></td><td>Sign in with Apple or manual entry</td><td>Device + CloudKit</td><td>Profile, scoreboard, invites, clubs</td></tr>
+          <tr><td><strong>Apple email</strong></td><td>First sign-in, if shared by Apple</td><td>Device only</td><td>Username generation and local account; <strong>never</strong> on CloudKit</td></tr>
+          <tr><td><strong>Profile photo</strong></td><td>If uploaded</td><td>CloudKit (public database)</td><td>Avatar visible to other players</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>3.2 Matches and sports content</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Data</th><th>When</th><th>Where</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Scores, sets, timeline, duration</strong></td><td>During/after match</td><td>Device; CloudKit if shared</td><td>Core app, history, H2H, live score</td></tr>
+          <tr><td><strong>Player names</strong></td><td>Match setup</td><td>Device; CloudKit if shared</td><td>Scoreboard and stats</td></tr>
+          <tr><td><strong>Sport, surface, venue, mode</strong></td><td>Match setup</td><td>Device + CloudKit</td><td>Stats and shareable cards</td></tr>
+          <tr><td><strong>Match memory photo</strong></td><td>Optional at end</td><td>Device + private CloudKit</td><td>Personal keepsake</td></tr>
+          <tr><td><strong>Social card photo</strong></td><td>Optional</td><td>In memory only</td><td>External card sharing</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>You may enter player names as <strong>free text</strong> (including people without an account). <strong>Cloud sharing</strong> visible to other users occurs <strong>only</strong> if at least one player is linked to a registered SyncPoint profile (&ldquo;Has the app&rdquo; toggle).</p>
+
+    <h3>3.3 Health and fitness</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Data</th><th>When</th><th>Where</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Heart rate, calories, steps, distance</strong></td><td>During match (with Health permission)</td><td>Apple Health + device; CloudKit in completed shared matches</td><td>Match statistics</td></tr>
+          <tr><td><strong>Workout</strong></td><td>On Apple Watch (with permission)</td><td>Apple Health</td><td>Workout in Health</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <p><strong>Live vs shared matches:</strong> during a <strong>live</strong> match, other players see <strong>only the score</strong>. Health metrics may be included in <strong>completed shared matches</strong> (<code>SharedMatch</code> on CloudKit) if present in the match and if you linked registered players.</p>
+    </div>
+
+    <h3>3.4 Location</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Data</th><th>When</th><th>Where</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><strong>GPS coordinates</strong> (~100&nbsp;m)</td><td>When location permission is active</td><td>Device; CloudKit if match shared</td><td>Map/weather on card; shared record</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>3.5 Clubs, groups and tournaments</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Data</th><th>In-app visibility</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Club name, city, sport, description</td><td>Public directory (if approved)</td><td>Community</td></tr>
+          <tr><td>Venue address</td><td>Club information</td><td>Directory</td></tr>
+          <tr><td>Email, phone, VAT number, legal name</td><td><strong>Not</strong> shown to other users</td><td>Registration and approval (requester + controller)</td></tr>
+          <tr><td>Tournament data</td><td>Per feature rules</td><td>Club tournaments</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>3.6 Invites and live matches</h3>
+    <p>For invites and live score we process session ID, player names, match configuration and live score. Live matches <strong>expire automatically</strong> (~6 hours), are no longer shown after the match and are deleted when the match ends. They do <strong>not</strong> include health metrics or location towards other players.</p>
+
+    <h2>4. Health, location and shared matches — transparency</h2>
+    <div class="warn">
+      <p><strong>Important.</strong> If you allow SyncPoint to access <strong>Apple Health</strong> and/or <strong>location</strong> (iOS &ldquo;When In Use&rdquo; permission), and link registered players with &ldquo;Has the app&rdquo;, when the match ends scores, any health metrics and coordinates in the match may be saved in the <strong>SharedMatch</strong> CloudKit record and visible to other linked participants.</p>
+    </div>
+    <p>There is currently <strong>no</strong> separate in-app consent such as &ldquo;Include health/location in shared matches&rdquo;: control is via iOS/watchOS system permissions and whether you link registered players. To limit sharing you can:</p>
+    <ul>
+      <li>revoke Health and/or Location permissions in iOS Settings;</li>
+      <li>not link players with &ldquo;Has the app&rdquo;;</li>
+      <li>delete your account (subject to limits on already shared matches — section 12).</li>
+    </ul>
+    <p>We plan to add dedicated toggles for more granular control in the future.</p>
+
+    <h2>5. Data we do NOT collect</h2>
+    <ul>
+      <li>Phone contacts / address book</li>
+      <li>Email or SMS content</li>
+      <li>In-app web browsing history</li>
+      <li>In-app search history (queries not stored)</li>
+      <li>Device advertising identifiers</li>
+      <li>Payment data (handled by Apple)</li>
+      <li>Third-party advertising, marketing, behavioural analytics via external SDKs</li>
+      <li>Crash logs sent to third-party services</li>
+      <li>Remote push notifications (APNs tokens)</li>
+      <li>Special categories under Art. 9 (race, religion, sexual orientation, etc.)</li>
+      <li>AR / environment scanning data</li>
+    </ul>
+
+    <h2>6. Purposes and legal basis</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Processing</th><th>Purpose</th><th>Legal basis (GDPR)</th></tr></thead>
+        <tbody>
+          <tr><td>Core features (scoreboard, history, sync, widget)</td><td>Service delivery</td><td>Art. 6(1)(b) — contract / pre-contractual steps</td></tr>
+          <tr><td>Profile, invites, clubs, shared matches</td><td>User-chosen cloud features</td><td>Art. 6(1)(b)</td></tr>
+          <tr><td>Health and fitness</td><td>Match stats, Health workouts</td><td>Art. 9(2)(a) — <strong>explicit consent</strong> (Health permission)</td></tr>
+          <tr><td>Location</td><td>Map, weather, match record</td><td>Art. 6(1)(a) — <strong>consent</strong> (location permission)</td></tr>
+          <tr><td>Health/location in SharedMatch</td><td>Visibility to linked players</td><td>Art. 9(2)(a) / Art. 6(1)(a) — system permissions + choice to share with registered players (see section 4)</td></tr>
+          <tr><td>Club administrative data</td><td>Registration and approval</td><td>Art. 6(1)(b)</td></tr>
+          <tr><td>Account retention and security</td><td>Service continuity</td><td>Art. 6(1)(f) — legitimate interests, where applicable</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Consent may be withdrawn at any time (Art. 7(3) GDPR) by revoking iOS permissions or deleting your account. Withdrawal does not affect lawfulness of processing based on consent before withdrawal.</p>
+    <p>We do <strong>not</strong> perform profiling or automated decision-making under Art. 22 GDPR.</p>
+
+    <h2>7. Whether provision is mandatory</h2>
+    <p>Data for local features (matches without account) is optional but required to use those features. Sign in with Apple and iCloud are <strong>required</strong> for profile, invites, clubs and shared matches. Health, Location, Camera and Photo Library permissions are <strong>optional</strong>; refusing them limits related features but not basic app use.</p>
+
+    <h2>8. Where data is stored</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Location</th><th>Content</th></tr></thead>
+        <tbody>
+          <tr><td>Device (SwiftData, local files)</td><td>Match history, memory photos, preferences</td></tr>
+          <tr><td>UserDefaults / App Group</td><td>Session, settings, cache</td></tr>
+          <tr><td>CloudKit — public database</td><td>Profile, SharedMatch, live matches, clubs, groups</td></tr>
+          <tr><td>CloudKit — private database</td><td>Match backup and memory photos (user iCloud)</td></tr>
+          <tr><td>Apple Health (HealthKit)</td><td>Workouts and metrics, if authorised</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>9. Processors and recipients</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Party</th><th>Role</th><th>Data</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Apple Inc.</strong> (iCloud, CloudKit, Sign in with Apple, HealthKit)</td><td>Processor under Art. 28 GDPR (infrastructure on our behalf)</td><td>Data listed as needed for cloud and Health</td><td>Hosting, sync, authentication — <strong>not</strong> advertising tracking</td></tr>
+          <tr><td><strong>Open-Meteo</strong> (<code>api.open-meteo.com</code>, <code>air-quality-api.open-meteo.com</code>, <code>archive-api.open-meteo.com</code>)</td><td>Weather/climate service provider</td><td>Latitude, longitude (~100&nbsp;m), date/time — <strong>without</strong> user ID, name or email</td><td>Weather and air quality on match card; direct iOS client call</td></tr>
+          <tr><td><strong>Other SyncPoint users</strong></td><td>Recipients in shared matches / public profile</td><td>Data made visible by chosen features</td><td>Community and shared history</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>We do <strong>not</strong> share data with ad networks, data brokers or analytics platforms. Voluntary card sharing on Instagram, WhatsApp or other apps is outside SyncPoint&rsquo;s control.</p>
+
+    <h2>10. International transfers</h2>
+    <p>Data processed via iCloud/CloudKit and Apple services may be stored in data centres <strong>outside the European Economic Area</strong>. Apple provides appropriate safeguards under Arts. 44–49 GDPR, including Standard Contractual Clauses. See <a href="https://www.apple.com/legal/privacy/data/" target="_blank" rel="noopener">Apple Privacy — Data</a> and <a href="https://www.apple.com/legal/privacy/en-ww/" target="_blank" rel="noopener">Apple Privacy Policy</a>.</p>
+    <p>Open-Meteo is an open-source service; check server location and terms at time of use. Calls are made from the user&rsquo;s device without additional personal identifiers.</p>
+
+    <h2>11. Retention</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Data</th><th>Duration</th></tr></thead>
+        <tbody>
+          <tr><td>CloudKit profile</td><td>Until account deletion</td></tr>
+          <tr><td>Local matches</td><td>Until manual deletion or uninstall</td></tr>
+          <tr><td>Private CloudKit backup</td><td>Until account/record deletion; <strong>not</strong> auto-deleted on account deletion alone (request by email)</td></tr>
+          <tr><td>Live matches</td><td>~6 hours; deleted at end of match</td></tr>
+          <tr><td>Completed SharedMatch</td><td>Until deleted by users or on request</td></tr>
+          <tr><td>Local Apple email</td><td>Until uninstall or account deletion</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>12. Account deletion and limits</h2>
+    <p>From the <strong>Profile</strong> screen you can delete your account yourself. This removes your public CloudKit profile, session data and associated live matches. <strong>Already published shared matches</strong> (<code>SharedMatch</code>) may remain in other participants&rsquo; history. <strong>Private backup</strong> on CloudKit is <strong>not</strong> automatically deleted — request deletion at <a href="mailto:mguida2604@gmail.com?subject=SyncPoint%20backup%20deletion">mguida2604@gmail.com</a>. Operational details on the <a href="data-management.html">Data management</a> page.</p>
+
+    <h2>13. Other people&rsquo;s data</h2>
+    <p>Free-text player names stay on your device unless you share via cloud with registered profiles. When you involve registered players, their profile data is also processed for the shared feature. Enter only lawful data and inform people involved where appropriate. Third parties may contact the controller to exercise GDPR rights.</p>
+
+    <h2>14. Your rights</h2>
+    <p>Under Arts. 15–22 GDPR you have rights of access, rectification, erasure, restriction, portability and objection, where applicable.</p>
+    <ul>
+      <li><strong>Profile and username:</strong> editable in-app (Profile)</li>
+      <li><strong>Health/Location permissions:</strong> revocable in iOS Settings</li>
+      <li><strong>Data export:</strong> by email to <a href="mailto:mguida2604@gmail.com?subject=SyncPoint%20data%20export">mguida2604@gmail.com</a> — no automatic in-app export currently</li>
+      <li><strong>Complaint:</strong> Italian Data Protection Authority — <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a> (or your local EU authority)</li>
+    </ul>
+    <p>We respond within <strong>30 days</strong> (Art. 12(3) GDPR).</p>
+
+    <h2>15. Children</h2>
+    <p>In Italy SyncPoint is not intended for children under <strong>14</strong> (Italian Privacy Code, Art. 8 GDPR implementation). In other EU countries and non-EU jurisdictions the minimum age for digital consent may vary (13–16). We do not knowingly collect data from children below the applicable threshold.</p>
+
+    <h2>16. Cookies and support website</h2>
+    <p>SyncPoint support pages are <strong>static</strong> and do <strong>not</strong> use profiling cookies, third-party analytics (Google Analytics, etc.) or tracking tools. Any essential technical cookies from the browser or hosting (GitHub Pages) are not used to profile users.</p>
+
+    <h2>17. Changes</h2>
+    <p>We update this policy with a new revision date. For material changes we will inform users via the app or website. The Italian version is at <a href="privacy.html">Informativa privacy (IT)</a>.</p>
+
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav aria-label="Other pages">
+      <a href="syncpoint.html">Support</a>
+      <a href="marketing.html">Discover the app</a>
+      <a href="data-management.html">Data management</a>
+      <a href="privacy.html">Italiano</a>
+    </nav>
+    <p><strong>SyncPoint</strong> &mdash; Tennis &amp; Padel scorekeeper for Apple&nbsp;Watch and iPhone. We do not sell your data. No advertising tracking.</p>
+    <p>&copy; 2026 Marcello Guida &middot; Apple, Apple&nbsp;Watch, iPhone and iCloud are trademarks of Apple&nbsp;Inc.</p>
+  </div>
+</footer>
+</body>
+</html>
