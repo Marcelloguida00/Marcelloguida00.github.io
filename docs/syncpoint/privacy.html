@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy — SyncPoint</title>
-  <meta name="description" content="Informativa privacy dell'app SyncPoint (0,99€, acquisto unico): quali dati vengono trattati, dove sono conservati (dispositivo, iCloud, Apple Salute), come viene gestito il pagamento tramite App Store, i tuoi diritti GDPR e come contattare lo sviluppatore.">
+  <meta name="description" content="Informativa privacy dell'app SyncPoint: quali dati vengono trattati, dove sono conservati (dispositivo, iCloud, Apple Salute), condivisione con terze parti, i tuoi diritti GDPR e come contattare lo sviluppatore.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎾</text></svg>">
 </head>
 <body>
@@ -135,10 +135,55 @@
     font-weight: 700;
     margin: 24px 0 8px;
   }
+  article h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 20px 0 8px;
+    color: var(--text);
+  }
   article p, article li { color: var(--muted); }
   article p strong, article li strong { color: var(--text); font-weight: 650; }
   article ul { padding-left: 22px; margin: 0 0 16px; }
   article li { margin-bottom: 8px; }
+
+  .note {
+    background: var(--surface);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 12px 12px 0;
+    padding: 14px 18px;
+    margin: 16px 0 20px;
+    font-size: 15px;
+  }
+  .note p { margin: 0; }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin: 12px 0 24px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  th, td {
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    font-weight: 700;
+    color: var(--text);
+    background: rgba(23, 107, 67, 0.06);
+    white-space: nowrap;
+  }
+  tr:last-child td { border-bottom: none; }
+  td { color: var(--muted); }
 
   footer {
     border-top: 1px solid var(--border);
@@ -156,71 +201,262 @@
 <header class="hero">
   <div class="wrap">
     <p class="eyebrow">Privacy Policy &middot; SyncPoint</p>
-    <h1>La tua privacy gioca in casa.</h1>
-    <p class="updated">Ultimo aggiornamento: 13 luglio 2026</p>
+    <h1>Informativa sulla privacy</h1>
+    <p class="updated">Ultimo aggiornamento: 14 luglio 2026 &middot; Titolare: Marcello Guida</p>
     <a class="back" href="syncpoint.html">&larr; Torna al supporto</a>
   </div>
 </header>
 
 <main class="wrap">
   <div class="summary">
-    <h2>In breve</h2>
+    <h2>In sintesi</h2>
     <ul>
-      <li>Le tue partite sono salvate <strong>sul tuo dispositivo</strong> e, se usi le funzioni condivise, <strong>nel tuo iCloud</strong>.</li>
-      <li>I dati di salute (battito, calorie) restano in <strong>Apple Salute</strong> e non vengono mai inviati a server di terze parti.</li>
-      <li><strong>Niente pubblicit&agrave;, niente tracciamento, niente analytics di terze parti</strong>. Nessun dato viene venduto, mai.</li>
-      <li>L&rsquo;account &egrave; <strong>facoltativo</strong> e puoi eliminarlo in qualsiasi momento direttamente dall&rsquo;app. Vedi la pagina <a href="data-management.html">Gestione dati</a>.</li>
+      <li>Raccogliamo solo i dati necessari al funzionamento dell&rsquo;app.</li>
+      <li><strong>Non</strong> vendiamo i tuoi dati.</li>
+      <li><strong>Non</strong> usiamo i tuoi dati per tracciarti a fini pubblicitari.</li>
+      <li><strong>Non</strong> utilizziamo SDK di analytics o crash reporting di terze parti.</li>
+      <li>I dati cloud sono archiviati nel <strong>tuo account iCloud</strong> tramite <strong>CloudKit</strong> (infrastruttura Apple gestita per conto dell&rsquo;app).</li>
     </ul>
   </div>
 
   <article>
-    <h2>1. Titolare del trattamento</h2>
-    <p>SyncPoint &egrave; sviluppata da <strong>Marcello Guida</strong> (di seguito &laquo;il Titolare&raquo;). Per qualsiasi domanda su questa informativa o sui tuoi dati puoi scrivere a <a href="mailto:mguida2604@gmail.com?subject=Privacy%20SyncPoint">mguida2604@gmail.com</a>.</p>
+    <p>SyncPoint &egrave; un&rsquo;app per tracciare partite di tennis e padel, sincronizzare i dati tra iPhone e Apple Watch e condividere risultati con altri giocatori. Questa informativa descrive quali dati raccogliamo, perch&eacute; lo facciamo e quali scelte hai. Per qualsiasi domanda puoi scrivere a <a href="mailto:mguida2604@gmail.com?subject=Privacy%20SyncPoint">mguida2604@gmail.com</a>.</p>
 
-    <h2>2. Quali dati tratta l&rsquo;app e dove sono conservati</h2>
+    <h2>1. Dati che raccogliamo</h2>
 
-    <h3>Partite e statistiche</h3>
-    <p>Punteggi, regole, nomi dei giocatori, durata dei match e statistiche derivate (storico, testa a testa, analisi di coppia) sono salvati <strong>localmente sul tuo iPhone e Apple&nbsp;Watch</strong>. Il widget della schermata Home legge questi stessi dati sul dispositivo. Nessuna di queste informazioni lascia i tuoi dispositivi, salvo quanto descritto nelle sezioni seguenti.</p>
+    <h3>1.1 Identificazione e profilo</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Dato</th><th>Quando</th><th>Dove</th><th>Finalit&agrave;</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Apple User ID</strong></td><td>Accesso con Sign in with Apple</td><td>Dispositivo + CloudKit</td><td>Autenticazione, sincronizzazione, inviti, community</td></tr>
+          <tr><td><strong>Nome utente (@handle)</strong></td><td>Creazione profilo</td><td>CloudKit (database pubblico)</td><td>Ricerca giocatori, identificazione nell&rsquo;app</td></tr>
+          <tr><td><strong>Nome e cognome</strong></td><td>Sign in with Apple o inserimento manuale</td><td>Dispositivo + CloudKit</td><td>Profilo, tabellone, inviti, circoli e gruppi</td></tr>
+          <tr><td><strong>Email Apple</strong></td><td>Solo al primo accesso, se condivisa da Apple</td><td>Solo dispositivo (non su CloudKit profilo)</td><td>Generazione username e gestione account locale</td></tr>
+          <tr><td><strong>Foto profilo (avatar)</strong></td><td>Se la carichi tu</td><td>CloudKit (database pubblico)</td><td>Avatar visibile agli altri giocatori</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    <h3>Account e profilo (facoltativi)</h3>
-    <p>Se scegli di accedere con <strong>Sign in with Apple</strong>, l&rsquo;app riceve un identificativo anonimo fornito da Apple e conserva il <strong>nome utente</strong> che scegli e, se la imposti, la tua <strong>foto profilo</strong>. Questi dati sono salvati su <strong>iCloud (CloudKit)</strong>, l&rsquo;infrastruttura cloud di Apple, e servono a far s&igrave; che altri giocatori possano trovarti per nome utente. L&rsquo;accesso non &egrave; obbligatorio: senza account tutte le funzioni di gioco locali restano disponibili.</p>
+    <h3>1.2 Partite e contenuti sportivi</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Dato</th><th>Quando</th><th>Dove</th><th>Finalit&agrave;</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Punteggi, set, timeline, durata</strong></td><td>Durante e dopo una partita</td><td>Dispositivo + CloudKit</td><td>Funzionalit&agrave; core, storico, H2H, live score</td></tr>
+          <tr><td><strong>Nomi avversari/partner</strong></td><td>Setup partita</td><td>Dispositivo + CloudKit</td><td>Tabellone e statistiche</td></tr>
+          <tr><td><strong>Sport, superficie, venue, modalit&agrave;</strong></td><td>Setup partita</td><td>Dispositivo + CloudKit</td><td>Statistiche e card condivisibili</td></tr>
+          <tr><td><strong>Foto ricordo partita</strong></td><td>Opzionale a fine partita</td><td>Dispositivo + CloudKit privato</td><td>Ricordo personale (non inclusa nella card social)</td></tr>
+          <tr><td><strong>Foto per card social</strong></td><td>Opzionale, scelta dall&rsquo;utente</td><td>Solo in memoria durante la creazione</td><td>Personalizzazione della card da condividere</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    <h3>Partite condivise e in diretta</h3>
-    <p>Quando crei una partita con giocatori collegati al loro profilo, il punteggio e i nomi dei partecipanti sono salvati su <strong>iCloud (CloudKit)</strong> per comparire nello storico di tutti i giocatori coinvolti e per permettere di seguire il match in diretta. Questi dati sono visibili solo ai partecipanti della partita tramite l&rsquo;app.</p>
+    <h3>1.3 Salute e fitness</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Dato</th><th>Quando</th><th>Dove</th><th>Finalit&agrave;</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Battito cardiaco</strong></td><td>Durante il match (con permesso)</td><td>Apple Salute + dispositivo + CloudKit</td><td>Statistiche partita</td></tr>
+          <tr><td><strong>Calorie attive</strong></td><td>Durante il match (con permesso)</td><td>Apple Salute + dispositivo + CloudKit</td><td>Statistiche partita</td></tr>
+          <tr><td><strong>Passi e distanza</strong></td><td>Durante il match (con permesso)</td><td>Apple Salute + dispositivo + CloudKit</td><td>Statistiche partita</td></tr>
+          <tr><td><strong>Workout</strong></td><td>Su Apple Watch (con permesso)</td><td>Apple Salute</td><td>Allenamento ufficiale in Salute</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <p><strong>Nota:</strong> l&rsquo;accesso a Salute avviene <strong>solo dopo il tuo consenso</strong> esplicito nelle impostazioni iOS/watchOS. Puoi revocarlo in qualsiasi momento da Impostazioni &rarr; Salute &rarr; Accesso dati e dispositivi &rarr; SyncPoint.</p>
+    </div>
 
-    <h3>Dati di salute</h3>
-    <p>Con il tuo <strong>permesso esplicito</strong>, l&rsquo;app registra ogni match come allenamento in <strong>Apple Salute</strong> (frequenza cardiaca, calorie, tipo di attivit&agrave;). Questi dati restano nell&rsquo;ecosistema Apple Salute, sul tuo dispositivo e nel tuo iCloud personale secondo le impostazioni del tuo account Apple. Il Titolare <strong>non vi ha accesso</strong> e non li trasmette ad alcun server proprio o di terzi. Puoi revocare il permesso in qualsiasi momento da Impostazioni&nbsp;&rsaquo;&nbsp;Privacy e sicurezza&nbsp;&rsaquo;&nbsp;Salute.</p>
+    <h3>1.4 Posizione</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Dato</th><th>Quando</th><th>Dove</th><th>Finalit&agrave;</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Coordinate GPS</strong> (precisione ~100&nbsp;m)</td><td>Opzionale a fine partita (con permesso)</td><td>Dispositivo + CloudKit</td><td>Mappa e meteo sulla card condivisa</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <p><strong>Nota:</strong> l&rsquo;accesso alla posizione avviene <strong>solo dopo il tuo consenso</strong> e <strong>solo quando in uso</strong> (<em>When In Use</em>).</p>
+    </div>
 
-    <h2>3. Pagamento e acquisto dell&rsquo;app</h2>
-    <p>SyncPoint &egrave; disponibile su App Store a fronte di un <strong>acquisto unico di 0,99&nbsp;&euro;</strong>, senza abbonamenti n&eacute; acquisti in-app successivi. Il pagamento &egrave; gestito interamente da <strong>Apple</strong> tramite il tuo ID Apple e il metodo di pagamento associato al tuo account App Store: il Titolare <strong>non riceve, non vede e non conserva</strong> alcun dato di pagamento (numero di carta, indirizzo di fatturazione, ecc.). Per fatture, rimborsi o problemi di addebito fai riferimento direttamente al supporto Apple e alla relativa <a href="https://www.apple.com/legal/privacy/it-ww/" target="_blank" rel="noopener">informativa privacy di Apple</a>.</p>
+    <h3>1.5 Circoli, gruppi e tornei</h3>
+    <p>Se registri o gestisci un circolo, possiamo trattare anche:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Dato</th><th>Finalit&agrave;</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Nome circolo, citt&agrave;, sport, descrizione</td><td>Directory e community</td></tr>
+          <tr><td>Indirizzo sede</td><td>Informazioni del circolo</td></tr>
+          <tr><td>Email e telefono di contatto</td><td>Gestione e approvazione circolo</td></tr>
+          <tr><td>Partita IVA e ragione sociale</td><td>Verifica amministrativa del circolo</td></tr>
+          <tr><td>Dati tornei (nome, date, formato)</td><td>Gestione tornei del circolo</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>I dati di circoli e gruppi sono visibili ad altri utenti dell&rsquo;app secondo le regole della funzione (es. circoli approvati in directory, membri visibili agli admin).</p>
 
-    <h2>4. Cosa non facciamo</h2>
+    <h3>1.6 Inviti e match live</h3>
+    <p>Per invitare altri giocatori o seguire partite in tempo reale trattiamo: ID sessione, nomi giocatori, configurazione partita, punteggio live. Questi dati sono usati esclusivamente per inviti e sincronizzazione multi-dispositivo.</p>
+
+    <h2>2. Dati che NON raccogliamo</h2>
+    <p>SyncPoint <strong>non</strong> raccoglie:</p>
     <ul>
-      <li>Non mostriamo pubblicit&agrave; e non usiamo SDK pubblicitari.</li>
-      <li>Non usiamo strumenti di tracciamento o analytics di terze parti.</li>
-      <li>Non vendiamo, affittiamo o cediamo i tuoi dati a nessuno.</li>
-      <li>Non creiamo profili a fini commerciali e non inviamo comunicazioni promozionali.</li>
+      <li>Rubrica / contatti del telefono</li>
+      <li>Email o SMS dell&rsquo;utente (contenuto messaggi)</li>
+      <li>Cronologia di navigazione web</li>
+      <li>Cronologia delle ricerche nell&rsquo;app (le query non vengono archiviate)</li>
+      <li>ID pubblicitari del dispositivo</li>
+      <li>Dati di acquisto o pagamento in-app</li>
+      <li>Dati per pubblicit&agrave; o marketing di terze parti</li>
+      <li>Analytics comportamentali tramite SDK esterni</li>
+      <li>Crash log inviati a servizi terzi</li>
+      <li>Push notification remote (token APNs)</li>
+      <li>Dati sensibili (razza, religione, orientamento sessuale, ecc.)</li>
+      <li>Dati AR / scansione ambiente / movimenti mano o testa</li>
     </ul>
 
-    <h2>5. Base giuridica del trattamento</h2>
-    <p>Il trattamento dei dati di gioco e di profilo si fonda sull&rsquo;<strong>esecuzione del servizio</strong> che richiedi usando l&rsquo;app (art.&nbsp;6.1.b GDPR). Il trattamento dei dati di salute avviene esclusivamente sulla base del tuo <strong>consenso esplicito</strong> (art.&nbsp;9.2.a GDPR), che puoi revocare in ogni momento.</p>
-
-    <h2>6. Conservazione e cancellazione</h2>
+    <h2>3. Come usiamo i dati</h2>
+    <p>Usiamo i dati <strong>esclusivamente</strong> per:</p>
     <ul>
-      <li>I dati locali restano sul dispositivo finch&eacute; non li elimini o non disinstalli l&rsquo;app.</li>
-      <li>Dalla schermata <strong>Profilo</strong> puoi modificare o rimuovere il nome utente e <strong>eliminare l&rsquo;account</strong>: la cancellazione rimuove il profilo e i dati associati da iCloud.</li>
-      <li>Le singole partite possono essere eliminate dallo storico in qualsiasi momento.</li>
+      <li><strong>Funzionalit&agrave; dell&rsquo;app</strong> &mdash; autenticazione, tabellone, storico, H2H, sync iPhone/Watch, inviti, circoli, gruppi, tornei, widget, Live Activity</li>
+      <li><strong>Sincronizzazione</strong> &mdash; backup e allineamento tra i tuoi dispositivi Apple</li>
+      <li><strong>Condivisione volontaria</strong> &mdash; quando scegli di condividere una card social o collegare giocatori con profilo SyncPoint</li>
     </ul>
-    <p>Per la procedura passo passo, consulta la pagina <a href="data-management.html">Gestione dati</a>.</p>
+    <p><strong>Non</strong> usiamo i dati per:</p>
+    <ul>
+      <li>Pubblicit&agrave; di terze parti</li>
+      <li>Pubblicit&agrave; o marketing dello sviluppatore</li>
+      <li>Analytics di terze parti</li>
+      <li>Personalizzazione pubblicitaria</li>
+      <li>Tracking cross-app (ATT non utilizzato)</li>
+    </ul>
 
-    <h2>7. I tuoi diritti</h2>
-    <p>Ai sensi del GDPR hai diritto di ottenere <strong>accesso, rettifica, cancellazione, limitazione e portabilit&agrave;</strong> dei tuoi dati, oltre a proporre reclamo al Garante per la protezione dei dati personali. La maggior parte di queste operazioni &egrave; disponibile direttamente nell&rsquo;app; per tutto il resto scrivi a <a href="mailto:mguida2604@gmail.com?subject=Privacy%20SyncPoint">mguida2604@gmail.com</a> e riceverai risposta entro 30 giorni.</p>
+    <h2>4. Dove conserviamo i dati</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Luogo</th><th>Cosa</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Dispositivo</strong> (SwiftData, file locali)</td><td>Storico partite, foto ricordo, preferenze</td></tr>
+          <tr><td><strong>UserDefaults / App Group</strong></td><td>Sessione, impostazioni, cache circoli</td></tr>
+          <tr><td><strong>CloudKit &mdash; database pubblico</strong></td><td>Profilo giocatore, match condivisi/live, circoli, gruppi, membership</td></tr>
+          <tr><td><strong>CloudKit &mdash; database privato</strong></td><td>Backup partite e foto ricordo (solo il tuo account iCloud)</td></tr>
+          <tr><td><strong>Apple Salute (HealthKit)</strong></td><td>Workout e metriche fitness, se autorizzato</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>CloudKit / iCloud</strong> &egrave; l&rsquo;infrastruttura cloud di Apple che opera <strong>per conto dell&rsquo;app</strong>. Non &egrave; un &laquo;partner&raquo; che usa i tuoi dati per propri scopi pubblicitari.</p>
 
-    <h2>8. Minori</h2>
-    <p>SyncPoint non &egrave; rivolta specificamente ai minori di 14 anni e non raccoglie consapevolmente loro dati personali. Le funzioni con account richiedono un ID Apple, soggetto ai requisiti di et&agrave; di Apple.</p>
+    <h2>5. Condivisione con terze parti</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Destinatario</th><th>Dati</th><th>Perch&eacute;</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Apple (iCloud / CloudKit)</strong></td><td>Dati elencati sopra necessari al sync e alla community</td><td>Infrastruttura cloud dell&rsquo;app (non tracking)</td></tr>
+          <tr><td><strong>Apple (HealthKit)</strong></td><td>Metriche salute/fitness, se autorizzato</td><td>Integrazione con Apple Salute</td></tr>
+          <tr><td><strong>Open-Meteo</strong> (<code>api.open-meteo.com</code>)</td><td>Solo coordinate geografiche e data/ora</td><td>Meteo e qualit&agrave; dell&rsquo;aria sulla card partita &mdash; <strong>senza ID utente, nome o email</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Non</strong> condividiamo dati con:</p>
+    <ul>
+      <li>Reti pubblicitarie</li>
+      <li>Data broker</li>
+      <li>Piattaforme analytics (Firebase, Amplitude, ecc.)</li>
+    </ul>
+    <p>Quando condividi volontariamente una card via Instagram, WhatsApp o altra app, il contenuto passa all&rsquo;app che scegli tu: fuori dal controllo diretto di SyncPoint.</p>
 
-    <h2>9. Modifiche a questa informativa</h2>
-    <p>Eventuali modifiche sostanziali a questa informativa saranno pubblicate su questa pagina, aggiornando la data in alto. Ti invitiamo a consultarla periodicamente.</p>
+    <h2>6. Dati visibili ad altri utenti</h2>
+    <p>Altri giocatori SyncPoint possono vedere, a seconda delle funzioni usate:</p>
+    <ul>
+      <li>Il tuo <strong>username</strong>, <strong>nome</strong> e <strong>avatar</strong> (profilo pubblico CloudKit)</li>
+      <li>Partite <strong>live</strong> o <strong>condivise</strong> a cui partecipi (punteggi; eventuali metriche salute e posizione se presenti nel match condiviso)</li>
+      <li>La tua appartenenza a <strong>circoli</strong> e <strong>gruppi</strong> (nome visualizzato agli admin/membri)</li>
+      <li>Tornei e informazioni <strong>pubbliche del circolo</strong> (nome, citt&agrave;, sport &mdash; non email/telefono admin salvo dove previsto per gestione)</li>
+    </ul>
+
+    <h2>7. Permessi richiesti dall&rsquo;app</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Permesso iOS</th><th>Uso</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Fotocamera</strong></td><td>Foto ricordo a fine partita</td></tr>
+          <tr><td><strong>Libreria foto</strong></td><td>Foto ricordo, avatar, sfondo card social</td></tr>
+          <tr><td><strong>Posizione (When In Use)</strong></td><td>Mappa e meteo sulla card</td></tr>
+          <tr><td><strong>Salute &mdash; lettura</strong></td><td>Battito, calorie, passi, distanza, workout</td></tr>
+          <tr><td><strong>Salute &mdash; scrittura</strong></td><td>Salvataggio workout su Apple Watch</td></tr>
+          <tr><td><strong>Sign in with Apple</strong></td><td>Accesso account</td></tr>
+          <tr><td><strong>iCloud / CloudKit</strong></td><td>Sync cloud e community</td></tr>
+          <tr><td><strong>Notifiche locali</strong></td><td>Avvisi inviti (solo on-device, nessuna push remota)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Ogni permesso &egrave; <strong>opzionale</strong> tranne iCloud/Sign in with Apple per le funzioni cloud (profilo, inviti, circoli).</p>
+
+    <h2>8. Base giuridica (GDPR &mdash; utenti UE)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Trattamento</th><th>Base</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Funzionalit&agrave; core dell&rsquo;app</td><td>Esecuzione del contratto / richiesta dell&rsquo;interessato</td></tr>
+          <tr><td>Salute e posizione</td><td><strong>Consenso esplicito</strong> (revocabile)</td></tr>
+          <tr><td>Circoli (dati business)</td><td>Esecuzione del contratto + obblighi amministrativi del richiedente</td></tr>
+          <tr><td>Conservazione account</td><td>Legittimo interesse / contratto</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>9. Conservazione</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Dato</th><th>Durata</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Profilo CloudKit</td><td>Fino a eliminazione account</td></tr>
+          <tr><td>Partite locali</td><td>Fino a eliminazione manuale o disinstallazione</td></tr>
+          <tr><td>Backup CloudKit privato</td><td>Fino a eliminazione account / record</td></tr>
+          <tr><td>Match live</td><td>Scadenza automatica (~6 ore)</td></tr>
+          <tr><td>Email Apple locale</td><td>Fino a disinstallazione o eliminazione account</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Per la procedura passo passo di cancellazione, consulta la pagina <a href="data-management.html">Gestione dati</a>.</p>
+
+    <h2>10. I tuoi diritti</h2>
+    <p>Puoi in qualsiasi momento:</p>
+    <ul>
+      <li><strong>Accedere</strong> e <strong>modificare</strong> profilo e username dall&rsquo;app (schermata Profilo)</li>
+      <li><strong>Revocare</strong> permessi Salute e Posizione dalle Impostazioni iOS</li>
+      <li><strong>Eliminare l&rsquo;account</strong> dall&rsquo;app (rimuove il profilo pubblico CloudKit e dati sessione; verifica eventuali backup privati)</li>
+      <li><strong>Richiedere informazioni</strong> o cancellazione scrivendo a <a href="mailto:mguida2604@gmail.com?subject=Privacy%20SyncPoint">mguida2604@gmail.com</a></li>
+      <li><strong>Presentare reclamo</strong> all&rsquo;Autorit&agrave; Garante per la Protezione dei Dati Personali (Italia)</li>
+    </ul>
+
+    <h2>11. Minori</h2>
+    <p>SyncPoint non &egrave; destinata a minori di 13 anni. Non raccogliamo consapevolmente dati di minori.</p>
+
+    <h2>12. Modifiche a questa informativa</h2>
+    <p>Pubblicheremo eventuali aggiornamenti su questa pagina con nuova data di revisione. In caso di modifiche sostanziali, informeremo gli utenti tramite l&rsquo;app o il sito.</p>
   </article>
 </main>
 
@@ -231,7 +467,7 @@
       <a href="marketing.html">Scopri l&rsquo;app</a>
       <a href="data-management.html">Gestione dati</a>
     </nav>
-    <p><strong>SyncPoint</strong> &mdash; segnapunti Tennis &amp; Padel per Apple&nbsp;Watch e iPhone.</p>
+    <p><strong>SyncPoint</strong> &mdash; segnapunti Tennis &amp; Padel per Apple&nbsp;Watch e iPhone. Non vendiamo i tuoi dati. Nessun tracking pubblicitario.</p>
     <p>&copy; 2026 Marcello Guida &middot; Apple, Apple&nbsp;Watch, iPhone e iCloud sono marchi di Apple&nbsp;Inc.</p>
   </div>
 </footer>
