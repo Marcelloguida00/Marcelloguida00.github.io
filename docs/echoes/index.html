@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Echoes — Winner of the Apple Swift Student Challenge 2026. An interactive story about exclusion, silence, and the courage to speak up." />
+  <title>Echoes — Swift Student Challenge 2026 Winner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#top" aria-label="Echoes home">Echoes</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#glimpse">The chat</a>
+        <a href="#story">Story</a>
+        <a href="#experience">Experience</a>
+        <a href="#creator">Creator</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero" aria-labelledby="hero-brand">
+      <div class="hero-atmosphere" aria-hidden="true">
+        <div class="hero-glow hero-glow--a"></div>
+        <div class="hero-glow hero-glow--b"></div>
+        <div class="hero-glow hero-glow--warm"></div>
+        <div class="hero-noise"></div>
+      </div>
+
+      <div class="hero-content">
+        <p class="hero-award reveal" style="--d: 0s">
+          <span class="award-mark" aria-hidden="true"></span>
+          Apple Swift Student Challenge 2026 · Winner
+        </p>
+        <h1 id="hero-brand" class="hero-brand reveal" style="--d: 0.12s">
+          <span class="echo echo-2" aria-hidden="true">Echoes</span>
+          <span class="echo echo-1" aria-hidden="true">Echoes</span>
+          <span class="brand-word">Echoes</span>
+        </h1>
+        <p class="hero-lede reveal" style="--d: 0.24s">
+          An interactive story that puts you inside a group chat —
+          so you can feel what <em>silence</em> does.
+        </p>
+        <div class="hero-actions reveal" style="--d: 0.36s">
+          <a class="btn btn-primary" href="#glimpse">Step inside</a>
+          <a class="btn btn-ghost" href="#experience">How it works</a>
+        </div>
+      </div>
+
+      <div class="hero-scroll reveal" style="--d: 0.5s" aria-hidden="true">
+        <span>Scroll</span>
+        <span class="scroll-line"></span>
+      </div>
+    </section>
+
+    <section class="award-band" aria-label="Award announcement">
+      <div class="award-band-inner reveal">
+        <p class="award-band-label">Official recognition</p>
+        <h2 class="award-band-title">
+          Echoes won the <em>Swift Student Challenge 2026</em>
+        </h2>
+        <p class="award-band-copy">
+          Built in Swift Playgrounds and submitted to Apple’s global student competition,
+          Echoes was selected as a winning project for WWDC26 — celebrating student creators
+          who use Swift to build something meaningful.
+        </p>
+      </div>
+    </section>
+
+    <section id="glimpse" class="section glimpse" aria-labelledby="glimpse-title">
+      <div class="section-inner glimpse-inner">
+        <div class="glimpse-copy">
+          <p class="section-label reveal">A glimpse</p>
+          <h2 id="glimpse-title" class="section-title reveal">
+            Saturday, 09:41.<br />The chat is already <em>talking.</em>
+          </h2>
+          <p class="section-lede reveal">
+            A night out happened. Leo wasn’t invited. The morning after, everyone
+            is joking about it — and he can read every word. So can you.
+            The only question is what you do next.
+          </p>
+        </div>
+
+        <div class="chat-frame reveal" role="img"
+          aria-label="Preview of the group chat in Echoes: friends joke about a night out while Leo, who was excluded, reads in silence. Two choices appear: say something, or keep scrolling.">
+          <div class="chat-header" aria-hidden="true">
+            <span class="chat-avatars"><i></i><i></i><i></i></span>
+            <div>
+              <p class="chat-name">the usual crew</p>
+              <p class="chat-sub">6 people</p>
+            </div>
+          </div>
+          <div class="chat-body" aria-hidden="true">
+            <div class="msg reveal" style="--d: 0.1s"><span class="msg-author">Giulia</span>last night was unreal 😂</div>
+            <div class="msg reveal" style="--d: 0.25s"><span class="msg-author">Marco</span>the photos… I’m crying</div>
+            <div class="msg reveal" style="--d: 0.4s"><span class="msg-author">Sara</span>wait — isn’t Leo in this chat?</div>
+            <div class="msg reveal" style="--d: 0.55s"><span class="msg-author">Marco</span>who cares, he never comes anyway</div>
+            <p class="msg-seen reveal" style="--d: 0.8s">Seen by Leo</p>
+            <div class="chat-choice reveal" style="--d: 1s">
+              <span class="choice choice-warm">Say something</span>
+              <span class="choice">Keep scrolling</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="section story">
+      <div class="section-inner">
+        <p class="section-label reveal">Why it exists</p>
+        <h2 class="section-title reveal">
+          Not a lecture.<br /><em>Something you step into.</em>
+        </h2>
+
+        <div class="story-grid">
+          <article class="story-block reveal">
+            <p>
+              I grew up in a small mountain town in the province of Caserta, southern Italy —
+              the kind of place where everyone knows everyone, and that isn’t always a gift.
+            </p>
+          </article>
+          <article class="story-block reveal">
+            <p>
+              Without a way to get around, weekends belonged to other people’s groups,
+              private jokes, and invitations I never received. Isolation wasn’t dramatic.
+              It was quiet. And it followed me online.
+            </p>
+          </article>
+          <article class="story-block reveal">
+            <p>
+              What hurt most wasn’t the words. It was the silence — discovering that people
+              you trusted talked about you, and that no one said stop.
+            </p>
+          </article>
+          <article class="story-block story-block--emphasis reveal">
+            <p>
+              I built Echoes because I needed it when I was a kid. Not a manifesto.
+              An experience that places you on the other side of the screen —
+              so you might pause before laughing, sharing, or staying silent.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section experience">
+      <div class="section-inner">
+        <p class="section-label reveal">The experience</p>
+        <h2 class="section-title reveal">You’re in the chat. <em>Then you choose.</em></h2>
+        <p class="section-lede reveal">
+          Echoes is an immersive narrative about exclusion and bystander silence —
+          grounded in real research, designed to be heard as much as read.
+        </p>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">01</span>
+            <div>
+              <h3>Enter a group chat</h3>
+              <p>A night out happened. Your friend wasn’t there. The morning after, everyone is talking — and Leo can read every message.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">02</span>
+            <div>
+              <h3>Make three decisions</h3>
+              <p>Defend the person being left out, or keep scrolling. There are no “correct” answers — only the ones you make.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">03</span>
+            <div>
+              <h3>See inside their mind</h3>
+              <p>After the chat, you enter the perspective of the person who was reading. Doubt. Shame. The weight of being unseen.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">04</span>
+            <div>
+              <h3>Meet the data</h3>
+              <p>What you lived isn’t fiction for fiction’s sake. It’s rooted in research: too many young people have been here — and too few were ever asked how it felt.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section quote-section" aria-labelledby="quote-text">
+      <blockquote class="quote reveal">
+        <p id="quote-text">
+          “If this app makes even one person stop — before laughing, before sharing,
+          before staying silent — then the kid who couldn’t make it to his friends’ houses
+          built something that traveled <em>farther than he ever could.</em>”
+        </p>
+        <footer>— Marcello Guida</footer>
+      </blockquote>
+    </section>
+
+    <section id="creator" class="section creator">
+      <div class="section-inner creator-inner">
+        <div class="creator-copy reveal">
+          <p class="section-label">Creator</p>
+          <h2 class="section-title">Marcello Guida</h2>
+          <p class="section-lede">
+            Developer &amp; designer from Caserta, Italy. Echoes was built with Swift Playgrounds
+            for the Apple Swift Student Challenge 2026 — and selected as a winning entry.
+          </p>
+          <a class="btn btn-primary" href="/#contact">Get in touch</a>
+        </div>
+        <aside class="creator-meta reveal" aria-label="Project details">
+          <dl>
+            <div>
+              <dt>Project</dt>
+              <dd>Echoes</dd>
+            </div>
+            <div>
+              <dt>Award</dt>
+              <dd>Swift Student Challenge 2026 Winner</dd>
+            </div>
+            <div>
+              <dt>Built with</dt>
+              <dd>Swift Playgrounds · SwiftUI</dd>
+            </div>
+            <div>
+              <dt>Event</dt>
+              <dd>WWDC26</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Echoes</p>
+      <p class="footer-note">Winner · Apple Swift Student Challenge 2026</p>
+      <p class="footer-copy">&copy; 2026 Marcello Guida</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

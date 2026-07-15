@@ -4,10 +4,19 @@ import './Projects.css'
 export default function Projects() {
   const projects = [
     {
+      title: 'Echoes',
+      subtitle: 'Swift Student Challenge',
+      description:
+        'Interactive story about exclusion, silence, and the courage to speak up — Winner of the Apple Swift Student Challenge 2026. Built with Swift Playgrounds for WWDC26.',
+      tags: ['Swift', 'SwiftUI', 'Playgrounds', 'WWDC26'],
+      link: '/echoes/index.html',
+      cover: '/projects/echoes-cover.jpg',
+    },
+    {
       title: 'Polly',
       subtitle: 'Digital Eco-Companion',
       description:
-        'Eco-companion digitale che ti aiuta a capire e ridurre la Data Pollution: pulisci la libreria foto, impara i fatti e chatta con Apple Intelligence on-device — tutto in privato.',
+        'A digital eco-companion that helps you understand and reduce Data Pollution: clean your photo library, learn the facts, and chat with on-device Apple Intelligence — all in private.',
       tags: ['Swift', 'iOS', 'Apple Intelligence', 'Sustainability'],
       link: '/marcelloguida-polly/indexPolly.html',
       cover: '/projects/marcelloguida-polly-cover.jpg',
@@ -16,7 +25,7 @@ export default function Projects() {
       title: 'SyncPoint',
       subtitle: 'Tennis & Padel',
       description:
-        'Segnapunti per Tennis e Padel su Apple Watch e iPhone: punteggio al polso, tabellone live, statistiche, Apple Salute e partite condivise con gli avversari.',
+        'A Tennis and Padel scorekeeper for Apple Watch and iPhone: scoring on your wrist, live scoreboard, stats, Apple Health, and matches shared with opponents.',
       tags: ['Swift', 'watchOS', 'iOS', 'HealthKit'],
       link: '/syncpoint/syncpoint.html',
       cover: '/projects/syncpoint-cover.jpg',
