@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SyncPoint — Segnapunti Tennis &amp; Padel per Apple Watch e iPhone</title>
-  <meta name="description" content="SyncPoint è il segnapunti Tennis e Padel per Apple Watch e iPhone: punteggio dal polso, tabellone sul telefono, Live Activity, statistiche testa a testa e supporto con FAQ e contatti.">
+  <title>SyncPoint — Tennis &amp; Padel Scorekeeper for Apple Watch and iPhone</title>
+  <meta name="description" content="SyncPoint is the Tennis and Padel scorekeeper for Apple Watch and iPhone: wrist scoring, phone scoreboard, Live Activity, head-to-head stats, FAQ and support.">
+  <link rel="alternate" hreflang="en" href="syncpoint.html">
+  <link rel="alternate" hreflang="it" href="syncpoint.html?lang=it">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎾</text></svg>">
 </head>
 <body>
@@ -68,7 +70,7 @@
     -webkit-text-size-adjust: 100%;
   }
   a { color: var(--accent); }
-  a:focus-visible, summary:focus-visible, .btn:focus-visible {
+  a:focus-visible, summary:focus-visible, .btn:focus-visible, .lang-btn:focus-visible {
     outline: 3px solid var(--accent);
     outline-offset: 3px;
     border-radius: 6px;
@@ -76,7 +78,6 @@
 
   .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
 
-  /* ---------- Hero: blocco verde campo, identico nei due temi ---------- */
   .hero {
     background: linear-gradient(160deg, var(--court) 0%, var(--court-deep) 100%);
     color: #F2F8F0;
@@ -107,6 +108,24 @@
     margin: 0 0 28px;
   }
   .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 44px; }
+  .lang-switch {
+    margin: 0 0 20px;
+    font-size: 14px;
+    color: rgba(242, 248, 240, 0.75);
+  }
+  .lang-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    font-weight: 700;
+    color: rgba(242, 248, 240, 0.65);
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .lang-btn:hover { color: var(--lime); text-decoration: underline; }
+  .lang-btn.active { color: var(--lime); text-decoration: none; cursor: default; }
+  .lang-sep { margin: 0 6px; opacity: 0.5; }
   .btn {
     display: inline-flex;
     align-items: center;
@@ -130,7 +149,6 @@
   }
   .btn-ghost:hover { background: rgba(242, 248, 240, 0.2); }
 
-  /* ---------- Mini tabellone ---------- */
   .board {
     background: var(--tile);
     border-radius: 18px;
@@ -176,7 +194,6 @@
     color: rgba(242, 248, 240, 0.55);
   }
 
-  /* ---------- Sezione marketing ---------- */
   .marketing { padding: 56px 0 8px; }
   .marketing .kicker {
     display: inline-block;
@@ -282,7 +299,6 @@
   }
   .btn-store:hover { filter: brightness(1.08); }
 
-  /* ---------- Sezioni FAQ ---------- */
   main { padding: 52px 0 24px; }
   .section { margin-bottom: 44px; }
   .section-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
@@ -346,7 +362,6 @@
     summary .chev, .btn { transition: none; }
   }
 
-  /* ---------- Blocco contatto ---------- */
   .contact {
     background: var(--court);
     color: #F2F8F0;
@@ -364,7 +379,6 @@
   .contact p { color: rgba(242, 248, 240, 0.85); margin: 0 0 22px; max-width: 36em; }
   .contact .hint { font-size: 14px; color: rgba(242, 248, 240, 0.6); margin-top: 18px; margin-bottom: 0; }
 
-  /* ---------- Footer ---------- */
   footer {
     border-top: 1px solid var(--border);
     padding: 28px 0 48px;
@@ -379,101 +393,105 @@
 
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow">Supporto &middot; SyncPoint</p>
-    <h1>Serve aiuto? Qui si risponde punto su punto.</h1>
-    <p class="lead">SyncPoint &egrave; il segnapunti per Tennis e Padel su Apple&nbsp;Watch e iPhone: punteggio in tempo reale al polso, tabellone sul telefono, statistiche e sfide con gli avversari. In questa pagina trovi le risposte alle domande pi&ugrave; frequenti e un contatto diretto con lo sviluppatore.</p>
+    <p class="lang-switch" aria-label="Language">
+      <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">English</button>
+      <span class="lang-sep" aria-hidden="true">&middot;</span>
+      <button type="button" class="lang-btn" data-lang="it" aria-pressed="false">Italiano</button>
+    </p>
+    <p class="eyebrow" data-i18n="hero.eyebrow">Support &middot; SyncPoint</p>
+    <h1 data-i18n="hero.title">Need help? We answer point by point.</h1>
+    <p class="lead" data-i18n="hero.lead">SyncPoint is the scorekeeper for Tennis and Padel on Apple&nbsp;Watch and iPhone: live scoring on your wrist, scoreboard on your phone, stats and head-to-head records. On this page you&rsquo;ll find answers to the most common questions and a direct line to the developer.</p>
     <div class="hero-actions">
-      <a class="btn btn-lime" href="mailto:mguida2604@gmail.com?subject=Supporto%20SyncPoint">
+      <a class="btn btn-lime" href="mailto:mguida2604@gmail.com?subject=SyncPoint%20Support" data-i18n-href="hero.emailHref" data-i18n="hero.emailBtn">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
-        Scrivici
+        Contact us
       </a>
-      <a class="btn btn-ghost" href="#app">Scopri l&rsquo;app</a>
-      <a class="btn btn-ghost" href="#faq">Leggi le FAQ</a>
+      <a class="btn btn-ghost" href="#app" data-i18n="hero.discoverApp">Discover the app</a>
+      <a class="btn btn-ghost" href="#faq" data-i18n="hero.readFaq">Read the FAQ</a>
     </div>
-    <div class="board" role="img" aria-label="Tabellone di esempio: Tu conduci contro I dubbi per 6 a 2, 4 a 1, 40 a 0">
-      <div class="name">Tu</div>
+    <div class="board" role="img" data-i18n-aria="hero.boardAria" aria-label="Sample scoreboard: You lead Doubts 6–2, 4–1, 40–0">
+      <div class="name" data-i18n="hero.boardYou">You</div>
       <div class="cell">6</div>
       <div class="cell">4</div>
       <div class="cell">40</div>
-      <div class="name">I dubbi</div>
+      <div class="name" data-i18n="hero.boardOpp">Doubts</div>
       <div class="cell dim">2</div>
       <div class="cell dim">1</div>
       <div class="cell dim">0</div>
     </div>
-    <p class="board-caption">Match point: la risposta che cerchi &egrave; qui sotto.</p>
+    <p class="board-caption" data-i18n="hero.boardCaption">Match point: the answer you&rsquo;re looking for is below.</p>
   </div>
 </header>
 
 <section id="app" class="marketing">
   <div class="wrap">
-    <p class="kicker">L&rsquo;app</p>
-    <h2 class="title">Il tuo arbitro personale, al polso e in tasca.</h2>
-    <p class="intro">SyncPoint segue il match punto dopo punto: tu pensi a giocare, lui tiene il punteggio, il servizio, i cambi campo e le statistiche. In campo con l&rsquo;Apple&nbsp;Watch, a bordo campo con l&rsquo;iPhone.</p>
+    <p class="kicker" data-i18n="app.kicker">The app</p>
+    <h2 class="title" data-i18n="app.title">Your personal umpire, on your wrist and in your pocket.</h2>
+    <p class="intro" data-i18n="app.intro">SyncPoint tracks the match point by point: you focus on playing, it keeps score, service, court changes and stats. On court with Apple&nbsp;Watch, on the sidelines with iPhone.</p>
 
     <div class="features">
       <div class="feature">
         <div class="f-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="5" width="12" height="14" rx="3"></rect><path d="M9 2h6"></path><path d="M9 22h6"></path><path d="M12 10v3l2 1"></path></svg>
         </div>
-        <h3>Punteggio dal polso</h3>
-        <p>Due pulsanti grandi, vibrazioni distinte per punto, game e set, undo con la Corona Digitale e gesto Doppio Tap per segnare senza toccare lo schermo.</p>
+        <h3 data-i18n="app.f1.title">Score from your wrist</h3>
+        <p data-i18n="app.f1.text">Two large buttons, distinct haptics for point, game and set, undo with the Digital Crown and Double Tap to score without touching the screen.</p>
       </div>
       <div class="feature">
         <div class="f-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"></rect><path d="M11 18h2"></path></svg>
         </div>
-        <h3>Tabellone gigante su iPhone</h3>
-        <p>Punteggio in stile segnapunti da campo, visibile da lontano. Con motore di gioco completo: funziona anche senza Watch, con modifica punti e undo dal telefono.</p>
+        <h3 data-i18n="app.f2.title">Giant scoreboard on iPhone</h3>
+        <p data-i18n="app.f2.text">Court-style scoreboard visible from afar. Full game engine: works without a Watch too, with point editing and undo from your phone.</p>
       </div>
       <div class="feature">
         <div class="f-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"></path></svg>
         </div>
-        <h3>Live Activity e Dynamic Island</h3>
-        <p>Il tabellone in tempo reale sulla schermata di blocco: chi &egrave; fuori campo segue il match a colpo d&rsquo;occhio, senza aprire l&rsquo;app.</p>
+        <h3 data-i18n="app.f3.title">Live Activity &amp; Dynamic Island</h3>
+        <p data-i18n="app.f3.text">Real-time scoreboard on the Lock Screen: anyone off court can follow the match at a glance, without opening the app.</p>
       </div>
       <div class="feature">
         <div class="f-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
         </div>
-        <h3>Allenamento ufficiale</h3>
-        <p>Ogni partita &egrave; un workout in Apple Salute: calorie, battito in tempo reale e Anelli di Attivit&agrave; che si chiudono mentre giochi.</p>
+        <h3 data-i18n="app.f4.title">Official workout</h3>
+        <p data-i18n="app.f4.text">Every match is a workout in Apple Health: calories, live heart rate and Activity Rings closing while you play.</p>
       </div>
       <div class="feature">
         <div class="f-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="M7 15v3"></path><path d="M11 11v7"></path><path d="M15 7v11"></path><path d="M19 4v14"></path></svg>
         </div>
-        <h3>Statistiche e testa a testa</h3>
-        <p>Storico filtrabile, percentuale vittorie contro ogni avversario, analisi di coppia nel doppio e grafico dell&rsquo;inerzia del match, punto per punto.</p>
+        <h3 data-i18n="app.f5.title">Stats &amp; head-to-head</h3>
+        <p data-i18n="app.f5.text">Filterable history, win rate against each opponent, doubles pair analysis and match momentum chart, point by point.</p>
       </div>
       <div class="feature">
         <div class="f-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><path d="m8.6 10.5 6.8-4"></path><path d="m8.6 13.5 6.8 4"></path></svg>
         </div>
-        <h3>Vittorie da condividere</h3>
-        <p>Card grafiche del risultato in formato Storia e Post, personalizzabili con le tue foto. E con le partite condivise, il match finisce nello storico di tutti i giocatori.</p>
+        <h3 data-i18n="app.f6.title">Wins worth sharing</h3>
+        <p data-i18n="app.f6.text">Graphic result cards in Story and Post format, customizable with your photos. With shared matches, the result lands in every player&rsquo;s history.</p>
       </div>
     </div>
 
     <div class="rules-band">
-      <h3>Le tue regole, il tuo gioco</h3>
+      <h3 data-i18n="app.rulesTitle">Your rules, your game</h3>
       <div class="chips">
         <span class="chip">Tennis</span>
         <span class="chip">Padel</span>
-        <span class="chip">Singolare</span>
-        <span class="chip">Doppio</span>
-        <span class="chip">1, 2 o 3 set</span>
+        <span class="chip" data-i18n="app.chipSingles">Singles</span>
+        <span class="chip" data-i18n="app.chipDoubles">Doubles</span>
+        <span class="chip" data-i18n="app.chipSets">1, 2 or 3 sets</span>
         <span class="chip">Fast4</span>
         <span class="chip">Golden Point</span>
-        <span class="chip">Tie-break a 7</span>
-        <span class="chip">Super Tie-Break a 10</span>
+        <span class="chip" data-i18n="app.chipTb7">Tie-break to 7</span>
+        <span class="chip" data-i18n="app.chipStb10">Super Tie-Break to 10</span>
       </div>
     </div>
 
     <div class="store-cta">
-      <p><strong>0,99&nbsp;&euro;, acquisto una tantum, senza pubblicit&agrave;.</strong> Richiede iPhone con iOS&nbsp;17 o successivo; Apple&nbsp;Watch consigliato per l&rsquo;esperienza in campo.</p>
-      <!-- Al rilascio: sostituire href con il link reale del prodotto, es. https://apps.apple.com/it/app/syncpoint/id0000000000 -->
-      <a class="btn btn-store" href="marketing.html">Scopri di pi&ugrave;</a>
+      <p data-i18n-html="app.storeText"><strong>&euro;0.99, one-time purchase, no ads.</strong> Requires iPhone with iOS&nbsp;17 or later; Apple&nbsp;Watch recommended for the on-court experience.</p>
+      <a class="btn btn-store" href="marketing.html" data-i18n="app.learnMore">Learn more</a>
     </div>
   </div>
 </section>
@@ -485,44 +503,35 @@
       <div class="icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
       </div>
-      <h2>Partite e punteggio</h2>
+      <h2 data-i18n="faq.s1.title">Matches &amp; scoring</h2>
     </div>
 
     <details>
-      <summary>Come segno un punto durante la partita?
+      <summary><span data-i18n="faq.s1.q1">How do I score a point during a match?</span>
         <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
       </summary>
-      <div class="answer">
-        <p>Sulla prima schermata del Watch (<strong>Azione</strong>) trovi due pulsanti grandi, uno per squadra: tocca quello di chi ha vinto lo scambio. Su Apple&nbsp;Watch Series&nbsp;9 e successivi puoi anche usare il gesto <strong>Doppio Tap</strong> per assegnare il punto senza toccare lo schermo.</p>
-        <p>Ogni punto, game e set &egrave; confermato da una vibrazione distinta, cos&igrave; non devi guardare il display.</p>
-      </div>
+      <div class="answer" data-i18n-html="faq.s1.a1"></div>
     </details>
 
     <details>
-      <summary>Ho assegnato un punto per errore: come lo annullo?
+      <summary><span data-i18n="faq.s1.q2">I scored a point by mistake: how do I undo it?</span>
         <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
       </summary>
-      <div class="answer">
-        <p>Ruota la <strong>Corona Digitale</strong> sul Watch per annullare l&rsquo;ultimo punto. Se stai seguendo il match dal tabellone su iPhone, trovi il pulsante di annullamento direttamente sul telefono.</p>
-      </div>
+      <div class="answer" data-i18n-html="faq.s1.a2"></div>
     </details>
 
     <details>
-      <summary>Quali regole posso personalizzare?
+      <summary><span data-i18n="faq.s1.q3">Which rules can I customize?</span>
         <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
       </summary>
-      <div class="answer">
-        <p>Alla creazione della partita scegli sport (<strong>Tennis o Padel</strong>), formazione (<strong>singolare o doppio</strong>), numero di set (1, 2 o 3 vincenti, oppure formato breve <strong>Fast4</strong>), tie-break classico a 7 o <strong>Super Tie-Break a 10</strong> e, per il padel, il <strong>Golden Point</strong> sul 40-40. Puoi anche dare un nome alla partita per ritrovarla facilmente nello storico.</p>
-      </div>
+      <div class="answer" data-i18n-html="faq.s1.a3"></div>
     </details>
 
     <details>
-      <summary>Chi serve e quando si cambia campo?
+      <summary><span data-i18n="faq.s1.q4">Who serves and when do you change ends?</span>
         <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
       </summary>
-      <div class="answer">
-        <p>L&rsquo;app tiene traccia del <strong>turno di servizio</strong> e del lato campo, e ti avvisa con una vibrazione quando &egrave; il momento del <strong>cambio campo</strong> (game dispari e durante il tie-break). Non devi ricordare nulla: pensa solo a giocare.</p>
-      </div>
+      <div class="answer" data-i18n-html="faq.s1.a4"></div>
     </details>
   </section>
 
@@ -531,61 +540,49 @@
       <div class="icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="5" width="12" height="14" rx="3"></rect><path d="M9 2h6"></path><path d="M9 22h6"></path></svg>
       </div>
-      <h2>Apple Watch e iPhone</h2>
+      <h2 data-i18n="faq.s2.title">Apple Watch &amp; iPhone</h2>
     </div>
 
     <details>
-      <summary>Serve per forza un Apple Watch?
+      <summary><span data-i18n="faq.s2.q1">Do I need an Apple Watch?</span>
         <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
       </summary>
-      <div class="answer">
-        <p>No. Il <strong>tabellone su iPhone</strong> ha un motore di punteggio completo: puoi creare la partita, segnare i punti e annullare direttamente dal telefono, anche senza Watch. Il Watch resta l&rsquo;esperienza ideale in campo, ma non &egrave; obbligatorio.</p>
-      </div>
+      <div class="answer" data-i18n-html="faq.s2.a1"></div>
     </details>
 
     <details>
-      <summary>Come avvio una partita dall&rsquo;iPhone?
+      <summary><span data-i18n="faq.s2.q2">How do I start a match from iPhone?</span>
         <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
       </summary>
-      <div class="answer">
-        <p>Configura regole e giocatori nella schermata <strong>Nuova partita</strong> sul telefono: l&rsquo;app sul Watch si apre da sola, gi&agrave; pronta a segnare. In alternativa puoi dire a Siri <strong>&laquo;Inizia una partita su SyncPoint&raquo;</strong> direttamente dal polso.</p>
-      </div>
+      <div class="answer" data-i18n-html="faq.s2.a2"></div>
     </details>
 
     <details>
-      <summary>Non vedo la Live Activity sulla schermata di blocco
+      <summary><span data-i18n="faq.s2.q3">I don&rsquo;t see Live Activity on the Lock Screen</span>
         <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
       </summary>
-      <div class="answer">
-        <p>Il tabellone su schermata di blocco e Dynamic Island compare al primo aggiornamento live ricevuto dall&rsquo;iPhone. Se il match &egrave; partito dal Watch, <strong>apri l&rsquo;app SyncPoint su iPhone almeno una volta durante la partita</strong> per attivarla. Controlla anche che le Attivit&agrave; in tempo reale siano abilitate in Impostazioni&nbsp;&rsaquo;&nbsp;SyncPoint.</p>
-      </div>
+      <div class="answer" data-i18n-html="faq.s2.a3"></div>
     </details>
 
     <details>
-      <summary>Il Watch si &egrave; scollegato durante il match: perdo i dati?
+      <summary><span data-i18n="faq.s2.q4">The Watch disconnected during the match: do I lose data?</span>
         <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
       </summary>
-      <div class="answer">
-        <p>No. SyncPoint funziona anche <strong>offline</strong>: il Watch continua a tracciare in locale e sincronizza tutto appena torna la connessione. Se nel frattempo hai modificato il punteggio anche dall&rsquo;iPhone, alla riconnessione vince automaticamente <strong>lo stato pi&ugrave; aggiornato</strong>.</p>
-      </div>
+      <div class="answer" data-i18n-html="faq.s2.a4"></div>
     </details>
 
     <details>
-      <summary>L&rsquo;app non risulta installata sul Watch
+      <summary><span data-i18n="faq.s2.q5">The app isn&rsquo;t installed on my Watch</span>
         <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
       </summary>
-      <div class="answer">
-        <p>Nelle schermate <strong>Profilo</strong> e <strong>Live</strong> dell&rsquo;app iPhone vedi lo stato di installazione sul Watch, con una <strong>guida passo passo</strong> per completarla: in breve, apri l&rsquo;app Watch sull&rsquo;iPhone, cerca SyncPoint nella sezione delle app disponibili e tocca Installa.</p>
-      </div>
+      <div class="answer" data-i18n-html="faq.s2.a5"></div>
     </details>
 
     <details>
-      <summary>Ho un widget per la schermata Home?
+      <summary><span data-i18n="faq.s2.q6">Is there a Home Screen widget?</span>
         <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
       </summary>
-      <div class="answer">
-        <p>S&igrave;: tieni premuto sulla schermata Home dell&rsquo;iPhone, tocca il pulsante di modifica e cerca <strong>SyncPoint</strong> tra i widget. Mostra la tua percentuale di vittorie e l&rsquo;ultima partita giocata, a colpo d&rsquo;occhio.</p>
-      </div>
+      <div class="answer" data-i18n-html="faq.s2.a6"></div>
     </details>
   </section>
 
@@ -594,25 +591,21 @@
       <div class="icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
       </div>
-      <h2>Salute e allenamenti</h2>
+      <h2 data-i18n="faq.s3.title">Health &amp; workouts</h2>
     </div>
 
     <details>
-      <summary>SyncPoint traccia calorie e battito cardiaco?
+      <summary><span data-i18n="faq.s3.q1">Does SyncPoint track calories and heart rate?</span>
         <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
       </summary>
-      <div class="answer">
-        <p>S&igrave;. Ogni match tracciato dal Watch &egrave; registrato come <strong>allenamento ufficiale in Apple Salute</strong>: calorie, frequenza cardiaca in tempo reale e contributo agli Anelli di Attivit&agrave;. Durante il gioco trovi battito, calorie e cronometro nella schermata Match &amp; Info.</p>
-      </div>
+      <div class="answer" data-i18n-html="faq.s3.a1"></div>
     </details>
 
     <details>
-      <summary>Dove finiscono i miei dati sanitari?
+      <summary><span data-i18n="faq.s3.q2">Where does my health data go?</span>
         <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
       </summary>
-      <div class="answer">
-        <p>I dati di salute restano in <strong>Apple Salute</strong>, sul tuo dispositivo e nel tuo iCloud personale, secondo le impostazioni di privacy del tuo account Apple. SyncPoint li legge e li scrive solo con il tuo permesso e <strong>non li invia a server di terze parti</strong>.</p>
-      </div>
+      <div class="answer" data-i18n-html="faq.s3.a2"></div>
     </details>
   </section>
 
@@ -621,69 +614,312 @@
       <div class="icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
       </div>
-      <h2>Account, dati e condivisione</h2>
+      <h2 data-i18n="faq.s4.title">Account, data &amp; sharing</h2>
     </div>
 
     <details>
-      <summary>A cosa serve l&rsquo;accesso con Apple?
+      <summary><span data-i18n="faq.s4.q1">What is Sign in with Apple for?</span>
         <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
       </summary>
-      <div class="answer">
-        <p>L&rsquo;accesso con Apple (facoltativo) ti d&agrave; un <strong>nome utente</strong> con cui gli amici possono trovarti quando creano una partita. Le partite collegate al tuo profilo compaiono anche nel tuo storico e nelle statistiche testa a testa. Senza account puoi comunque usare tutte le funzioni di gioco in locale.</p>
-      </div>
+      <div class="answer" data-i18n-html="faq.s4.a1"></div>
     </details>
 
     <details>
-      <summary>Come funzionano le partite condivise?
+      <summary><span data-i18n="faq.s4.q2">How do shared matches work?</span>
         <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
       </summary>
-      <div class="answer">
-        <p>In <strong>Nuova partita</strong>, cerca i giocatori per nome utente e attiva &laquo;Ha l&rsquo;applicazione&raquo;: a fine match la partita compare nello storico di tutti i partecipanti (con la prospettiva corretta per gli avversari) e, durante il gioco, chi &egrave; collegato pu&ograve; seguirla in diretta dalla scheda <strong>Live</strong>.</p>
-      </div>
+      <div class="answer" data-i18n-html="faq.s4.a2"></div>
     </details>
 
     <details>
-      <summary>Come condivido il risultato sui social?
+      <summary><span data-i18n="faq.s4.q3">How do I share the result on social media?</span>
         <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
       </summary>
-      <div class="answer">
-        <p>Dal dettaglio di una partita tocca <strong>Condividi</strong>: SyncPoint genera una card grafica con il punteggio, in formato Storia (9:16) o Post (1:1), personalizzabile con una tua foto. Puoi condividerla su Instagram, WhatsApp, Telegram o dove preferisci.</p>
-      </div>
+      <div class="answer" data-i18n-html="faq.s4.a3"></div>
     </details>
 
     <details>
-      <summary>Come elimino il mio account o il nome utente?
+      <summary><span data-i18n="faq.s4.q4">How do I delete my account or username?</span>
         <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
       </summary>
-      <div class="answer">
-        <p>Vai in <strong>Profilo</strong> sull&rsquo;iPhone: da l&igrave; puoi modificare o rimuovere il nome utente e <strong>eliminare completamente l&rsquo;account</strong>, con una conferma prima di ogni azione definitiva. Le partite salvate in locale sul dispositivo restano tue. Trovi i dettagli completi nella pagina <a href="data-management.html">Gestione dati</a>.</p>
-      </div>
+      <div class="answer" data-i18n-html="faq.s4.a4"></div>
     </details>
   </section>
 
   <section class="contact" id="contatti">
-    <h2>Non hai trovato la risposta?</h2>
-    <p>Scrivi direttamente allo sviluppatore: leggo personalmente ogni segnalazione e di solito rispondo entro 48 ore.</p>
-    <a class="btn btn-lime" href="mailto:mguida2604@gmail.com?subject=Supporto%20SyncPoint">
+    <h2 data-i18n="contact.title">Didn&rsquo;t find your answer?</h2>
+    <p data-i18n="contact.text">Write directly to the developer: I personally read every message and usually reply within 48 hours.</p>
+    <a class="btn btn-lime" href="mailto:mguida2604@gmail.com?subject=SyncPoint%20Support">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
       mguida2604@gmail.com
     </a>
-    <p class="hint">Per aiutarci a risolvere prima: indica il modello di iPhone e di Apple&nbsp;Watch, la versione di iOS/watchOS e cosa stavi facendo quando si &egrave; presentato il problema.</p>
+    <p class="hint" data-i18n="contact.hint">To help us resolve faster: include your iPhone and Apple&nbsp;Watch model, iOS/watchOS version and what you were doing when the issue occurred.</p>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <nav aria-label="Altre pagine">
-      <a href="marketing.html">Scopri l&rsquo;app</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="privacy-en.html">Privacy (EN)</a>
-      <a href="data-management.html">Gestione dati</a>
+    <nav aria-label="Other pages" data-i18n-aria="footer.navAria">
+      <a href="marketing.html" data-i18n="footer.discoverApp">Discover the app</a>
+      <a href="privacy.html" data-i18n="footer.privacyIt">Privacy Policy (IT)</a>
+      <a href="privacy-en.html" data-i18n="footer.privacyEn">Privacy Policy (EN)</a>
+      <a href="data-management.html" data-i18n="footer.dataMgmt">Data management</a>
     </nav>
-    <p><strong>SyncPoint</strong> &mdash; segnapunti Tennis &amp; Padel per Apple&nbsp;Watch e iPhone.</p>
-    <p>Le tue partite sono salvate sul dispositivo e, se scegli di usare le funzioni condivise, nel tuo iCloud. I dati di allenamento restano in Apple Salute. Nessun dato viene venduto o condiviso con terze parti. Leggi la <a href="privacy.html">Privacy Policy completa</a>.</p>
-    <p>&copy; 2026 Marcello Guida &middot; Apple, Apple&nbsp;Watch e iPhone sono marchi di Apple&nbsp;Inc.</p>
+    <p data-i18n-html="footer.tagline"><strong>SyncPoint</strong> &mdash; Tennis &amp; Padel scorekeeper for Apple&nbsp;Watch and iPhone.</p>
+    <p data-i18n-html="footer.privacyNote">Your matches are saved on device and, if you use shared features, in your iCloud. Workout data stays in Apple Health. No data is sold or shared with third parties. Read the full <a href="privacy-en.html" data-i18n-href="footer.privacyLink">Privacy Policy</a>.</p>
+    <p data-i18n="footer.copyright">&copy; 2026 Marcello Guida &middot; Apple, Apple&nbsp;Watch and iPhone are trademarks of Apple&nbsp;Inc.</p>
   </div>
 </footer>
+
+<script>
+(function () {
+  var STORAGE_KEY = 'syncpoint-lang';
+
+  var en = {
+    meta: {
+      title: 'SyncPoint — Tennis & Padel Scorekeeper for Apple Watch and iPhone',
+      description: 'SyncPoint is the Tennis and Padel scorekeeper for Apple Watch and iPhone: wrist scoring, phone scoreboard, Live Activity, head-to-head stats, FAQ and support.'
+    },
+    'hero.eyebrow': 'Support · SyncPoint',
+    'hero.title': 'Need help? We answer point by point.',
+    'hero.lead': 'SyncPoint is the scorekeeper for Tennis and Padel on Apple\u00a0Watch and iPhone: live scoring on your wrist, scoreboard on your phone, stats and head-to-head records. On this page you\u2019ll find answers to the most common questions and a direct line to the developer.',
+    'hero.emailHref': 'mailto:mguida2604@gmail.com?subject=SyncPoint%20Support',
+    'hero.emailBtn': 'Contact us',
+    'hero.discoverApp': 'Discover the app',
+    'hero.readFaq': 'Read the FAQ',
+    'hero.boardAria': 'Sample scoreboard: You lead Doubts 6–2, 4–1, 40–0',
+    'hero.boardYou': 'You',
+    'hero.boardOpp': 'Doubts',
+    'hero.boardCaption': 'Match point: the answer you\u2019re looking for is below.',
+    'app.kicker': 'The app',
+    'app.title': 'Your personal umpire, on your wrist and in your pocket.',
+    'app.intro': 'SyncPoint tracks the match point by point: you focus on playing, it keeps score, service, court changes and stats. On court with Apple\u00a0Watch, on the sidelines with iPhone.',
+    'app.f1.title': 'Score from your wrist',
+    'app.f1.text': 'Two large buttons, distinct haptics for point, game and set, undo with the Digital Crown and Double Tap to score without touching the screen.',
+    'app.f2.title': 'Giant scoreboard on iPhone',
+    'app.f2.text': 'Court-style scoreboard visible from afar. Full game engine: works without a Watch too, with point editing and undo from your phone.',
+    'app.f3.title': 'Live Activity & Dynamic Island',
+    'app.f3.text': 'Real-time scoreboard on the Lock Screen: anyone off court can follow the match at a glance, without opening the app.',
+    'app.f4.title': 'Official workout',
+    'app.f4.text': 'Every match is a workout in Apple Health: calories, live heart rate and Activity Rings closing while you play.',
+    'app.f5.title': 'Stats & head-to-head',
+    'app.f5.text': 'Filterable history, win rate against each opponent, doubles pair analysis and match momentum chart, point by point.',
+    'app.f6.title': 'Wins worth sharing',
+    'app.f6.text': 'Graphic result cards in Story and Post format, customizable with your photos. With shared matches, the result lands in every player\u2019s history.',
+    'app.rulesTitle': 'Your rules, your game',
+    'app.chipSingles': 'Singles',
+    'app.chipDoubles': 'Doubles',
+    'app.chipSets': '1, 2 or 3 sets',
+    'app.chipTb7': 'Tie-break to 7',
+    'app.chipStb10': 'Super Tie-Break to 10',
+    'app.storeText': '<strong>\u20ac0.99, one-time purchase, no ads.</strong> Requires iPhone with iOS\u00a017 or later; Apple\u00a0Watch recommended for the on-court experience.',
+    'app.learnMore': 'Learn more',
+    'faq.s1.title': 'Matches & scoring',
+    'faq.s1.q1': 'How do I score a point during a match?',
+    'faq.s1.a1': '<p>On the first Watch screen (<strong>Action</strong>) you\u2019ll find two large buttons, one per team: tap the one for whoever won the rally. On Apple\u00a0Watch Series\u00a09 and later you can also use the <strong>Double Tap</strong> gesture to assign the point without touching the screen.</p><p>Every point, game and set is confirmed with a distinct haptic, so you don\u2019t need to look at the display.</p>',
+    'faq.s1.q2': 'I scored a point by mistake: how do I undo it?',
+    'faq.s1.a2': '<p>Turn the <strong>Digital Crown</strong> on the Watch to undo the last point. If you\u2019re following the match from the iPhone scoreboard, you\u2019ll find the undo button directly on your phone.</p>',
+    'faq.s1.q3': 'Which rules can I customize?',
+    'faq.s1.a3': '<p>When creating a match, choose sport (<strong>Tennis or Padel</strong>), format (<strong>singles or doubles</strong>), number of sets (1, 2 or 3 to win, or short <strong>Fast4</strong> format), classic tie-break to 7 or <strong>Super Tie-Break to 10</strong>, and for padel, <strong>Golden Point</strong> at 40–40. You can also name the match to find it easily in history.</p>',
+    'faq.s1.q4': 'Who serves and when do you change ends?',
+    'faq.s1.a4': '<p>The app tracks <strong>service turns</strong> and court side, and alerts you with a haptic when it\u2019s time to <strong>change ends</strong> (odd games and during tie-breaks). You don\u2019t need to remember anything: just play.</p>',
+    'faq.s2.title': 'Apple Watch & iPhone',
+    'faq.s2.q1': 'Do I need an Apple Watch?',
+    'faq.s2.a1': '<p>No. The <strong>iPhone scoreboard</strong> has a full scoring engine: you can create the match, score points and undo directly from your phone, even without a Watch. The Watch is still the ideal on-court experience, but it\u2019s not required.</p>',
+    'faq.s2.q2': 'How do I start a match from iPhone?',
+    'faq.s2.a2': '<p>Set rules and players in the <strong>New match</strong> screen on your phone: the Watch app opens automatically, ready to score. Alternatively, tell Siri <strong>\u201cStart a match on SyncPoint\u201d</strong> directly from your wrist.</p>',
+    'faq.s2.q3': 'I don\u2019t see Live Activity on the Lock Screen',
+    'faq.s2.a3': '<p>The Lock Screen scoreboard and Dynamic Island appear after the first live update received by iPhone. If the match started on the Watch, <strong>open the SyncPoint app on iPhone at least once during the match</strong> to activate it. Also check that Live Activities are enabled in Settings\u00a0\u203a\u00a0SyncPoint.</p>',
+    'faq.s2.q4': 'The Watch disconnected during the match: do I lose data?',
+    'faq.s2.a4': '<p>No. SyncPoint works <strong>offline</strong> too: the Watch keeps tracking locally and syncs everything once the connection returns. If you also changed the score from iPhone in the meantime, on reconnect the <strong>most up-to-date state</strong> wins automatically.</p>',
+    'faq.s2.q5': 'The app isn\u2019t installed on my Watch',
+    'faq.s2.a5': '<p>In the iPhone app\u2019s <strong>Profile</strong> and <strong>Live</strong> screens you\u2019ll see Watch installation status, with a <strong>step-by-step guide</strong> to complete it: briefly, open the Watch app on iPhone, find SyncPoint in available apps and tap Install.</p>',
+    'faq.s2.q6': 'Is there a Home Screen widget?',
+    'faq.s2.a6': '<p>Yes: long-press on the iPhone Home Screen, tap the edit button and find <strong>SyncPoint</strong> among widgets. It shows your win rate and last match played, at a glance.</p>',
+    'faq.s3.title': 'Health & workouts',
+    'faq.s3.q1': 'Does SyncPoint track calories and heart rate?',
+    'faq.s3.a1': '<p>Yes. Every match tracked from the Watch is recorded as an <strong>official workout in Apple Health</strong>: calories, live heart rate and contribution to Activity Rings. During play you\u2019ll find heart rate, calories and timer in the Match & Info screen.</p>',
+    'faq.s3.q2': 'Where does my health data go?',
+    'faq.s3.a2': '<p>Health data stays in <strong>Apple Health</strong>, on your device and in your personal iCloud, according to your Apple account privacy settings. SyncPoint reads and writes it only with your permission and <strong>does not send it to third-party servers</strong>.</p>',
+    'faq.s4.title': 'Account, data & sharing',
+    'faq.s4.q1': 'What is Sign in with Apple for?',
+    'faq.s4.a1': '<p>Sign in with Apple (optional) gives you a <strong>username</strong> friends can use to find you when creating a match. Matches linked to your profile also appear in your history and head-to-head stats. Without an account you can still use all local game features.</p>',
+    'faq.s4.q2': 'How do shared matches work?',
+    'faq.s4.a2': '<p>In <strong>New match</strong>, search for players by username and enable \u201cHas the app\u201d: at the end of the match it appears in every participant\u2019s history (with the correct perspective for opponents) and, during play, connected players can follow it live from the <strong>Live</strong> tab.</p>',
+    'faq.s4.q3': 'How do I share the result on social media?',
+    'faq.s4.a3': '<p>From a match detail tap <strong>Share</strong>: SyncPoint generates a graphic card with the score, in Story (9:16) or Post (1:1) format, customizable with your photo. Share it on Instagram, WhatsApp, Telegram or wherever you like.</p>',
+    'faq.s4.q4': 'How do I delete my account or username?',
+    'faq.s4.a4': '<p>Go to <strong>Profile</strong> on iPhone: from there you can edit or remove your username and <strong>permanently delete your account</strong>, with confirmation before every irreversible action. Matches saved locally on device remain yours. Full details on the <a href="data-management.html">Data management</a> page.</p>',
+    'contact.title': 'Didn\u2019t find your answer?',
+    'contact.text': 'Write directly to the developer: I personally read every message and usually reply within 48 hours.',
+    'contact.hint': 'To help us resolve faster: include your iPhone and Apple\u00a0Watch model, iOS/watchOS version and what you were doing when the issue occurred.',
+    'footer.navAria': 'Other pages',
+    'footer.discoverApp': 'Discover the app',
+    'footer.privacyIt': 'Privacy Policy (IT)',
+    'footer.privacyEn': 'Privacy Policy (EN)',
+    'footer.dataMgmt': 'Data management',
+    'footer.tagline': '<strong>SyncPoint</strong> \u2014 Tennis & Padel scorekeeper for Apple\u00a0Watch and iPhone.',
+    'footer.privacyNote': 'Your matches are saved on device and, if you use shared features, in your iCloud. Workout data stays in Apple Health. No data is sold or shared with third parties. Read the full <a href="privacy-en.html" data-i18n-href="footer.privacyLink">Privacy Policy</a>.',
+    'footer.privacyLink': 'privacy-en.html',
+    'footer.copyright': '\u00a9 2026 Marcello Guida \u00b7 Apple, Apple\u00a0Watch and iPhone are trademarks of Apple\u00a0Inc.'
+  };
+
+  var it = {
+    meta: {
+      title: 'SyncPoint — Segnapunti Tennis & Padel per Apple Watch e iPhone',
+      description: 'SyncPoint \u00e8 il segnapunti Tennis e Padel per Apple Watch e iPhone: punteggio dal polso, tabellone sul telefono, Live Activity, statistiche testa a testa e supporto con FAQ e contatti.'
+    },
+    'hero.eyebrow': 'Supporto \u00b7 SyncPoint',
+    'hero.title': 'Serve aiuto? Qui si risponde punto su punto.',
+    'hero.lead': 'SyncPoint \u00e8 il segnapunti per Tennis e Padel su Apple\u00a0Watch e iPhone: punteggio in tempo reale al polso, tabellone sul telefono, statistiche e sfide con gli avversari. In questa pagina trovi le risposte alle domande pi\u00f9 frequenti e un contatto diretto con lo sviluppatore.',
+    'hero.emailHref': 'mailto:mguida2604@gmail.com?subject=Supporto%20SyncPoint',
+    'hero.emailBtn': 'Scrivici',
+    'hero.discoverApp': 'Scopri l\u2019app',
+    'hero.readFaq': 'Leggi le FAQ',
+    'hero.boardAria': 'Tabellone di esempio: Tu conduci contro I dubbi per 6 a 2, 4 a 1, 40 a 0',
+    'hero.boardYou': 'Tu',
+    'hero.boardOpp': 'I dubbi',
+    'hero.boardCaption': 'Match point: la risposta che cerchi \u00e8 qui sotto.',
+    'app.kicker': 'L\u2019app',
+    'app.title': 'Il tuo arbitro personale, al polso e in tasca.',
+    'app.intro': 'SyncPoint segue il match punto dopo punto: tu pensi a giocare, lui tiene il punteggio, il servizio, i cambi campo e le statistiche. In campo con l\u2019Apple\u00a0Watch, a bordo campo con l\u2019iPhone.',
+    'app.f1.title': 'Punteggio dal polso',
+    'app.f1.text': 'Due pulsanti grandi, vibrazioni distinte per punto, game e set, undo con la Corona Digitale e gesto Doppio Tap per segnare senza toccare lo schermo.',
+    'app.f2.title': 'Tabellone gigante su iPhone',
+    'app.f2.text': 'Punteggio in stile segnapunti da campo, visibile da lontano. Con motore di gioco completo: funziona anche senza Watch, con modifica punti e undo dal telefono.',
+    'app.f3.title': 'Live Activity e Dynamic Island',
+    'app.f3.text': 'Il tabellone in tempo reale sulla schermata di blocco: chi \u00e8 fuori campo segue il match a colpo d\u2019occhio, senza aprire l\u2019app.',
+    'app.f4.title': 'Allenamento ufficiale',
+    'app.f4.text': 'Ogni partita \u00e8 un workout in Apple Salute: calorie, battito in tempo reale e Anelli di Attivit\u00e0 che si chiudono mentre giochi.',
+    'app.f5.title': 'Statistiche e testa a testa',
+    'app.f5.text': 'Storico filtrabile, percentuale vittorie contro ogni avversario, analisi di coppia nel doppio e grafico dell\u2019inerzia del match, punto per punto.',
+    'app.f6.title': 'Vittorie da condividere',
+    'app.f6.text': 'Card grafiche del risultato in formato Storia e Post, personalizzabili con le tue foto. E con le partite condivise, il match finisce nello storico di tutti i giocatori.',
+    'app.rulesTitle': 'Le tue regole, il tuo gioco',
+    'app.chipSingles': 'Singolare',
+    'app.chipDoubles': 'Doppio',
+    'app.chipSets': '1, 2 o 3 set',
+    'app.chipTb7': 'Tie-break a 7',
+    'app.chipStb10': 'Super Tie-Break a 10',
+    'app.storeText': '<strong>0,99\u00a0\u20ac, acquisto una tantum, senza pubblicit\u00e0.</strong> Richiede iPhone con iOS\u00a017 o successivo; Apple\u00a0Watch consigliato per l\u2019esperienza in campo.',
+    'app.learnMore': 'Scopri di pi\u00f9',
+    'faq.s1.title': 'Partite e punteggio',
+    'faq.s1.q1': 'Come segno un punto durante la partita?',
+    'faq.s1.a1': '<p>Sulla prima schermata del Watch (<strong>Azione</strong>) trovi due pulsanti grandi, uno per squadra: tocca quello di chi ha vinto lo scambio. Su Apple\u00a0Watch Series\u00a09 e successivi puoi anche usare il gesto <strong>Doppio Tap</strong> per assegnare il punto senza toccare lo schermo.</p><p>Ogni punto, game e set \u00e8 confermato da una vibrazione distinta, cos\u00ec non devi guardare il display.</p>',
+    'faq.s1.q2': 'Ho assegnato un punto per errore: come lo annullo?',
+    'faq.s1.a2': '<p>Ruota la <strong>Corona Digitale</strong> sul Watch per annullare l\u2019ultimo punto. Se stai seguendo il match dal tabellone su iPhone, trovi il pulsante di annullamento direttamente sul telefono.</p>',
+    'faq.s1.q3': 'Quali regole posso personalizzare?',
+    'faq.s1.a3': '<p>Alla creazione della partita scegli sport (<strong>Tennis o Padel</strong>), formazione (<strong>singolare o doppio</strong>), numero di set (1, 2 o 3 vincenti, oppure formato breve <strong>Fast4</strong>), tie-break classico a 7 o <strong>Super Tie-Break a 10</strong> e, per il padel, il <strong>Golden Point</strong> sul 40-40. Puoi anche dare un nome alla partita per ritrovarla facilmente nello storico.</p>',
+    'faq.s1.q4': 'Chi serve e quando si cambia campo?',
+    'faq.s1.a4': '<p>L\u2019app tiene traccia del <strong>turno di servizio</strong> e del lato campo, e ti avvisa con una vibrazione quando \u00e8 il momento del <strong>cambio campo</strong> (game dispari e durante il tie-break). Non devi ricordare nulla: pensa solo a giocare.</p>',
+    'faq.s2.title': 'Apple Watch e iPhone',
+    'faq.s2.q1': 'Serve per forza un Apple Watch?',
+    'faq.s2.a1': '<p>No. Il <strong>tabellone su iPhone</strong> ha un motore di punteggio completo: puoi creare la partita, segnare i punti e annullare direttamente dal telefono, anche senza Watch. Il Watch resta l\u2019esperienza ideale in campo, ma non \u00e8 obbligatorio.</p>',
+    'faq.s2.q2': 'Come avvio una partita dall\u2019iPhone?',
+    'faq.s2.a2': '<p>Configura regole e giocatori nella schermata <strong>Nuova partita</strong> sul telefono: l\u2019app sul Watch si apre da sola, gi\u00e0 pronta a segnare. In alternativa puoi dire a Siri <strong>\u00abInizia una partita su SyncPoint\u00bb</strong> direttamente dal polso.</p>',
+    'faq.s2.q3': 'Non vedo la Live Activity sulla schermata di blocco',
+    'faq.s2.a3': '<p>Il tabellone su schermata di blocco e Dynamic Island compare al primo aggiornamento live ricevuto dall\u2019iPhone. Se il match \u00e8 partito dal Watch, <strong>apri l\u2019app SyncPoint su iPhone almeno una volta durante la partita</strong> per attivarla. Controlla anche che le Attivit\u00e0 in tempo reale siano abilitate in Impostazioni\u00a0\u203a\u00a0SyncPoint.</p>',
+    'faq.s2.q4': 'Il Watch si \u00e8 scollegato durante il match: perdo i dati?',
+    'faq.s2.a4': '<p>No. SyncPoint funziona anche <strong>offline</strong>: il Watch continua a tracciare in locale e sincronizza tutto appena torna la connessione. Se nel frattempo hai modificato il punteggio anche dall\u2019iPhone, alla riconnessione vince automaticamente <strong>lo stato pi\u00f9 aggiornato</strong>.</p>',
+    'faq.s2.q5': 'L\u2019app non risulta installata sul Watch',
+    'faq.s2.a5': '<p>Nelle schermate <strong>Profilo</strong> e <strong>Live</strong> dell\u2019app iPhone vedi lo stato di installazione sul Watch, con una <strong>guida passo passo</strong> per completarla: in breve, apri l\u2019app Watch sull\u2019iPhone, cerca SyncPoint nella sezione delle app disponibili e tocca Installa.</p>',
+    'faq.s2.q6': 'Ho un widget per la schermata Home?',
+    'faq.s2.a6': '<p>S\u00ec: tieni premuto sulla schermata Home dell\u2019iPhone, tocca il pulsante di modifica e cerca <strong>SyncPoint</strong> tra i widget. Mostra la tua percentuale di vittorie e l\u2019ultima partita giocata, a colpo d\u2019occhio.</p>',
+    'faq.s3.title': 'Salute e allenamenti',
+    'faq.s3.q1': 'SyncPoint traccia calorie e battito cardiaco?',
+    'faq.s3.a1': '<p>S\u00ec. Ogni match tracciato dal Watch \u00e8 registrato come <strong>allenamento ufficiale in Apple Salute</strong>: calorie, frequenza cardiaca in tempo reale e contributo agli Anelli di Attivit\u00e0. Durante il gioco trovi battito, calorie e cronometro nella schermata Match & Info.</p>',
+    'faq.s3.q2': 'Dove finiscono i miei dati sanitari?',
+    'faq.s3.a2': '<p>I dati di salute restano in <strong>Apple Salute</strong>, sul tuo dispositivo e nel tuo iCloud personale, secondo le impostazioni di privacy del tuo account Apple. SyncPoint li legge e li scrive solo con il tuo permesso e <strong>non li invia a server di terze parti</strong>.</p>',
+    'faq.s4.title': 'Account, dati e condivisione',
+    'faq.s4.q1': 'A cosa serve l\u2019accesso con Apple?',
+    'faq.s4.a1': '<p>L\u2019accesso con Apple (facoltativo) ti d\u00e0 un <strong>nome utente</strong> con cui gli amici possono trovarti quando creano una partita. Le partite collegate al tuo profilo compaiono anche nel tuo storico e nelle statistiche testa a testa. Senza account puoi comunque usare tutte le funzioni di gioco in locale.</p>',
+    'faq.s4.q2': 'Come funzionano le partite condivise?',
+    'faq.s4.a2': '<p>In <strong>Nuova partita</strong>, cerca i giocatori per nome utente e attiva \u00abHa l\u2019applicazione\u00bb: a fine match la partita compare nello storico di tutti i partecipanti (con la prospettiva corretta per gli avversari) e, durante il gioco, chi \u00e8 collegato pu\u00f2 seguirla in diretta dalla scheda <strong>Live</strong>.</p>',
+    'faq.s4.q3': 'Come condivido il risultato sui social?',
+    'faq.s4.a3': '<p>Dal dettaglio di una partita tocca <strong>Condividi</strong>: SyncPoint genera una card grafica con il punteggio, in formato Storia (9:16) o Post (1:1), personalizzabile con una tua foto. Puoi condividerla su Instagram, WhatsApp, Telegram o dove preferisci.</p>',
+    'faq.s4.q4': 'Come elimino il mio account o il nome utente?',
+    'faq.s4.a4': '<p>Vai in <strong>Profilo</strong> sull\u2019iPhone: da l\u00ec puoi modificare o rimuovere il nome utente e <strong>eliminare completamente l\u2019account</strong>, con una conferma prima di ogni azione definitiva. Le partite salvate in locale sul dispositivo restano tue. Trovi i dettagli completi nella pagina <a href="data-management.html">Gestione dati</a>.</p>',
+    'contact.title': 'Non hai trovato la risposta?',
+    'contact.text': 'Scrivi direttamente allo sviluppatore: leggo personalmente ogni segnalazione e di solito rispondo entro 48 ore.',
+    'contact.hint': 'Per aiutarci a risolvere prima: indica il modello di iPhone e di Apple\u00a0Watch, la versione di iOS/watchOS e cosa stavi facendo quando si \u00e8 presentato il problema.',
+    'footer.navAria': 'Altre pagine',
+    'footer.discoverApp': 'Scopri l\u2019app',
+    'footer.privacyIt': 'Privacy Policy',
+    'footer.privacyEn': 'Privacy (EN)',
+    'footer.dataMgmt': 'Gestione dati',
+    'footer.tagline': '<strong>SyncPoint</strong> \u2014 segnapunti Tennis & Padel per Apple\u00a0Watch e iPhone.',
+    'footer.privacyNote': 'Le tue partite sono salvate sul dispositivo e, se scegli di usare le funzioni condivise, nel tuo iCloud. I dati di allenamento restano in Apple Salute. Nessun dato viene venduto o condiviso con terze parti. Leggi la <a href="privacy.html" data-i18n-href="footer.privacyLink">Privacy Policy completa</a>.',
+    'footer.privacyLink': 'privacy.html',
+    'footer.copyright': '\u00a9 2026 Marcello Guida \u00b7 Apple, Apple\u00a0Watch e iPhone sono marchi di Apple\u00a0Inc.'
+  };
+
+  var locales = { en: en, it: it };
+
+  function getInitialLang() {
+    var params = new URLSearchParams(window.location.search);
+    var fromUrl = params.get('lang');
+    if (fromUrl === 'it' || fromUrl === 'en') return fromUrl;
+    try {
+      var saved = localStorage.getItem(STORAGE_KEY);
+      if (saved === 'it' || saved === 'en') return saved;
+    } catch (e) {}
+    return 'en';
+  }
+
+  function applyLang(lang) {
+    var strings = locales[lang] || locales.en;
+    document.documentElement.lang = lang;
+
+    if (strings.meta) {
+      document.title = strings.meta.title;
+      var desc = document.querySelector('meta[name="description"]');
+      if (desc) desc.setAttribute('content', strings.meta.description);
+    }
+
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) {
+        if (el.classList.contains('btn') && el.querySelector('svg')) {
+          var svg = el.querySelector('svg').outerHTML;
+          el.innerHTML = svg + ' ' + strings[key];
+        } else {
+          el.textContent = strings[key];
+        }
+      }
+    });
+
+    document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-html');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+
+    document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-aria');
+      if (strings[key] != null) el.setAttribute('aria-label', strings[key]);
+    });
+
+    document.querySelectorAll('[data-i18n-href]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-href');
+      if (strings[key] != null) el.setAttribute('href', strings[key]);
+    });
+
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+      var active = btn.getAttribute('data-lang') === lang;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      applyLang(btn.getAttribute('data-lang'));
+    });
+  });
+
+  applyLang(getInitialLang());
+})();
+</script>
 </body>
 </html>
