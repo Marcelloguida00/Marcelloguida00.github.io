@@ -131,6 +131,7 @@
   border-radius: 16px;
   background: rgba(12, 14, 18, 0.72);
   overflow: hidden;
+  max-width: 100%;
   margin-bottom: 0;
   box-shadow: 0 28px 60px -28px rgba(0, 0, 0, 0.55);
 }
@@ -525,26 +526,54 @@
     grid-template-columns: 1fr;
   }
 
+  .pricing-studio {
+    border-radius: 14px;
+  }
+
   .pricing-tabs {
-    grid-template-columns: 1fr;
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .pricing-tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .pricing-tab {
-    border-right: 0;
-    border-bottom: 1px solid var(--border-color);
+    flex: 0 0 auto;
+    min-width: 132px;
+    max-width: 160px;
+    border-right: 1px solid var(--border-color);
+    border-bottom: 0;
+    scroll-snap-align: start;
+    min-height: 58px;
+    padding: 14px 14px 16px;
+  }
+
+  .pricing-tab-sub {
+    display: none;
   }
 
   .pricing-tab:last-child {
-    border-bottom: 0;
+    border-right: 0;
   }
 
   .pricing-tab.is-active::after {
-    left: 0;
-    right: auto;
+    left: 12px;
+    right: 12px;
     bottom: 0;
-    top: 0;
-    width: 2px;
-    height: auto;
+    top: auto;
+    width: auto;
+    height: 2px;
+  }
+
+  .pricing-tab-sub {
+    white-space: nowrap;
   }
 
   .pricing-panel-head {
@@ -554,24 +583,48 @@
 
   .pricing-featured {
     text-align: left;
+    width: 100%;
   }
 
   .pricing-featured-label {
     margin-left: 0;
+    max-width: 100%;
+    white-space: normal;
   }
 
   .pricing-split {
     grid-template-columns: 1fr;
   }
+
+  .pricing-service {
+    min-height: 56px;
+  }
 }
 
 @media (max-width: 560px) {
+  .pricing-title {
+    max-width: none;
+  }
+
+  .pricing-lead {
+    margin-bottom: 32px;
+  }
+
+  .pricing-rates {
+    margin-bottom: 36px;
+    gap: 12px;
+  }
+
+  .pricing-rate {
+    padding: 22px 18px 20px;
+  }
+
   .pricing-panel {
-    padding: 22px 18px 24px;
+    padding: 20px 14px 22px;
   }
 
   .pricing-detail {
-    padding: 22px 18px;
+    padding: 20px 16px;
     min-height: 0;
   }
 
@@ -582,5 +635,6 @@
 
   .pricing-cta {
     width: 100%;
+    min-height: 44px;
   }
 }

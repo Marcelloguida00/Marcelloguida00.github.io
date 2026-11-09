@@ -183,5 +183,23 @@
 }
 
 @media (max-width: 600px) {
-  .timeline-content-glass { padding: 22px; }
+  .timeline-wow {
+    padding-left: 0;
+  }
+
+  .timeline-item-wow {
+    padding-left: 36px;
+  }
+
+  .timeline-content-glass {
+    padding: 18px 16px;
+  }
+
+  .timeline-title-wow {
+    font-size: 1.15rem;
+  }
+
+  .timeline-period-wow {
+    white-space: normal;
+  }
 }

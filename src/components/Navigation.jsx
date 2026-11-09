@@ -2,6 +2,29 @@ import { useEffect, useState } from 'react'
 import { useLanguage } from '../i18n/useLanguage'
 import './Navigation.css'
 
+function LangSwitch({ className = '', lang, setLang, label }) {
+  return (
+    <div className={`lang-switch ${className}`.trim()} role="group" aria-label={label}>
+      <button
+        type="button"
+        className={`lang-btn ${lang === 'it' ? 'is-active' : ''}`}
+        onClick={() => setLang('it')}
+        aria-pressed={lang === 'it'}
+      >
+        IT
+      </button>
+      <button
+        type="button"
+        className={`lang-btn ${lang === 'en' ? 'is-active' : ''}`}
+        onClick={() => setLang('en')}
+        aria-pressed={lang === 'en'}
+      >
+        EN
+      </button>
+    </div>
+  )
+}
+
 export default function Navigation({ scrolled }) {
   const { t, lang, setLang } = useLanguage()
   const [active, setActive] = useState('hero')
@@ -50,40 +73,31 @@ export default function Navigation({ scrolled }) {
             </a>
           ))}
 
-          <div className="lang-switch" role="group" aria-label={t.nav.langLabel}>
-            <button
-              type="button"
-              className={`lang-btn ${lang === 'it' ? 'is-active' : ''}`}
-              onClick={() => setLang('it')}
-              aria-pressed={lang === 'it'}
-            >
-              IT
-            </button>
-            <button
-              type="button"
-              className={`lang-btn ${lang === 'en' ? 'is-active' : ''}`}
-              onClick={() => setLang('en')}
-              aria-pressed={lang === 'en'}
-            >
-              EN
-            </button>
-          </div>
+          <LangSwitch lang={lang} setLang={setLang} label={t.nav.langLabel} />
 
           <a href="#contact" className="nav-cta">
             {t.nav.cta}
           </a>
         </nav>
 
-        <button
-          className={`nav-toggle ${open ? 'open' : ''}`}
-          aria-label={t.nav.toggleMenu}
-          aria-expanded={open}
-          onClick={() => setOpen((o) => !o)}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <div className="nav-mobile-tools">
+          <LangSwitch
+            className="compact"
+            lang={lang}
+            setLang={setLang}
+            label={t.nav.langLabel}
+          />
+          <button
+            className={`nav-toggle ${open ? 'open' : ''}`}
+            aria-label={t.nav.toggleMenu}
+            aria-expanded={open}
+            onClick={() => setOpen((o) => !o)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
 
       <nav className={`nav-mobile ${open ? 'open' : ''}`}>
@@ -92,24 +106,6 @@ export default function Navigation({ scrolled }) {
             {link.label}
           </a>
         ))}
-        <div className="lang-switch mobile" role="group" aria-label={t.nav.langLabel}>
-          <button
-            type="button"
-            className={`lang-btn ${lang === 'it' ? 'is-active' : ''}`}
-            onClick={() => setLang('it')}
-            aria-pressed={lang === 'it'}
-          >
-            IT
-          </button>
-          <button
-            type="button"
-            className={`lang-btn ${lang === 'en' ? 'is-active' : ''}`}
-            onClick={() => setLang('en')}
-            aria-pressed={lang === 'en'}
-          >
-            EN
-          </button>
-        </div>
         <a href="#contact" className="nav-cta" onClick={() => setOpen(false)}>
           {t.nav.cta}
         </a>

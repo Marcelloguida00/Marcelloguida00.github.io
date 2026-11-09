@@ -78,4 +78,29 @@
     grid-template-columns: 1fr;
     gap: 36px;
   }
+
+  .about-greeting {
+    font-size: clamp(1.55rem, 6.5vw, 1.95rem);
+  }
+}
+
+@media (max-width: 560px) {
+  .about-facts {
+    padding: 4px 16px;
+  }
+
+  .fact-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 14px 0;
+  }
+
+  .fact-value {
+    text-align: left;
+  }
+
+  .fact-highlight {
+    align-items: flex-start;
+  }
 }

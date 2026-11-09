@@ -73,5 +73,22 @@
 }
 
 @media (max-width: 600px) {
-  .skills-json-card { padding: 22px 20px; }
+  .skills-json-card {
+    padding: 18px 14px;
+    overflow-x: auto;
+  }
+
+  .skills-groups {
+    padding-left: 12px;
+  }
+
+  .skills-chips {
+    padding-left: 8px;
+    gap: 8px;
+  }
+
+  .skill-chip {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
 }
