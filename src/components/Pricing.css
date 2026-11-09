@@ -620,11 +620,22 @@
   }
 
   .pricing-panel {
-    padding: 20px 14px 22px;
+    padding: 18px 12px 20px;
+  }
+
+  .pricing-panel-head {
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    gap: 10px;
+  }
+
+  /* Avoid duplicating the big price block above the list on small screens */
+  .pricing-featured {
+    display: none;
   }
 
   .pricing-detail {
-    padding: 20px 16px;
+    padding: 18px 14px;
     min-height: 0;
   }
 

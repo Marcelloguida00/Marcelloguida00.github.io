@@ -19,10 +19,26 @@
 .nav-container {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 0 5%;
+  padding: 0 max(5%, env(safe-area-inset-right)) 0 max(5%, env(safe-area-inset-left));
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
+}
+
+@media (max-width: 980px) {
+  .nav-container {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
+  }
+
+  .navbar {
+    padding-top: max(14px, env(safe-area-inset-top));
+  }
+
+  .navbar.scrolled {
+    padding-top: max(10px, env(safe-area-inset-top));
+  }
 }
 
 .nav-logo {
