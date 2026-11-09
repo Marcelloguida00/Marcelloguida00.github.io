@@ -132,7 +132,8 @@
 .hero-marker:nth-child(2) .hero-marker-dot { background: var(--accent-green); }
 .hero-marker:nth-child(3) .hero-marker-dot { background: #f1c453; }
 .hero-marker:nth-child(4) .hero-marker-dot { background: var(--accent-secondary); }
-.hero-marker:nth-child(5) .hero-marker-dot { background: var(--accent-color); }
+.hero-marker:nth-child(5) .hero-marker-dot { background: #f1c453; }
+.hero-marker:nth-child(6) .hero-marker-dot { background: var(--accent-color); }
 
 .hero-visual {
   display: flex;

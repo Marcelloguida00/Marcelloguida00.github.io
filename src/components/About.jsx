@@ -1,53 +1,46 @@
 import SectionTab from './SectionTab'
+import { useLanguage } from '../i18n/useLanguage'
 import './About.css'
 
-const FACTS = [
-  { label: 'Based in', value: 'Naples, Italy' },
-  { label: 'Studying', value: 'Computer Science · Fisciano (UNISA)' },
-  { label: 'Academy', value: 'Apple Developer Academy · Federico II' },
-  { label: 'Award', value: 'Swift Student Challenge 2026' },
-]
-
 export default function About() {
+  const { t } = useLanguage()
+  const a = t.about
+
   return (
     <section id="about" className="about-wow reveal">
       <div className="container">
         <SectionTab
           file="About.swift"
-          comment="// who I am"
+          comment={a.comment}
           dotColor="var(--accent-secondary)"
         />
 
         <div className="about-grid-wow">
           <div className="about-main">
             <h2 className="about-greeting">
-              Hi, I'm Marcello —<br />I build software that respects people.
+              {a.greeting.split('\n').map((line, i) => (
+                <span key={i}>
+                  {i > 0 && <br />}
+                  {line}
+                </span>
+              ))}
             </h2>
-            <p className="about-text">
-              I'm a Computer Science student at the University of Salerno (Fisciano)
-              and an iOS developer currently sharpening my craft at the Apple
-              Developer Academy, a joint program with Federico II University in
-              Naples. I design and build responsive, native iOS applications from
-              first sketch to shipped product.
-            </p>
-            <p className="about-text">
-              What keeps me at the keyboard is the gap between an idea and a working
-              app: I like closing it carefully, with attention to performance,
-              accessibility, and the small interactions most people never notice —
-              but always feel.
-            </p>
+            <p className="about-text">{a.p1}</p>
+            <p className="about-text">{a.p2}</p>
           </div>
 
           <div className="about-facts">
-            {FACTS.map((fact) => (
+            {a.facts.map((fact) => (
               <div className="fact-row" key={fact.label}>
                 <span className="fact-label">{fact.label}</span>
                 <span className="fact-value">{fact.value}</span>
               </div>
             ))}
             <div className="fact-highlight">
-              <span className="fact-highlight-icon">🏆</span>
-              <span>Swift Student Challenge 2026 Winner</span>
+              <span className="fact-highlight-icon" aria-hidden="true">
+                ★
+              </span>
+              <span>{a.awardHighlight}</span>
             </div>
           </div>
         </div>

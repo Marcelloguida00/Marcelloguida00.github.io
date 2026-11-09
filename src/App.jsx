@@ -5,11 +5,15 @@ import About from './components/About'
 import Skills from './components/Skills'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
+import Pricing from './components/Pricing'
 import Contact from './components/Contact'
 import Navigation from './components/Navigation'
+import { LanguageProvider } from './i18n/LanguageContext'
+import { useLanguage } from './i18n/useLanguage'
 
-function App() {
+function AppShell() {
   const [scrolled, setScrolled] = useState(false)
+  const { t, lang } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +38,7 @@ function App() {
     )
     revealEls.forEach((el) => observer.observe(el))
     return () => observer.disconnect()
-  }, [])
+  }, [lang])
 
   return (
     <div className="app">
@@ -45,19 +49,40 @@ function App() {
         <Experience />
         <Skills />
         <Projects />
+        <Pricing />
         <Contact />
       </main>
       <footer className="footer">
         <div className="footer-content">
-          <p>© 2026 Marcello Guida — built with React &amp; Swift ambition.</p>
+          <p>{t.footer.copy}</p>
           <div className="footer-links">
-            <a href="https://github.com/Marcelloguida00" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://linkedin.com/in/marcelloguida00" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a
+              href="https://github.com/Marcelloguida00"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/marcelloguida00"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
             <a href="mailto:mguida2604@gmail.com">Email</a>
           </div>
         </div>
       </footer>
     </div>
+  )
+}
+
+function App() {
+  return (
+    <LanguageProvider>
+      <AppShell />
+    </LanguageProvider>
   )
 }
 
