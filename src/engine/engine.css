@@ -1,0 +1,134 @@
+/* Foundation helpers for Silence → Signal */
+
+.voice-field {
+  position: absolute;
+  inset: -20% -10%;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse 55% 45% at 50% 40%,
+      color-mix(in srgb, var(--accent) calc(10% + var(--signal) * 28%), transparent),
+      transparent 70%
+    );
+  transform: translate3d(0, calc(var(--signal) * -3%), 0);
+  will-change: transform, opacity;
+}
+
+html.motion .voice-field {
+  animation: voice-idle 5.5s ease-in-out infinite alternate;
+}
+
+@keyframes voice-idle {
+  from {
+    transform: translate3d(-1.5%, 1%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(1.5%, -2%, 0) scale(1.05);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.motion .voice-field {
+    animation: none;
+  }
+}
+
+.signal-meter {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.signal-meter__bar {
+  width: 64px;
+  height: 2px;
+  background: var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.signal-meter__fill {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--accent);
+  transform: scaleX(var(--signal));
+  transform-origin: left center;
+}
+
+.btn-signal {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 22px;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 0.95rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn-signal__label {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-signal__fill {
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform: translateY(101%);
+  transition: transform 0.35s var(--ease-out-expo);
+  z-index: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-signal:hover .btn-signal__fill,
+  .btn-signal:focus-visible .btn-signal__fill {
+    transform: translateY(0);
+  }
+
+  .btn-signal:hover,
+  .btn-signal:focus-visible {
+    color: #0a0a0a;
+    border-color: var(--accent);
+  }
+}
+
+.btn-signal.is-ghost {
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.btn-signal.is-ghost .btn-signal__fill {
+  background: var(--ink);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-signal.is-ghost:hover,
+  .btn-signal.is-ghost:focus-visible {
+    color: #0a0a0a;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-signal__fill {
+    transition: none;
+  }
+
+  .btn-signal:hover,
+  .btn-signal:focus-visible {
+    background: var(--accent);
+    color: #0a0a0a;
+  }
+}

@@ -2,109 +2,59 @@ import { useLanguage } from '../i18n/useLanguage'
 import './Hero.css'
 
 export default function Hero() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
   const h = t.hero
 
-  const CODE_LINES = [
-    { indent: 0, text: 'struct Marcello: Developer {' },
-    { indent: 1, text: `var role = "${h.codeRole}"` },
-    { indent: 1, text: 'var focus = ["Swift", "UIKit", "Accessibility"]' },
-    { indent: 1, text: 'var status: Availability = .openToWork' },
-    { indent: 0, text: '}' },
-  ]
-
-  const SECTION_MARKERS = [
-    { href: '#about', label: h.markers.about },
-    { href: '#experience', label: h.markers.experience },
-    { href: '#skills', label: h.markers.skills },
-    { href: '#projects', label: h.markers.work },
-    { href: '#pricing', label: h.markers.pricing },
-    { href: '#contact', label: h.markers.contact },
-  ]
-
   return (
-    <section id="hero" className="hero-wow">
-      <div className="hero-glow-orb"></div>
-      <div className="hero-grid-fade"></div>
+    <section id="hero" className="hero-signal">
+      <div className="hero-plane" aria-hidden="true">
+        <img
+          src="/profile/marcello-guida.jpg"
+          alt=""
+          className="hero-plane-img"
+          width={1600}
+          height={2000}
+          decoding="async"
+        />
+        <div className="hero-plane-scrim" />
+        <div className="voice-field" />
+      </div>
 
-      <div className="hero-content-wow">
-        <div className="hero-copy">
-          <div className="hero-badge">
-            <span className="live-dot"></span>
-            {h.badge}
-          </div>
+      <div className="hero-frame">
+        <p className="hero-availability" data-intro data-delay="0">
+          <span className="hero-availability-dot" aria-hidden="true" />
+          {h.badge}
+        </p>
 
-          <h1 className="hero-title-wow">
-            {h.titleBefore} <span className="text-accent">{h.titleAccent}</span>
-            <br />
-            {h.titleAfter}
-          </h1>
+        <h1 className="hero-brand" data-intro data-delay="0.05">
+          Marcello
+          <br />
+          Guida
+        </h1>
 
-          <p className="hero-subtitle-wow">{h.subtitle}</p>
+        <p className="hero-line" data-intro data-delay="0.12">
+          {h.subtitle}
+        </p>
 
-          <div className="hero-actions">
-            <a href="#projects" className="btn btn-primary">
-              {h.viewWork}
-            </a>
-            <a href="#pricing" className="btn btn-secondary">
-              {h.viewPricing}
-            </a>
-          </div>
-
-          <nav className="hero-markers" aria-label="Jump to section">
-            {SECTION_MARKERS.map((item) => (
-              <a key={item.href} href={item.href} className="hero-marker">
-                <span className="hero-marker-dot" aria-hidden="true"></span>
-                {item.label}
-              </a>
-            ))}
-          </nav>
+        <div className="hero-actions" data-intro data-delay="0.18">
+          <a href="#projects" className="btn-signal">
+            <span className="btn-signal__fill" aria-hidden="true" />
+            <span className="btn-signal__label">{h.viewWork}</span>
+          </a>
+          <a href="#pricing" className="btn-signal is-ghost">
+            <span className="btn-signal__fill" aria-hidden="true" />
+            <span className="btn-signal__label">{h.viewPricing}</span>
+          </a>
         </div>
 
-        <div className="hero-visual">
-          <div className="hero-photo-wrap">
-            <img
-              src="/profile/marcello-guida.jpg"
-              alt={h.photoAlt}
-              className="hero-photo"
-              width={420}
-              height={560}
-              loading="eager"
-              decoding="async"
-            />
+        <div className="hero-corner" data-intro data-delay="0.22">
+          <div className="signal-meter" aria-hidden="true">
+            <span>{lang === 'it' ? 'segnale' : 'signal'}</span>
+            <span className="signal-meter__bar">
+              <span className="signal-meter__fill" />
+            </span>
           </div>
-
-          <div className="hero-editor">
-            <div className="editor-titlebar">
-              <div className="editor-dots">
-                <span className="dot red"></span>
-                <span className="dot yellow"></span>
-                <span className="dot green"></span>
-              </div>
-              <span className="editor-filename">Marcello.swift</span>
-            </div>
-            <div className="editor-body">
-              {CODE_LINES.map((lineObj, idx) => {
-                const isLast = idx === CODE_LINES.length - 1
-                return (
-                  <div
-                    className="editor-line"
-                    key={`${lineObj.text}-${idx}`}
-                    style={{ animationDelay: `${idx * 120}ms` }}
-                  >
-                    <span className="line-number">{idx + 1}</span>
-                    <span
-                      className="line-code"
-                      style={{ paddingLeft: `${lineObj.indent * 20}px` }}
-                    >
-                      {lineObj.text}
-                      {isLast && <span className="type-cursor" aria-hidden="true"></span>}
-                    </span>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
+          <p className="hero-role">{h.codeRole}</p>
         </div>
       </div>
     </section>

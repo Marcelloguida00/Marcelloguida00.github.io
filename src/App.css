@@ -17,68 +17,12 @@
   position: relative;
   overflow-x: clip;
   background:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(250, 115, 67, 0.07), transparent 55%),
-    var(--bg-color);
-  background-size: 48px 48px, 48px 48px, auto, auto;
-  background-position: -1px -1px, -1px -1px, center, center;
-}
-
-/* Ambient glow, faint and singular — not a purple-cyan double orb */
-.app::before {
-  content: '';
-  position: fixed;
-  top: -15%;
-  right: -10%;
-  width: 55vw;
-  height: 55vw;
-  background: radial-gradient(circle, rgba(250, 115, 67, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
-  border-radius: 50%;
-  z-index: -1;
-  pointer-events: none;
-  animation: ambient-drift 18s ease-in-out infinite alternate;
-}
-
-.app::after {
-  content: '';
-  position: fixed;
-  bottom: -20%;
-  left: -12%;
-  width: 45vw;
-  height: 45vw;
-  max-width: 520px;
-  max-height: 520px;
-  background: radial-gradient(circle, rgba(77, 163, 255, 0.05) 0%, transparent 70%);
-  border-radius: 50%;
-  z-index: -1;
-  pointer-events: none;
-}
-
-@keyframes ambient-drift {
-  from { transform: translate3d(0, 0, 0) scale(1); }
-  to { transform: translate3d(-3%, 4%, 0) scale(1.06); }
-}
-
-@media (max-width: 768px) {
-  .app {
-    background-image:
-      radial-gradient(ellipse 100% 50% at 50% 0%, rgba(250, 115, 67, 0.08), transparent 50%),
-      var(--bg-color);
-    background-size: auto, auto;
-  }
-
-  .app::before,
-  .app::after {
-    animation: none;
-    opacity: 0.85;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .app::before {
-    animation: none;
-  }
+    radial-gradient(
+      ellipse 80% 50% at 70% -10%,
+      var(--voice-glow),
+      transparent 60%
+    ),
+    var(--ground);
 }
 
 main {
@@ -87,201 +31,118 @@ main {
 }
 
 .container {
-  max-width: 1180px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 max(5%, env(safe-area-inset-right)) 0 max(5%, env(safe-area-inset-left));
   width: 100%;
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--color-foreground);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
 }
 
-h1 { font-size: 3.75rem; }
-h2 { font-size: 2.25rem; }
-h3 { font-size: 1.4rem; }
-p { color: var(--color-muted); }
+.section-header-wow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 48px;
+}
 
-/* Signature structural device: a file tab, echoing Xcode's editor tabs.
-   Each section is introduced as if it were a source file being opened. */
 .file-tab {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  display: flex;
   flex-wrap: wrap;
-  max-width: 100%;
+  align-items: baseline;
+  gap: 10px 14px;
   font-family: var(--font-mono);
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  background: var(--glass-bg);
-  border: 1px solid var(--border-color);
-  border-bottom: 2px solid var(--dot-color, var(--accent-color));
-  padding: 8px 16px;
-  border-radius: 8px 8px 0 0;
-  margin-bottom: 24px;
-}
-
-.file-tab-path {
-  color: var(--text-dim);
-  font-size: 0.74rem;
-  opacity: 0.85;
-}
-
-.file-tab-name {
-  color: var(--text-color);
-  font-weight: 500;
-}
-
-.file-tab-comment {
-  color: var(--text-dim);
-  font-size: 0.74rem;
-  font-style: italic;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  max-width: 100%;
+  font-size: 12px;
+  letter-spacing: 0.04em;
 }
 
 .file-tab .dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background: var(--dot-color, var(--accent-color));
+  background: var(--dot-color, var(--accent));
   flex-shrink: 0;
+  align-self: center;
 }
 
-.section-title {
-  margin: 0 0 60px;
-  font-size: 2.5rem;
-  font-weight: 600;
+.file-tab-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-transform: lowercase;
+  color: var(--ink);
 }
 
-/* Glassmorphism / editor-chrome buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 13px 26px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  font-family: var(--font-main);
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 10px;
-  transition:
-    transform var(--motion-base) var(--ease-out-expo),
-    box-shadow var(--motion-base) ease,
-    border-color var(--motion-base) ease,
-    background var(--motion-base) ease;
-  position: relative;
+.file-tab-comment {
+  color: var(--muted);
 }
 
-.btn:active {
-  transform: scale(0.98);
+section.about-wow,
+section.experience-wow,
+section.skills-wow,
+section.contact-wow,
+section.pricing-wow {
+  padding: 88px 0;
 }
 
-.btn-primary {
-  background: var(--accent-color);
-  color: #10110f;
-  border: 1px solid var(--accent-color);
-  box-shadow: 0 0 0 0 rgba(250, 115, 67, 0);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 12px 24px -8px rgba(250, 115, 67, 0.5),
-    0 0 32px -8px rgba(250, 115, 67, 0.35);
-  color: #10110f;
-}
-
-.btn-secondary {
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--color-border);
-  color: var(--color-foreground);
-  font-family: var(--font-mono);
-}
-
-.btn-secondary:hover {
-  border-color: var(--border-color-strong);
-  transform: translateY(-2px);
-  color: var(--color-foreground);
-}
-
-/* Sections */
-section {
-  padding: 130px 0;
-  position: relative;
-}
-
-/* Footer */
 .footer {
-  padding: 48px 0;
-  margin-top: auto;
-  border-top: 1px solid var(--color-border);
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--line);
+  padding: 48px 0 56px;
+  margin-top: 40px;
 }
 
 .footer-content {
-  max-width: 1180px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 0 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
+  padding: 0 max(5%, env(safe-area-inset-right)) 0 max(5%, env(safe-area-inset-left));
+  display: grid;
+  gap: 18px;
 }
 
-.footer-content p {
+.footer-coords {
   font-family: var(--font-mono);
-  font-size: 0.82rem;
-  color: var(--text-dim);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-transform: uppercase;
 }
 
 .footer-links {
   display: flex;
-  gap: 28px;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 0.95rem;
 }
 
 .footer-links a {
-  color: var(--color-muted);
-  font-weight: 500;
-  font-size: 0.9rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--line);
 }
 
-.footer-links a:hover {
-  color: var(--accent-color);
+@media (hover: hover) and (pointer: fine) {
+  .footer-links a:hover,
+  .footer-links a:focus-visible {
+    text-decoration-color: var(--accent);
+    color: var(--accent);
+  }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  h1 { font-size: 2.35rem; }
-  h2 { font-size: 1.75rem; }
-  section { padding: 84px 0; }
-  .section-title { margin-bottom: 40px; font-size: 1.85rem; }
-  /* Grid intentionally off on small screens — set in the earlier mobile block */
-  .container {
-    padding-left: max(18px, env(safe-area-inset-left));
-    padding-right: max(18px, env(safe-area-inset-right));
-  }
-  .file-tab {
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .file-tab-path { display: none; }
-  .footer-content {
+  .section-header-wow {
     flex-direction: column;
-    gap: 18px;
-    text-align: center;
-    padding-bottom: max(12px, env(safe-area-inset-bottom));
+    align-items: flex-start;
   }
 }

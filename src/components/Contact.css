@@ -34,7 +34,7 @@
   padding: 16px 18px;
   background: var(--glass-bg);
   border: 1px solid var(--border-color);
-  border-radius: 12px;
+  border-radius: 2px;
   transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
@@ -80,7 +80,7 @@
 .contact-form-glass {
   background: var(--glass-bg);
   border: 1px solid var(--border-color);
-  border-radius: 14px;
+  border-radius: 2px;
   padding: 32px;
 }
 

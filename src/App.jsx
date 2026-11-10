@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import './engine/engine.css'
 import Hero from './components/Hero'
 import About from './components/About'
 import Skills from './components/Skills'
@@ -11,41 +12,51 @@ import Navigation from './components/Navigation'
 import SeoHead from './components/SeoHead'
 import { LanguageProvider } from './i18n/LanguageContext'
 import { useLanguage } from './i18n/useLanguage'
+import { boot, teardown } from './engine'
 
 function AppShell() {
   const [scrolled, setScrolled] = useState(false)
   const { t, lang } = useLanguage()
 
   useEffect(() => {
-    const handleScroll = () => {
+    let alive = true
+    boot().catch(() => {
+      document.documentElement.classList.add('is-loaded')
+    })
+    const onScroll = () => {
+      if (!alive) return
       setScrolled(window.scrollY > 40)
     }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      alive = false
+      window.removeEventListener('scroll', onScroll)
+      teardown()
+    }
   }, [])
-
-  useEffect(() => {
-    const revealEls = document.querySelectorAll('.reveal')
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible')
-            observer.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
-    )
-    revealEls.forEach((el) => observer.observe(el))
-    return () => observer.disconnect()
-  }, [lang])
 
   return (
     <div className="app">
+      <a className="skip-link" href="#main">
+        {lang === 'it' ? 'Vai al contenuto' : 'Skip to content'}
+      </a>
+
+      <div id="loader" role="status" aria-label={lang === 'it' ? 'Caricamento' : 'Loading'}>
+        <div className="loader-brand">Marcello Guida</div>
+        <div className="loader-meta">
+          <span data-loader-out>{lang === 'it' ? 'segnale' : 'signal'}</span>
+          <span data-loader-out data-loader-count>
+            000
+          </span>
+        </div>
+        <div className="loader-track" aria-hidden="true">
+          <span data-loader-bar className="loader-bar" />
+        </div>
+      </div>
+
       <SeoHead />
       <Navigation scrolled={scrolled} />
-      <main>
+      <main id="main" tabIndex={-1}>
         <Hero />
         <About />
         <Experience />
@@ -56,7 +67,10 @@ function AppShell() {
       </main>
       <footer className="footer">
         <div className="footer-content">
-          <p>{t.footer.copy}</p>
+          <p data-reveal="up">{t.footer.copy}</p>
+          <p className="footer-coords" data-reveal="fade">
+            40.8518° N · 14.2681° E · Napoli
+          </p>
           <div className="footer-links">
             <a href={lang === 'it' ? '/servizi/' : '/services/'}>
               {lang === 'it' ? 'Servizi' : 'Services'}

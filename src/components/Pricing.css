@@ -50,7 +50,7 @@
   position: relative;
   padding: 28px 26px 24px;
   border: 1px solid var(--border-color);
-  border-radius: 14px;
+  border-radius: 2px;
   background:
     linear-gradient(165deg, rgba(255, 255, 255, 0.03) 0%, transparent 55%),
     var(--glass-bg);
@@ -133,7 +133,7 @@
 /* ── Interactive studio ── */
 .pricing-studio {
   border: 1px solid var(--border-color);
-  border-radius: 16px;
+  border-radius: 2px;
   background: rgba(12, 14, 18, 0.72);
   overflow: hidden;
   max-width: 100%;
@@ -161,16 +161,20 @@
   gap: 12px;
   align-items: flex-start;
   position: relative;
-  transition: color 0.25s ease, background 0.25s ease;
+  transition: color 0.25s ease, background 0.25s ease, transform 0.35s var(--ease-out-expo);
 }
 
 .pricing-tab:last-child {
   border-right: 0;
 }
 
-.pricing-tab:hover {
-  color: var(--text-color);
-  background: rgba(255, 255, 255, 0.02);
+@media (hover: hover) and (pointer: fine) {
+  .pricing-tab:hover,
+  .pricing-tab:focus-visible {
+    color: var(--text-color);
+    background: rgba(255, 255, 255, 0.02);
+    transform: translateY(-2px);
+  }
 }
 
 .pricing-tab.is-active {
@@ -309,13 +313,19 @@
   gap: 12px;
   align-items: center;
   padding: 16px 14px;
-  border-radius: 12px;
+  border-radius: 2px;
   position: relative;
   opacity: 0;
   transform: translateX(-12px);
   animation: pricing-row-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   animation-delay: var(--stagger, 0ms);
   transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pricing-service:hover {
+    transform: translateY(-2px);
+  }
 }
 
 .pricing-service:hover,
@@ -383,7 +393,7 @@
 
 .pricing-detail {
   border: 1px solid var(--border-color);
-  border-radius: 14px;
+  border-radius: 2px;
   padding: 28px 26px;
   background:
     radial-gradient(
@@ -532,7 +542,7 @@
   }
 
   .pricing-studio {
-    border-radius: 14px;
+    border-radius: 2px;
   }
 
   .pricing-tabs {

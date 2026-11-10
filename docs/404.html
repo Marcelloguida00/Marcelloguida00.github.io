@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Nessun segnale - Marcello Guida</title>
+    <meta name="theme-color" content="#07080a" />
+    <style>
+      :root {
+        --ground: #07080a;
+        --ink: #f2f1ec;
+        --muted: #8b909a;
+        --accent: #e8ff6a;
+        --line: rgba(242, 241, 236, 0.12);
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        min-height: 100vh;
+        display: grid;
+        place-content: center;
+        gap: 18px;
+        padding: 24px;
+        background: var(--ground);
+        color: var(--ink);
+        font-family: Manrope, system-ui, sans-serif;
+      }
+      .stage {
+        width: min(520px, 92vw);
+        border: 1px solid var(--line);
+        padding: 48px 28px;
+        text-align: left;
+      }
+      .kicker {
+        font-family: ui-monospace, monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 18px;
+      }
+      h1 {
+        font-family: Syne, Manrope, sans-serif;
+        font-size: clamp(2.4rem, 8vw, 3.6rem);
+        letter-spacing: -0.05em;
+        line-height: 0.95;
+        margin-bottom: 14px;
+      }
+      p { color: var(--muted); max-width: 34ch; line-height: 1.55; margin-bottom: 28px; }
+      a {
+        color: var(--ink);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+      a:hover { color: var(--accent); }
+    </style>
+  </head>
+  <body>
+    <main class="stage">
+      <p class="kicker">404 · nessun segnale</p>
+      <h1>No signal</h1>
+      <p>Questa frequenza non risponde. Torna al portfolio e riparti dal silenzio.</p>
+      <a href="/">Marcello Guida →</a>
+    </main>
+  </body>
+</html>

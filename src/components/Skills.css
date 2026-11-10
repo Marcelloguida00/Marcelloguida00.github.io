@@ -9,7 +9,7 @@
   margin: 0 auto;
   background: #101216;
   border: 1px solid var(--border-color-strong);
-  border-radius: 12px;
+  border-radius: 2px;
   padding: 28px 32px;
   font-family: var(--font-mono);
   box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.6);
