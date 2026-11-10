@@ -43,9 +43,12 @@ export default function Hero() {
           <p className="hero-subtitle-wow">{h.subtitle}</p>
 
           <div className="hero-actions">
-            <a href="#projects" className="btn btn-primary">{h.viewWork}</a>
-            <a href="#pricing" className="btn btn-secondary">{h.viewPricing}</a>
-            <a href="#contact" className="btn btn-secondary">{h.getInTouch}</a>
+            <a href="#projects" className="btn btn-primary">
+              {h.viewWork}
+            </a>
+            <a href="#pricing" className="btn btn-secondary">
+              {h.viewPricing}
+            </a>
           </div>
 
           <nav className="hero-markers" aria-label="Jump to section">

@@ -20,6 +20,12 @@
   --font-display: 'Space Grotesk', sans-serif;
   --font-main: 'Sora', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+
+  /* Motion tokens (Awwwards / Motion-Driven direction) */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-fast: 180ms;
+  --motion-base: 280ms;
+  --motion-enter: 700ms;
 }
 
 * {
@@ -116,11 +122,43 @@ section[id] {
 /* Scroll-reveal utility, driven by IntersectionObserver in App.jsx */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(28px);
+  transition:
+    opacity var(--motion-enter) var(--ease-out-expo),
+    transform var(--motion-enter) var(--ease-out-expo);
+  will-change: opacity, transform;
 }
 
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.reveal.is-visible .reveal-child {
+  animation: reveal-child-in var(--motion-enter) var(--ease-out-expo) both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+@keyframes reveal-child-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+
+  .reveal.is-visible .reveal-child {
+    animation: none;
+  }
 }
