@@ -1,0 +1,161 @@
+:root {
+  --bg: #0b0d10;
+  --text: #eceef1;
+  --muted: #8992a1;
+  --dim: #5b636f;
+  --accent: #fa7343;
+  --border: rgba(255, 255, 255, 0.09);
+  --card: rgba(18, 20, 24, 0.85);
+  --font: 'Sora', system-ui, sans-serif;
+  --display: 'Space Grotesk', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  background:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px),
+    var(--bg);
+  background-size: 48px 48px, 48px 48px, auto;
+  color: var(--text);
+  line-height: 1.65;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 28px max(18px, env(safe-area-inset-right)) 80px max(18px, env(safe-area-inset-left));
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.brand {
+  font-family: var(--mono);
+  color: var(--text);
+  font-weight: 600;
+}
+.brand span { color: var(--accent); }
+.nav { display: flex; gap: 14px; flex-wrap: wrap; font-family: var(--mono); font-size: 0.86rem; }
+.nav a { color: var(--muted); }
+.nav a:hover { color: var(--text); text-decoration: none; }
+.hero h1 {
+  font-family: var(--display);
+  font-size: clamp(1.9rem, 5vw, 2.7rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 14px;
+}
+.hero p { color: var(--muted); max-width: 58ch; margin: 0 0 24px; }
+.cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 42px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+.btn-primary { background: var(--accent); color: #10110f !important; }
+.btn-ghost {
+  border: 1px solid var(--border);
+  color: var(--text) !important;
+  background: var(--card);
+}
+.rates {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 36px;
+}
+.rate {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  background: var(--card);
+}
+.rate .label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.rate .price {
+  font-family: var(--display);
+  font-size: 1.35rem;
+  margin: 8px 0 6px;
+}
+.rate .note { color: var(--muted); font-size: 0.9rem; margin: 0; }
+h2 {
+  font-family: var(--display);
+  font-size: 1.45rem;
+  margin: 36px 0 14px;
+  letter-spacing: -0.02em;
+}
+.cat {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  background: var(--card);
+}
+.cat-head {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--border);
+  background: #101216;
+}
+.cat-head .kicker {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 4px;
+}
+.cat-head h3 { margin: 0; font-family: var(--display); font-size: 1.2rem; }
+.service {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px 18px;
+  padding: 16px 18px;
+  border-top: 1px solid var(--border);
+}
+.service:first-of-type { border-top: 0; }
+.service strong { display: block; color: var(--text); }
+.service p { margin: 4px 0 0; color: var(--muted); font-size: 0.92rem; }
+.service .amount {
+  font-family: var(--mono);
+  color: var(--accent);
+  white-space: nowrap;
+  font-size: 0.86rem;
+  text-align: right;
+}
+.foot {
+  margin-top: 48px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+  color: var(--dim);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+@media (max-width: 720px) {
+  .rates { grid-template-columns: 1fr; }
+  .service { grid-template-columns: 1fr; }
+  .service .amount { text-align: left; }
+}

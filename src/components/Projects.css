@@ -34,7 +34,7 @@
 
 .projects-grid-wow {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 28px;
 }
 
@@ -151,4 +151,27 @@
 
 .project-card-wow:hover .project-link-wow .arrow {
   transform: translate(3px, -3px);
+}
+
+@media (max-width: 600px) {
+  .projects-grid-wow {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .project-card-top {
+    height: 180px;
+  }
+
+  .project-content-wow {
+    padding: 20px 18px 22px;
+  }
+
+  .project-title-wow {
+    font-size: 1.2rem;
+  }
+
+  .project-description-wow {
+    font-size: 0.92rem;
+  }
 }

@@ -1,4 +1,5 @@
 import SectionTab from './SectionTab'
+import { useLanguage } from '../i18n/useLanguage'
 import './Skills.css'
 
 const GROUPS = [
@@ -30,12 +31,14 @@ const GROUPS = [
 ]
 
 export default function Skills() {
+  const { t } = useLanguage()
+
   return (
     <section id="skills" className="skills-wow reveal">
       <div className="container">
         <SectionTab
           file="Skills.json"
-          comment="// what I use"
+          comment={t.skills.comment}
           dotColor="#f1c453"
         />
 
@@ -45,12 +48,15 @@ export default function Skills() {
             {GROUPS.map((group, gIdx) => (
               <div className="skills-group" key={group.key}>
                 <div className="skills-group-key">
-                  {group.label}<span className="json-colon">:</span>
+                  {group.label}
+                  <span className="json-colon">:</span>
                   <span className="json-bracket">[</span>
                 </div>
                 <div className="skills-chips">
                   {group.items.map((item) => (
-                    <span className="skill-chip" key={item}>{item}</span>
+                    <span className="skill-chip" key={item}>
+                      {item}
+                    </span>
                   ))}
                 </div>
                 <div className="skills-group-close">

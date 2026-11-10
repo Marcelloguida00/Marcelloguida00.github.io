@@ -1,22 +1,27 @@
+import { useLanguage } from '../i18n/useLanguage'
 import './Hero.css'
 
-const CODE_LINES = [
-  { indent: 0, text: 'struct Marcello: Developer {' },
-  { indent: 1, text: 'var role = "iOS Developer & Designer"' },
-  { indent: 1, text: 'var focus = ["Swift", "UIKit", "Accessibility"]' },
-  { indent: 1, text: 'var status: Availability = .openToWork' },
-  { indent: 0, text: '}' },
-]
-
-const SECTION_MARKERS = [
-  { href: '#about', label: 'about' },
-  { href: '#experience', label: 'experience' },
-  { href: '#skills', label: 'skills' },
-  { href: '#projects', label: 'work' },
-  { href: '#contact', label: 'contact' },
-]
-
 export default function Hero() {
+  const { t } = useLanguage()
+  const h = t.hero
+
+  const CODE_LINES = [
+    { indent: 0, text: 'struct Marcello: Developer {' },
+    { indent: 1, text: `var role = "${h.codeRole}"` },
+    { indent: 1, text: 'var focus = ["Swift", "UIKit", "Accessibility"]' },
+    { indent: 1, text: 'var status: Availability = .openToWork' },
+    { indent: 0, text: '}' },
+  ]
+
+  const SECTION_MARKERS = [
+    { href: '#about', label: h.markers.about },
+    { href: '#experience', label: h.markers.experience },
+    { href: '#skills', label: h.markers.skills },
+    { href: '#projects', label: h.markers.work },
+    { href: '#pricing', label: h.markers.pricing },
+    { href: '#contact', label: h.markers.contact },
+  ]
+
   return (
     <section id="hero" className="hero-wow">
       <div className="hero-glow-orb"></div>
@@ -26,24 +31,21 @@ export default function Hero() {
         <div className="hero-copy">
           <div className="hero-badge">
             <span className="live-dot"></span>
-            Available for new projects
+            {h.badge}
           </div>
 
           <h1 className="hero-title-wow">
-            Crafting <span className="text-accent">native</span><br />
-            iOS experiences.
+            {h.titleBefore} <span className="text-accent">{h.titleAccent}</span>
+            <br />
+            {h.titleAfter}
           </h1>
 
-          <p className="hero-subtitle-wow">
-            I'm Marcello, an iOS developer and designer. Computer Science student
-            at Fisciano, Apple Developer Academy alumnus, and Swift Student
-            Challenge 2026 winner — building apps that are as considered under the
-            hood as they are on screen.
-          </p>
+          <p className="hero-subtitle-wow">{h.subtitle}</p>
 
           <div className="hero-actions">
-            <a href="#projects" className="btn btn-primary">View my work</a>
-            <a href="#contact" className="btn btn-secondary">Get in touch</a>
+            <a href="#projects" className="btn btn-primary">{h.viewWork}</a>
+            <a href="#pricing" className="btn btn-secondary">{h.viewPricing}</a>
+            <a href="#contact" className="btn btn-secondary">{h.getInTouch}</a>
           </div>
 
           <nav className="hero-markers" aria-label="Jump to section">
@@ -60,7 +62,7 @@ export default function Hero() {
           <div className="hero-photo-wrap">
             <img
               src="/profile/marcello-guida.jpg"
-              alt="Marcello Guida, iOS developer"
+              alt={h.photoAlt}
               className="hero-photo"
               width={420}
               height={560}
@@ -71,33 +73,33 @@ export default function Hero() {
 
           <div className="hero-editor">
             <div className="editor-titlebar">
-            <div className="editor-dots">
-              <span className="dot red"></span>
-              <span className="dot yellow"></span>
-              <span className="dot green"></span>
-            </div>
-            <span className="editor-filename">Marcello.swift</span>
+              <div className="editor-dots">
+                <span className="dot red"></span>
+                <span className="dot yellow"></span>
+                <span className="dot green"></span>
+              </div>
+              <span className="editor-filename">Marcello.swift</span>
             </div>
             <div className="editor-body">
-            {CODE_LINES.map((lineObj, idx) => {
-              const isLast = idx === CODE_LINES.length - 1
-              return (
-                <div
-                  className="editor-line"
-                  key={lineObj.text}
-                  style={{ animationDelay: `${idx * 120}ms` }}
-                >
-                  <span className="line-number">{idx + 1}</span>
-                  <span
-                    className="line-code"
-                    style={{ paddingLeft: `${lineObj.indent * 20}px` }}
+              {CODE_LINES.map((lineObj, idx) => {
+                const isLast = idx === CODE_LINES.length - 1
+                return (
+                  <div
+                    className="editor-line"
+                    key={`${lineObj.text}-${idx}`}
+                    style={{ animationDelay: `${idx * 120}ms` }}
                   >
-                    {lineObj.text}
-                    {isLast && <span className="type-cursor" aria-hidden="true"></span>}
-                  </span>
-                </div>
-              )
-            })}
+                    <span className="line-number">{idx + 1}</span>
+                    <span
+                      className="line-code"
+                      style={{ paddingLeft: `${lineObj.indent * 20}px` }}
+                    >
+                      {lineObj.text}
+                      {isLast && <span className="type-cursor" aria-hidden="true"></span>}
+                    </span>
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>

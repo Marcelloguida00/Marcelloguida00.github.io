@@ -178,4 +178,26 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
+
+  .contact-title {
+    font-size: clamp(1.7rem, 7vw, 2.1rem);
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-form-glass {
+    padding: 22px 16px;
+  }
+
+  .contact-text-wow {
+    max-width: none;
+  }
+
+  .method-glass {
+    min-height: 56px;
+  }
+
+  .form-input {
+    font-size: 16px; /* iOS: avoid auto-zoom on focus */
+  }
 }
