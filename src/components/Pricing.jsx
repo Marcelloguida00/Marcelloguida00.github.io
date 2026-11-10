@@ -55,9 +55,12 @@ export default function Pricing() {
         <div className="pricing-rates" aria-label={copy.ratesAria}>
           {copy.rates.map((rate, idx) => (
             <article
-              className="pricing-rate"
+              className="pricing-rate reveal-child"
               key={rate.id}
-              style={{ '--rate-delay': `${idx * 90}ms` }}
+              style={{
+                '--rate-delay': `${idx * 90}ms`,
+                '--reveal-delay': `${idx * 70}ms`,
+              }}
             >
               <span className="pricing-rate-label">{rate.label}</span>
               <div className="pricing-rate-value">

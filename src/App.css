@@ -17,11 +17,12 @@
   position: relative;
   overflow-x: clip;
   background:
-    linear-gradient(var(--border-color) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border-color) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(250, 115, 67, 0.07), transparent 55%),
     var(--bg-color);
-  background-size: 48px 48px, 48px 48px, auto;
-  background-position: -1px -1px;
+  background-size: 48px 48px, 48px 48px, auto, auto;
+  background-position: -1px -1px, -1px -1px, center, center;
 }
 
 /* Ambient glow, faint and singular — not a purple-cyan double orb */
@@ -32,10 +33,52 @@
   right: -10%;
   width: 55vw;
   height: 55vw;
-  background: radial-gradient(circle, rgba(250, 115, 67, 0.09) 0%, rgba(0, 0, 0, 0) 70%);
+  background: radial-gradient(circle, rgba(250, 115, 67, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
   border-radius: 50%;
   z-index: -1;
   pointer-events: none;
+  animation: ambient-drift 18s ease-in-out infinite alternate;
+}
+
+.app::after {
+  content: '';
+  position: fixed;
+  bottom: -20%;
+  left: -12%;
+  width: 45vw;
+  height: 45vw;
+  max-width: 520px;
+  max-height: 520px;
+  background: radial-gradient(circle, rgba(77, 163, 255, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes ambient-drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(-3%, 4%, 0) scale(1.06); }
+}
+
+@media (max-width: 768px) {
+  .app {
+    background-image:
+      radial-gradient(ellipse 100% 50% at 50% 0%, rgba(250, 115, 67, 0.08), transparent 50%),
+      var(--bg-color);
+    background-size: auto, auto;
+  }
+
+  .app::before,
+  .app::after {
+    animation: none;
+    opacity: 0.85;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app::before {
+    animation: none;
+  }
 }
 
 main {
@@ -131,8 +174,16 @@ p { color: var(--color-muted); }
   text-decoration: none;
   cursor: pointer;
   border-radius: 10px;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  transition:
+    transform var(--motion-base) var(--ease-out-expo),
+    box-shadow var(--motion-base) ease,
+    border-color var(--motion-base) ease,
+    background var(--motion-base) ease;
   position: relative;
+}
+
+.btn:active {
+  transform: scale(0.98);
 }
 
 .btn-primary {
@@ -144,7 +195,9 @@ p { color: var(--color-muted); }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px -8px rgba(250, 115, 67, 0.5);
+  box-shadow:
+    0 12px 24px -8px rgba(250, 115, 67, 0.5),
+    0 0 32px -8px rgba(250, 115, 67, 0.35);
   color: #10110f;
 }
 
@@ -215,7 +268,7 @@ section {
   h2 { font-size: 1.75rem; }
   section { padding: 84px 0; }
   .section-title { margin-bottom: 40px; font-size: 1.85rem; }
-  .app { background-size: 32px 32px, 32px 32px, auto; }
+  /* Grid intentionally off on small screens — set in the earlier mobile block */
   .container {
     padding-left: max(18px, env(safe-area-inset-left));
     padding-right: max(18px, env(safe-area-inset-right));
