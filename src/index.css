@@ -1,31 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap');
 
 :root {
-  /* Base */
-  --bg-color: #0b0d10;
-  --bg-color-alt: #0f1216;
-  --text-color: #eceef1;
-  --text-muted: #8992a1;
-  --text-dim: #5b636f;
+  --ground: #07080a;
+  --ink: #f2f1ec;
+  --muted: #8b909a;
+  --line: rgba(242, 241, 236, 0.12);
+  --accent: #e8ff6a;
+  --curtain: #050505;
+  --signal: 0;
 
-  /* Signature accents — grounded in Swift/Xcode's own palette */
-  --accent-color: #fa7343;   /* Swift orange */
-  --accent-secondary: #4da3ff; /* Xcode keyword blue */
-  --accent-green: #63d38a;   /* Xcode string / "online" green */
+  /* Compat aliases used across existing components */
+  --bg-color: var(--ground);
+  --bg-color-alt: #0c0d10;
+  --text-color: var(--ink);
+  --text-muted: var(--muted);
+  --text-dim: #9aa0aa;
+  --accent-color: var(--accent);
+  --accent-secondary: color-mix(in srgb, var(--accent) 55%, #8ec8ff);
+  --accent-green: var(--accent);
+  --border-color: var(--line);
+  --border-color-strong: rgba(242, 241, 236, 0.22);
+  --glass-bg: rgba(10, 11, 14, 0.72);
 
-  --border-color: rgba(255, 255, 255, 0.09);
-  --border-color-strong: rgba(255, 255, 255, 0.16);
-  --glass-bg: rgba(18, 20, 24, 0.72);
+  --font-display: 'Syne', sans-serif;
+  --font-main: 'Manrope', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
 
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-main: 'Sora', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-
-  /* Motion tokens (Awwwards / Motion-Driven direction) */
+  --radius: 2px;
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --motion-fast: 180ms;
-  --motion-base: 280ms;
+  --motion-base: 320ms;
   --motion-enter: 700ms;
+
+  --voice-glow: color-mix(in srgb, var(--accent) calc(var(--signal) * 28%), transparent);
 }
 
 * {
@@ -35,130 +42,142 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  background: var(--ground);
+}
+
+html.motion {
+  scroll-behavior: auto;
 }
 
 body {
   margin: 0;
-  padding: 0;
   font-family: var(--font-main);
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--ground);
+  color: var(--ink);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
+  line-height: 1.55;
+  font-size: 17px;
   overflow-x: clip;
 }
 
 #root {
   width: 100%;
-  margin: 0;
-  padding: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 ::selection {
-  background-color: rgba(250, 115, 67, 0.3);
-  color: #fff;
-}
-
-::-moz-selection {
-  background-color: rgba(250, 115, 67, 0.3);
-  color: #fff;
+  background-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  color: #0a0a0a;
 }
 
 a {
-  color: var(--text-color);
+  color: inherit;
   text-decoration: none;
-  transition: all 0.3s ease;
 }
 
-a:hover {
-  color: var(--accent-color);
-}
-
-/* Custom Sleek Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--bg-color);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-color);
-}
-
-/* Accessibility */
 :focus-visible {
-  outline: 2px solid var(--accent-secondary);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
-  border-radius: 4px;
 }
 
 section[id] {
-  scroll-margin-top: 90px;
+  scroll-margin-top: 88px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  z-index: 10000;
+  padding: 10px 14px;
+  background: var(--accent);
+  color: #0a0a0a;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  border-radius: var(--radius);
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+#loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-content: center;
+  gap: 18px;
+  background: var(--curtain);
+  color: var(--ink);
+  font-family: var(--font-mono);
+}
+
+#loader[hidden] {
+  display: none !important;
+}
+
+.loader-brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  letter-spacing: -0.04em;
+}
+
+.loader-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: lowercase;
+}
+
+.loader-track {
+  width: min(280px, 70vw);
+  height: 2px;
+  background: var(--line);
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.loader-bar {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+/* Only hide scroll-reveals before paint; intro starts visible enough for LCP/brand */
+html.motion [data-reveal]:not(.is-revealed) {
+  opacity: 0;
+}
+
+html.motion [data-intro]:not(.is-revealed) {
+  opacity: 0.001; /* keep layout + near-LCP text present for crawlers/QA */
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-}
 
-/* Scroll-reveal utility, driven by IntersectionObserver in App.jsx */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition:
-    opacity var(--motion-enter) var(--ease-out-expo),
-    transform var(--motion-enter) var(--ease-out-expo);
-  will-change: opacity, transform;
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.reveal.is-visible .reveal-child {
-  animation: reveal-child-in var(--motion-enter) var(--ease-out-expo) both;
-  animation-delay: var(--reveal-delay, 0ms);
-}
-
-@keyframes reveal-child-in {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-    will-change: auto;
-  }
-
-  .reveal.is-visible .reveal-child {
-    animation: none;
+  html.motion [data-reveal],
+  html.motion [data-intro] {
+    opacity: 1 !important;
   }
 }

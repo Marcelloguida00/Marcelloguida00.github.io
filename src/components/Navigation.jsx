@@ -58,8 +58,7 @@ export default function Navigation({ scrolled }) {
     <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <a href="#hero" className="nav-logo">
-          <span className="prompt-glyph">&gt;_</span>
-          marcello<span className="cursor-blink">|</span>
+          Marcello <span>Guida</span>
         </a>
 
         <nav className="nav-menu">

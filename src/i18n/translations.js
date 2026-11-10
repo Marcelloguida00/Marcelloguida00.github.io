@@ -18,7 +18,7 @@ export const translations = {
       titleAccent: 'native',
       titleAfter: 'iOS experiences.',
       subtitle:
-        "I'm Marcello, an iOS developer and designer. Computer Science student at Fisciano, Apple Developer Academy alumnus, and Swift Student Challenge 2026 winner — building apps that are as considered under the hood as they are on screen.",
+        'iOS developer and designer in Naples. Apple Developer Academy. Swift Student Challenge 2026 winner.',
       viewWork: 'View my work',
       viewPricing: 'See pricing',
       getInTouch: 'Get in touch',
@@ -35,9 +35,9 @@ export const translations = {
     },
     about: {
       comment: '// who I am',
-      greeting: "Hi, I'm Marcello —\nI build software that respects people.",
+      greeting: "Hi, I'm Marcello  - \nI build software that respects people.",
       p1: "I'm a Computer Science student at the University of Salerno (Fisciano) and an iOS developer currently sharpening my craft at the Apple Developer Academy, a joint program with Federico II University in Naples. I design and build responsive, native iOS applications from first sketch to shipped product.",
-      p2: 'What keeps me at the keyboard is the gap between an idea and a working app: I like closing it carefully, with attention to performance, accessibility, and the small interactions most people never notice — but always feel.',
+      p2: 'What keeps me at the keyboard is the gap between an idea and a working app: I like closing it carefully, with attention to performance, accessibility, and the small interactions most people never notice - but always feel.',
       facts: [
         { label: 'Based in', value: 'Naples, Italy' },
         { label: 'Studying', value: 'Computer Science · Fisciano (UNISA)' },
@@ -53,7 +53,7 @@ export const translations = {
           title: 'Apple Developer Academy',
           company: 'Federico II University × Apple',
           location: 'Naples, Italy',
-          period: 'Sep 2025 – Jun 2026',
+          period: 'Sep 2025 - Jun 2026',
           description:
             'Selective program focused on iOS development, product design, and entrepreneurial thinking. Building and shipping iOS apps with Swift and Xcode inside Agile-style team sprints.',
           highlights: ['iOS Development', 'Product Design', 'Swift', 'Xcode', 'Team Collaboration'],
@@ -66,7 +66,7 @@ export const translations = {
           location: 'Remote',
           period: 'Feb 2026',
           description:
-            'Selected as a winner with an interactive Swift playground built around accessibility and playful learning — shipped as a polished, App-Store-ready experience.',
+            'Selected as a winner with an interactive Swift playground built around accessibility and playful learning - shipped as a polished, App-Store-ready experience.',
           highlights: ['Swift Playgrounds', 'Accessibility', 'SwiftUI', 'Winner'],
           marker: 'award',
           current: false,
@@ -75,7 +75,7 @@ export const translations = {
           title: 'B.Sc. Computer Science',
           company: 'University of Salerno (UNISA)',
           location: 'Fisciano, Italy',
-          period: '2023 – Present',
+          period: '2023 - Present',
           description:
             'Studying algorithms, software engineering, and machine learning while applying what I learn directly to native iOS projects and product design.',
           highlights: ['Algorithms', 'Software Engineering', 'Machine Learning', 'Databases'],
@@ -96,7 +96,7 @@ export const translations = {
           title: 'Echoes',
           subtitle: 'Swift Student Challenge',
           description:
-            'Interactive story about exclusion, silence, and the courage to speak up — Winner of the Apple Swift Student Challenge 2026. Built with Swift Playgrounds for WWDC26.',
+            'Interactive story about exclusion, silence, and the courage to speak up - Winner of the Apple Swift Student Challenge 2026. Built with Swift Playgrounds for WWDC26.',
           tags: ['Swift', 'SwiftUI', 'Playgrounds', 'WWDC26'],
           link: '/echoes/index.html',
           cover: '/projects/echoes-cover.jpg',
@@ -105,7 +105,7 @@ export const translations = {
           title: 'Polly',
           subtitle: 'Digital Eco-Companion',
           description:
-            'A digital eco-companion that helps you understand and reduce Data Pollution: clean your photo library, learn the facts, and chat with on-device Apple Intelligence — all in private.',
+            'A digital eco-companion that helps you understand and reduce Data Pollution: clean your photo library, learn the facts, and chat with on-device Apple Intelligence - all in private.',
           tags: ['Swift', 'iOS', 'Apple Intelligence', 'Sustainability'],
           link: '/marcelloguida-polly/indexPolly.html',
           cover: '/projects/marcelloguida-polly-cover.jpg',
@@ -123,7 +123,7 @@ export const translations = {
           title: 'World of Fables',
           subtitle: 'Lumi',
           description:
-            'An immersive iPad experience that turns classic fables into interactive games, built to teach logical sequencing to children with a deep focus on accessibility — removing barriers so every young mind can play.',
+            'An immersive iPad experience that turns classic fables into interactive games, built to teach logical sequencing to children with a deep focus on accessibility - removing barriers so every young mind can play.',
           tags: ['Swift', 'iPadOS', 'Accessibility', 'Game Design'],
           link: '/world-of-fables/index.html',
           cover: '/projects/world-of-fables-cover.jpg',
@@ -136,20 +136,20 @@ export const translations = {
       titleAccent: 'start strong',
       titleAfter: '.',
       lead:
-        'A complete, competitive listino for websites, web apps, mobile, and backend — serious figures without underselling the craft.',
+        'A complete, competitive listino for websites, web apps, mobile, and backend - serious figures without underselling the craft.',
       ratesAria: 'Base rates & labour',
       rates: [
         {
           id: 'hourly',
           label: 'Hourly rate',
-          range: '€18 – €25',
+          range: '€18 - €25',
           unit: '/ hour',
           note: 'Small tweaks, edits, bug fixes',
         },
         {
           id: 'day',
           label: 'Work day (8 hours)',
-          range: '€120 – €160',
+          range: '€120 - €160',
           unit: '/ day',
           note: 'Full focus on one deliverable',
         },
@@ -177,25 +177,25 @@ export const translations = {
               name: 'Landing Page / One-Page',
               includes:
                 'Single promotional or event page, responsive (phone/desktop), email contact form, map, modern visuals.',
-              price: '€180 – €300',
+              price: '€180 - €300',
             },
             {
-              name: 'Brochure site (4–5 pages)',
+              name: 'Brochure site (4-5 pages)',
               includes:
                 'Home, About, Services, Contact, Privacy Policy. Built on WordPress or modern static code.',
-              price: '€350 – €600',
+              price: '€350 - €600',
             },
             {
               name: 'Dynamic site with CMS',
               includes:
                 'Product catalogue (no direct sales), blog or news area the client can manage from an admin panel.',
-              price: '€500 – €850',
+              price: '€500 - €850',
             },
             {
               name: 'Base e-commerce',
               includes:
-                'Shopify / WooCommerce. Up to 20–30 products loaded, cart, payments (Stripe/PayPal), basic shipping setup and order notifications.',
-              price: '€650 – €1,100',
+                'Shopify / WooCommerce. Up to 20-30 products loaded, cart, payments (Stripe/PayPal), basic shipping setup and order notifications.',
+              price: '€650 - €1,100',
             },
           ],
         },
@@ -210,25 +210,25 @@ export const translations = {
               name: 'Base dashboard / user portal',
               includes:
                 'Login/Registration (JWT/Sessions), profile management, relational or NoSQL database, data tables and filters.',
-              price: '€800 – €1,400',
+              price: '€800 - €1,400',
             },
             {
               name: 'MVP web app / Mini-SaaS',
               includes:
                 'Custom business logic, user roles (Admin / Client), payments/subscriptions (Stripe), transactional email.',
-              price: '€1,400 – €2,400',
+              price: '€1,400 - €2,400',
             },
             {
               name: 'Simple business CRM',
               includes:
                 'Digitising paper registers or Excel sheets: client records, inventory, or internal orders (CRUD).',
-              price: '€1,000 – €1,800',
+              price: '€1,000 - €1,800',
             },
             {
               name: 'Booking platform',
               includes:
                 'Availability calendar, appointment/resource booking, slot management and automatic notifications.',
-              price: '€750 – €1,300',
+              price: '€750 - €1,300',
             },
           ],
         },
@@ -242,20 +242,20 @@ export const translations = {
             {
               name: 'Showcase / content app',
               includes:
-                '3–5 screens, smooth navigation, data from an existing API/site, basic notifications. Flutter or React Native.',
-              price: '€600 – €1,000',
+                '3-5 screens, smooth navigation, data from an existing API/site, basic notifications. Flutter or React Native.',
+              price: '€600 - €1,000',
             },
             {
               name: 'Dynamic app with login & DB',
               includes:
                 'Authentication, user profiles, data saved to a database (Supabase/Firebase/own backend), interactive screens.',
-              price: '€1,200 – €2,200',
+              price: '€1,200 - €2,200',
             },
             {
               name: 'Store publishing',
               includes:
                 'iOS + Android bundle: certificates, icon, screenshots and upload to the App Store and Google Play. Developer account fees excluded.',
-              price: '€120 – €180',
+              price: '€120 - €180',
             },
           ],
         },
@@ -270,25 +270,25 @@ export const translations = {
               name: 'Database schema design',
               includes:
                 'Tables, relations, foreign keys, normalisation and indexes (SQL or MongoDB).',
-              price: '€150 – €300',
+              price: '€150 - €300',
             },
             {
               name: 'Base REST API',
               includes:
                 'Secure CRUD endpoints, input validation and clear documentation (Postman/Swagger).',
-              price: '€350 – €650',
+              price: '€350 - €650',
             },
             {
               name: 'Automation / bot / scraping',
               includes:
                 'Telegram/Discord bots, data extraction to Excel/CSV, automation of repetitive tasks.',
-              price: '€120 – €250',
+              price: '€120 - €250',
             },
             {
               name: 'External API integration',
               includes:
                 'Connecting two systems: form → Google Sheets/ERP, payment webhooks.',
-              price: '€150 – €300',
+              price: '€150 - €300',
             },
           ],
         },
@@ -303,19 +303,19 @@ export const translations = {
               name: 'Hosting & basic maintenance',
               includes:
                 'Periodic updates, weekly backups, uptime checks for websites.',
-              price: '€30 – €60 / month',
+              price: '€30 - €60 / month',
             },
             {
               name: 'App / server maintenance',
               includes:
                 'Database monitoring, dependency updates, small fixes (up to 3 hours/month included).',
-              price: '€90 – €150 / month',
+              price: '€90 - €150 / month',
             },
             {
               name: 'Server setup / cloud deploy',
               includes:
                 'VPS (Hetzner/DigitalOcean) or cloud hosting (Render, Supabase, Vercel), domain and HTTPS SSL. One-off.',
-              price: '€100 – €200',
+              price: '€100 - €200',
             },
           ],
         },
@@ -324,7 +324,7 @@ export const translations = {
     contact: {
       comment: '// say hello',
       title: "Let's build something.",
-      text: "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. My inbox is open — reach out.",
+      text: "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. My inbox is open - reach out.",
       email: 'Email',
       linkedin: 'LinkedIn',
       phone: 'Phone',
@@ -337,14 +337,14 @@ export const translations = {
       send: 'Send message',
       sending: 'Sending…',
       successTitle: 'Message sent',
-      successText: "Thanks for reaching out — I'll get back to you as soon as possible.",
+      successText: "Thanks for reaching out - I'll get back to you as soon as possible.",
       sendAnother: 'Send another',
       errorGeneric: 'Something went wrong. Please try again.',
       errorNetwork: 'Failed to send message. Please try again later.',
       subject: 'New message from your portfolio!',
     },
     footer: {
-      copy: '© 2026 Marcello Guida — built with React & Swift ambition.',
+      copy: '© 2026 Marcello Guida - built with React & Swift ambition.',
     },
   },
 
@@ -367,7 +367,7 @@ export const translations = {
       titleAccent: 'native',
       titleAfter: 'iOS, curate.',
       subtitle:
-        'Sono Marcello, iOS developer e designer. Studente di Informatica a Fisciano, alumnus della Apple Developer Academy e vincitore della Swift Student Challenge 2026 — costruisco app pensate tanto sotto il cofano quanto sullo schermo.',
+        'iOS developer e designer a Napoli. Apple Developer Academy. Vincitore Swift Student Challenge 2026.',
       viewWork: 'Guarda i miei lavori',
       viewPricing: 'Vedi i prezzi',
       getInTouch: 'Scrivimi',
@@ -384,9 +384,9 @@ export const translations = {
     },
     about: {
       comment: '// chi sono',
-      greeting: 'Ciao, sono Marcello —\ncostruisco software che rispetta le persone.',
+      greeting: 'Ciao, sono Marcello  - \ncostruisco software che rispetta le persone.',
       p1: 'Sono uno studente di Informatica all’Università degli Studi di Salerno (Fisciano) e un iOS developer che affina il mestiere alla Apple Developer Academy, programma congiunto con l’Università Federico II di Napoli. Progetto e realizzo applicazioni iOS native, dal primo sketch al prodotto in store.',
-      p2: 'Quello che mi tiene alla tastiera è il passaggio tra un’idea e un’app che funziona: mi piace chiuderlo con cura, attenzione a performance, accessibilità e a quelle piccole interazioni che quasi nessuno nota — ma che tutti sentono.',
+      p2: 'Quello che mi tiene alla tastiera è il passaggio tra un’idea e un’app che funziona: mi piace chiuderlo con cura, attenzione a performance, accessibilità e a quelle piccole interazioni che quasi nessuno nota - ma che tutti sentono.',
       facts: [
         { label: 'Basato a', value: 'Napoli, Italia' },
         { label: 'Studi', value: 'Informatica · Fisciano (UNISA)' },
@@ -402,7 +402,7 @@ export const translations = {
           title: 'Apple Developer Academy',
           company: 'Università Federico II × Apple',
           location: 'Napoli, Italia',
-          period: 'Set 2025 – Giu 2026',
+          period: 'Set 2025 - Giu 2026',
           description:
             'Programma selettivo su sviluppo iOS, product design e pensiero imprenditoriale. Costruzione e rilascio di app iOS con Swift e Xcode in sprint di team in stile Agile.',
           highlights: ['Sviluppo iOS', 'Product Design', 'Swift', 'Xcode', 'Lavoro di team'],
@@ -415,7 +415,7 @@ export const translations = {
           location: 'Remoto',
           period: 'Feb 2026',
           description:
-            'Selezionato come vincitore con un playground Swift interattivo su accessibilità e apprendimento ludico — consegnato come esperienza pronta per l’App Store.',
+            'Selezionato come vincitore con un playground Swift interattivo su accessibilità e apprendimento ludico - consegnato come esperienza pronta per l’App Store.',
           highlights: ['Swift Playgrounds', 'Accessibilità', 'SwiftUI', 'Vincitore'],
           marker: 'award',
           current: false,
@@ -424,7 +424,7 @@ export const translations = {
           title: 'Laurea triennale in Informatica',
           company: 'Università degli Studi di Salerno (UNISA)',
           location: 'Fisciano, Italia',
-          period: '2023 – Presente',
+          period: '2023 - Presente',
           description:
             'Studio di algoritmi, ingegneria del software e machine learning, applicando subito quanto appreso a progetti iOS nativi e al product design.',
           highlights: ['Algoritmi', 'Ingegneria del software', 'Machine Learning', 'Database'],
@@ -445,7 +445,7 @@ export const translations = {
           title: 'Echoes',
           subtitle: 'Swift Student Challenge',
           description:
-            'Storia interattiva su esclusione, silenzio e il coraggio di parlare — Vincitore dell’Apple Swift Student Challenge 2026. Realizzato con Swift Playgrounds per WWDC26.',
+            'Storia interattiva su esclusione, silenzio e il coraggio di parlare - Vincitore dell’Apple Swift Student Challenge 2026. Realizzato con Swift Playgrounds per WWDC26.',
           tags: ['Swift', 'SwiftUI', 'Playgrounds', 'WWDC26'],
           link: '/echoes/index.html',
           cover: '/projects/echoes-cover.jpg',
@@ -454,7 +454,7 @@ export const translations = {
           title: 'Polly',
           subtitle: 'Eco-compagno digitale',
           description:
-            'Un eco-compagno digitale che aiuta a capire e ridurre l’inquinamento dei dati: pulisci la libreria foto, impara i fatti e chatta con Apple Intelligence on-device — tutto in privato.',
+            'Un eco-compagno digitale che aiuta a capire e ridurre l’inquinamento dei dati: pulisci la libreria foto, impara i fatti e chatta con Apple Intelligence on-device - tutto in privato.',
           tags: ['Swift', 'iOS', 'Apple Intelligence', 'Sostenibilità'],
           link: '/marcelloguida-polly/indexPolly.html',
           cover: '/projects/marcelloguida-polly-cover.jpg',
@@ -485,20 +485,20 @@ export const translations = {
       titleAccent: 'partire forte',
       titleAfter: '.',
       lead:
-        'Un listino completo e competitivo per siti, web app, mobile e backend — cifre serie, senza svendere il mestiere.',
+        'Un listino completo e competitivo per siti, web app, mobile e backend - cifre serie, senza svendere il mestiere.',
       ratesAria: 'Tariffe base e manodopera',
       rates: [
         {
           id: 'hourly',
           label: 'Tariffa oraria',
-          range: '18€ – 25€',
+          range: '18€ - 25€',
           unit: '/ ora',
           note: 'Ritocchi, modifiche, bug fix',
         },
         {
           id: 'day',
           label: 'Giornata (8 ore)',
-          range: '120€ – 160€',
+          range: '120€ - 160€',
           unit: '/ giorno',
           note: 'Focus pieno su un deliverable',
         },
@@ -526,25 +526,25 @@ export const translations = {
               name: 'Landing Page / One-Page',
               includes:
                 'Singola pagina promozionale o evento, responsive (smartphone/desktop), modulo contatti email, mappa, grafica moderna.',
-              price: '180€ – 300€',
+              price: '180€ - 300€',
             },
             {
-              name: 'Sito Vetrina Base (4–5 pagine)',
+              name: 'Sito Vetrina Base (4-5 pagine)',
               includes:
                 'Home, Chi Siamo, Servizi, Contatti, Privacy Policy. Realizzato su WordPress o con codice statico moderno.',
-              price: '350€ – 600€',
+              price: '350€ - 600€',
             },
             {
               name: 'Sito Dinamico con CMS',
               includes:
                 'Catalogo prodotti (senza vendita diretta), blog o area news gestibile autonomamente dal cliente con pannello admin.',
-              price: '500€ – 850€',
+              price: '500€ - 850€',
             },
             {
               name: 'E-commerce Base',
               includes:
-                'Shopify / WooCommerce. Fino a 20–30 prodotti caricati, carrello, pagamenti (Stripe/PayPal), setup spedizioni base e notifiche ordine.',
-              price: '650€ – 1.100€',
+                'Shopify / WooCommerce. Fino a 20-30 prodotti caricati, carrello, pagamenti (Stripe/PayPal), setup spedizioni base e notifiche ordine.',
+              price: '650€ - 1.100€',
             },
           ],
         },
@@ -559,25 +559,25 @@ export const translations = {
               name: 'Dashboard / Portale Utenti Base',
               includes:
                 'Login/Registrazione (JWT/Sessioni), gestione profilo, database relazionale o NoSQL, tabelle dati e filtri.',
-              price: '800€ – 1.400€',
+              price: '800€ - 1.400€',
             },
             {
               name: 'MVP Web App / Mini-SaaS',
               includes:
                 'Logica di business custom, ruoli utente (Admin / Cliente), integrazione pagamenti/abbonamenti (Stripe), email transazionali.',
-              price: '1.400€ – 2.400€',
+              price: '1.400€ - 2.400€',
             },
             {
               name: 'Gestionale Aziendale Semplice',
               includes:
                 'Digitalizzazione di registri o fogli Excel: anagrafica clienti, inventario magazzino o ordini interni (CRUD).',
-              price: '1.000€ – 1.800€',
+              price: '1.000€ - 1.800€',
             },
             {
               name: 'Piattaforma di Prenotazioni',
               includes:
                 'Calendario disponibilità, prenotazione appuntamenti/risorse, gestione slot e notifiche automatiche.',
-              price: '750€ – 1.300€',
+              price: '750€ - 1.300€',
             },
           ],
         },
@@ -591,20 +591,20 @@ export const translations = {
             {
               name: 'App Vetrina / Contenuti',
               includes:
-                '3–5 schermate, navigazione fluida, lettura dati da API/sito esistente, notifiche base. Flutter o React Native.',
-              price: '600€ – 1.000€',
+                '3-5 schermate, navigazione fluida, lettura dati da API/sito esistente, notifiche base. Flutter o React Native.',
+              price: '600€ - 1.000€',
             },
             {
               name: 'App Dinamica con Login e DB',
               includes:
                 'Autenticazione, profili utente, salvataggio dati (Supabase/Firebase/backend proprio), schermate interattive.',
-              price: '1.200€ – 2.200€',
+              price: '1.200€ - 2.200€',
             },
             {
               name: 'Pubblicazione Store',
               includes:
                 'Bundle iOS + Android: certificati, icona, screenshot e caricamento su App Store e Google Play. Costi account sviluppatore esclusi.',
-              price: '120€ – 180€',
+              price: '120€ - 180€',
             },
           ],
         },
@@ -619,25 +619,25 @@ export const translations = {
               name: 'Progettazione Schema Database',
               includes:
                 'Tabelle, relazioni, foreign key, normalizzazione e indici (SQL o MongoDB).',
-              price: '150€ – 300€',
+              price: '150€ - 300€',
             },
             {
               name: 'API REST Base',
               includes:
                 'Endpoint sicuri CRUD, validazione input e documentazione chiara (Postman/Swagger).',
-              price: '350€ – 650€',
+              price: '350€ - 650€',
             },
             {
               name: 'Automazione / Bot / Scraping',
               includes:
                 'Bot Telegram/Discord, estrazione dati in Excel/CSV, automazione di task ripetitivi.',
-              price: '120€ – 250€',
+              price: '120€ - 250€',
             },
             {
               name: 'Integrazione API Esterne',
               includes:
                 'Collegamento tra due software: moduli → Google Sheets/gestionale, webhook pagamenti.',
-              price: '150€ – 300€',
+              price: '150€ - 300€',
             },
           ],
         },
@@ -652,19 +652,19 @@ export const translations = {
               name: 'Hosting & Manutenzione Base',
               includes:
                 'Aggiornamenti periodici, backup settimanale, verifica funzionamento per siti web.',
-              price: '30€ – 60€ / mese',
+              price: '30€ - 60€ / mese',
             },
             {
               name: 'Manutenzione Applicativa / Server',
               includes:
                 'Monitoraggio database, aggiornamento dipendenze, piccoli fix (fino a 3 ore/mese incluse).',
-              price: '90€ – 150€ / mese',
+              price: '90€ - 150€ / mese',
             },
             {
               name: 'Setup Server / Deploy Cloud',
               includes:
                 'VPS (Hetzner/DigitalOcean) o hosting cloud (Render, Supabase, Vercel), dominio e SSL HTTPS. Una tantum.',
-              price: '100€ – 200€',
+              price: '100€ - 200€',
             },
           ],
         },
@@ -673,7 +673,7 @@ export const translations = {
     contact: {
       comment: '// ciao',
       title: 'Costruiamo qualcosa.',
-      text: 'Sono sempre aperto a nuovi progetti, idee creative o opportunità per entrare nella tua visione. La casella è aperta — scrivimi.',
+      text: 'Sono sempre aperto a nuovi progetti, idee creative o opportunità per entrare nella tua visione. La casella è aperta - scrivimi.',
       email: 'Email',
       linkedin: 'LinkedIn',
       phone: 'Telefono',
@@ -686,14 +686,14 @@ export const translations = {
       send: 'Invia messaggio',
       sending: 'Invio…',
       successTitle: 'Messaggio inviato',
-      successText: 'Grazie per aver scritto — ti rispondo il prima possibile.',
+      successText: 'Grazie per aver scritto - ti rispondo il prima possibile.',
       sendAnother: 'Inviane un altro',
       errorGeneric: 'Qualcosa è andato storto. Riprova.',
       errorNetwork: 'Invio non riuscito. Riprova più tardi.',
       subject: 'Nuovo messaggio dal portfolio!',
     },
     footer: {
-      copy: '© 2026 Marcello Guida — costruito con React & ambizione Swift.',
+      copy: '© 2026 Marcello Guida - costruito con React & ambizione Swift.',
     },
   },
 }

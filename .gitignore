@@ -22,3 +22,5 @@ dist-old
 *.njsproj
 *.sln
 *.sw?
+.shots/
+design-md/
