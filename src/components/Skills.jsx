@@ -6,7 +6,7 @@ const GROUPS = [
   {
     key: 'languages',
     label: '"languages"',
-    items: ['Swift', 'Python', 'JavaScript'],
+    items: ['Swift', 'Python', 'JavaScript', 'PHP'],
   },
   {
     key: 'apple_platforms',
@@ -14,9 +14,14 @@ const GROUPS = [
     items: ['SwiftUI', 'UIKit', 'Xcode', 'iPadOS'],
   },
   {
+    key: 'web_platforms',
+    label: '"web_platforms"',
+    items: ['WordPress', 'Shopify'],
+  },
+  {
     key: 'craft',
     label: '"craft"',
-    items: ['UI/UX Design', 'Accessibility', 'Product Thinking'],
+    items: ['UI/UX Design', 'Accessibility', 'Product Thinking', 'SEO', 'GEO'],
   },
   {
     key: 'shipped_apps',
