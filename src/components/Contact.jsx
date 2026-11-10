@@ -89,9 +89,10 @@ export default function Contact() {
                 <p>{c.successText}</p>
                 <button
                   onClick={() => setIsSubmitted(false)}
-                  className="btn btn-secondary mt-4"
+                  className="btn-signal is-ghost mt-4"
                 >
-                  {c.sendAnother}
+                  <span className="btn-signal__fill" aria-hidden="true" />
+                  <span className="btn-signal__label">{c.sendAnother}</span>
                 </button>
               </div>
             ) : (
@@ -141,10 +142,13 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="btn btn-primary submit-btn"
+                  className="btn-signal submit-btn"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? c.sending : c.send}
+                  <span className="btn-signal__fill" aria-hidden="true" />
+                  <span className="btn-signal__label">
+                    {isSubmitting ? c.sending : c.send}
+                  </span>
                 </button>
               </form>
             )}

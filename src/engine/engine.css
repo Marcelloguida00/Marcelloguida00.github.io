@@ -69,13 +69,16 @@ html.motion .voice-field {
   gap: 10px;
   min-height: 48px;
   padding: 0 22px;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--accent);
   border-radius: var(--radius);
   font-family: var(--font-main);
   font-weight: 600;
   font-size: 0.95rem;
   overflow: hidden;
   isolation: isolate;
+  background: var(--accent);
+  color: #0a0a0a;
+  white-space: nowrap;
 }
 
 .btn-signal__label {
@@ -86,7 +89,7 @@ html.motion .voice-field {
 .btn-signal__fill {
   position: absolute;
   inset: 0;
-  background: var(--accent);
+  background: var(--ink);
   transform: translateY(101%);
   transition: transform 0.35s var(--ease-out-expo);
   z-index: 0;
@@ -100,24 +103,26 @@ html.motion .voice-field {
 
   .btn-signal:hover,
   .btn-signal:focus-visible {
-    color: #0a0a0a;
-    border-color: var(--accent);
+    color: var(--accent);
+    border-color: var(--ink);
   }
 }
 
 .btn-signal.is-ghost {
   border-color: var(--line);
   color: var(--ink);
+  background: transparent;
 }
 
 .btn-signal.is-ghost .btn-signal__fill {
-  background: var(--ink);
+  background: var(--accent);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .btn-signal.is-ghost:hover,
   .btn-signal.is-ghost:focus-visible {
     color: #0a0a0a;
+    border-color: var(--accent);
   }
 }
 
@@ -128,6 +133,12 @@ html.motion .voice-field {
 
   .btn-signal:hover,
   .btn-signal:focus-visible {
+    background: var(--ink);
+    color: var(--accent);
+  }
+
+  .btn-signal.is-ghost:hover,
+  .btn-signal.is-ghost:focus-visible {
     background: var(--accent);
     color: #0a0a0a;
   }

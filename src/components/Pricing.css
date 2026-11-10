@@ -429,9 +429,17 @@
 }
 
 @media (max-width: 980px) {
+  section.pricing-wow {
+    padding: 28px 0 36px;
+  }
+
+  .pricing-lead {
+    display: none;
+  }
+
+  /* Rates already live inside the studio list — drop the extra strip on phones */
   .pricing-rates {
-    grid-template-columns: 1fr;
-    gap: 8px;
+    display: none;
   }
 
   .pricing-tabs {
@@ -449,63 +457,87 @@
 
   .pricing-tab {
     flex: 0 0 auto;
-    min-width: 118px;
-    max-width: 148px;
-    padding: 12px;
+    min-width: 96px;
+    max-width: 120px;
+    padding: 10px 10px;
     scroll-snap-align: start;
+  }
+
+  .pricing-tab-index {
+    display: none;
   }
 
   .pricing-tab-sub {
     display: none;
   }
 
+  .pricing-tab-title {
+    font-size: 0.82rem;
+  }
+
+  .pricing-panel {
+    padding: 10px 10px 12px;
+  }
+
   .pricing-panel-head {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .pricing-featured {
-    text-align: left;
-    width: 100%;
-  }
-
-  .pricing-featured-label {
-    margin-left: 0;
-    max-width: 100%;
-    white-space: normal;
+    display: none;
   }
 
   .pricing-split {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 8px;
+  }
+
+  .pricing-service {
+    padding: 8px 8px;
+    grid-template-columns: 24px 1fr 8px;
+    min-height: 44px;
+  }
+
+  .pricing-service-name {
+    font-size: 0.9rem;
+  }
+
+  .pricing-detail {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  /* List already shows the price; keep mobile detail short */
+  .pricing-detail-text,
+  .pricing-detail-label {
+    display: none;
+  }
+
+  .pricing-detail-footer {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+    gap: 8px;
+  }
+
+  .pricing-detail-amount {
+    font-size: 1.15rem;
+  }
+
+  .pricing-cta.btn-signal {
+    width: 100%;
+    min-height: 44px;
   }
 }
 
 @media (max-width: 560px) {
   .pricing-title {
     max-width: none;
+    font-size: clamp(1.45rem, 7vw, 1.85rem);
   }
 
   .pricing-rates {
-    margin: 16px 0;
-  }
-
-  .pricing-panel {
-    padding: 14px 12px 16px;
-  }
-
-  .pricing-featured {
-    display: none;
+    margin: 8px 0 10px;
   }
 
   .pricing-detail-footer {
     flex-direction: column;
     align-items: stretch;
-  }
-
-  .pricing-cta {
-    width: 100%;
-    min-height: 44px;
   }
 }
