@@ -92,9 +92,12 @@ h6 {
 section.about-wow,
 section.experience-wow,
 section.skills-wow,
-section.contact-wow,
-section.pricing-wow {
+section.contact-wow {
   padding: 88px 0;
+}
+
+section.pricing-wow {
+  padding: 40px 0 48px;
 }
 
 .footer {
