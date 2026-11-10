@@ -6,6 +6,13 @@ const STORAGE_KEY = 'mg-lang'
 
 function detectInitialLang() {
   try {
+    const params = new URLSearchParams(window.location.search)
+    const fromQuery = params.get('lang')
+    if (fromQuery === 'it' || fromQuery === 'en') return fromQuery
+  } catch {
+    /* ignore */
+  }
+  try {
     const saved = localStorage.getItem(STORAGE_KEY)
     if (saved === 'it' || saved === 'en') return saved
   } catch {

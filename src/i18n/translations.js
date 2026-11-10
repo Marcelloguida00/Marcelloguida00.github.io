@@ -20,6 +20,7 @@ export const translations = {
       subtitle:
         "I'm Marcello, an iOS developer and designer. Computer Science student at Fisciano, Apple Developer Academy alumnus, and Swift Student Challenge 2026 winner — building apps that are as considered under the hood as they are on screen.",
       viewWork: 'View my work',
+      viewPricing: 'See pricing',
       getInTouch: 'Get in touch',
       markers: {
         about: 'about',
@@ -368,6 +369,7 @@ export const translations = {
       subtitle:
         'Sono Marcello, iOS developer e designer. Studente di Informatica a Fisciano, alumnus della Apple Developer Academy e vincitore della Swift Student Challenge 2026 — costruisco app pensate tanto sotto il cofano quanto sullo schermo.',
       viewWork: 'Guarda i miei lavori',
+      viewPricing: 'Vedi i prezzi',
       getInTouch: 'Scrivimi',
       markers: {
         about: 'chi sono',

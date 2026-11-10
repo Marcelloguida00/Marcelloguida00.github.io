@@ -327,6 +327,10 @@
     min-height: 46px;
   }
 
+  .hero-actions .btn-secondary:last-of-type {
+    order: 3;
+  }
+
   .hero-markers {
     gap: 8px;
   }

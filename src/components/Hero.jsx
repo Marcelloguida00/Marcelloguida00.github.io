@@ -44,6 +44,7 @@ export default function Hero() {
 
           <div className="hero-actions">
             <a href="#projects" className="btn btn-primary">{h.viewWork}</a>
+            <a href="#pricing" className="btn btn-secondary">{h.viewPricing}</a>
             <a href="#contact" className="btn btn-secondary">{h.getInTouch}</a>
           </div>
 

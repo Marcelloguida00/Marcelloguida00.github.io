@@ -8,6 +8,7 @@ import Projects from './components/Projects'
 import Pricing from './components/Pricing'
 import Contact from './components/Contact'
 import Navigation from './components/Navigation'
+import SeoHead from './components/SeoHead'
 import { LanguageProvider } from './i18n/LanguageContext'
 import { useLanguage } from './i18n/useLanguage'
 
@@ -42,6 +43,7 @@ function AppShell() {
 
   return (
     <div className="app">
+      <SeoHead />
       <Navigation scrolled={scrolled} />
       <main>
         <Hero />
@@ -56,6 +58,9 @@ function AppShell() {
         <div className="footer-content">
           <p>{t.footer.copy}</p>
           <div className="footer-links">
+            <a href={lang === 'it' ? '/servizi/' : '/services/'}>
+              {lang === 'it' ? 'Servizi' : 'Services'}
+            </a>
             <a
               href="https://github.com/Marcelloguida00"
               target="_blank"

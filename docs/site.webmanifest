@@ -1,6 +1,10 @@
 {
-  "name": "Marcello Guida",
-  "short_name": "Marcello",
+  "name": "Marcello Guida — iOS Developer & Designer",
+  "short_name": "Marcello Guida",
+  "description": "Sviluppo iOS, siti web, web app e backend. Listino prezzi chiaro. Napoli, Italia.",
+  "lang": "it",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/favicon-48.png",
@@ -11,6 +15,12 @@
       "src": "/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png"
+    },
+    {
+      "src": "/og-cover.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "purpose": "any"
     }
   ],
   "theme_color": "#0b0d10",
