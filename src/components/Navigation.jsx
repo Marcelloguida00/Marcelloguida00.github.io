@@ -74,12 +74,17 @@ export default function Navigation({ scrolled }) {
 
           <LangSwitch lang={lang} setLang={setLang} label={t.nav.langLabel} />
 
-          <a href="#contact" className="nav-cta">
-            {t.nav.cta}
+          <a href="#contact" className="nav-cta btn-signal">
+            <span className="btn-signal__fill" aria-hidden="true" />
+            <span className="btn-signal__label">{t.nav.cta}</span>
           </a>
         </nav>
 
         <div className="nav-mobile-tools">
+          <a href="#contact" className="nav-cta btn-signal nav-cta-mobile">
+            <span className="btn-signal__fill" aria-hidden="true" />
+            <span className="btn-signal__label">{t.nav.cta}</span>
+          </a>
           <LangSwitch
             className="compact"
             lang={lang}
@@ -105,8 +110,13 @@ export default function Navigation({ scrolled }) {
             {link.label}
           </a>
         ))}
-        <a href="#contact" className="nav-cta" onClick={() => setOpen(false)}>
-          {t.nav.cta}
+        <a
+          href="#contact"
+          className="nav-cta btn-signal"
+          onClick={() => setOpen(false)}
+        >
+          <span className="btn-signal__fill" aria-hidden="true" />
+          <span className="btn-signal__label">{t.nav.cta}</span>
         </a>
       </nav>
     </header>

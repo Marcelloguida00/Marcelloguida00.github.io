@@ -161,8 +161,9 @@ export default function Pricing() {
                     <p className="pricing-detail-meta">{copy.indicativeLabel}</p>
                     <p className="pricing-detail-amount">{service.price}</p>
                   </div>
-                  <a href="#contact" className="btn btn-primary pricing-cta">
-                    {copy.cta}
+                  <a href="#contact" className="btn-signal pricing-cta">
+                    <span className="btn-signal__fill" aria-hidden="true" />
+                    <span className="btn-signal__label">{copy.cta}</span>
                   </a>
                 </div>
               </aside>
