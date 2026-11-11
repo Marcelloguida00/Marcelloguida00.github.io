@@ -4,7 +4,7 @@
   min-height: 100dvh;
   display: grid;
   align-items: center;
-  overflow: clip;
+  overflow: visible;
   padding: 120px 0 64px;
 }
 
@@ -12,6 +12,7 @@
   position: absolute;
   inset: 0;
   z-index: 0;
+  overflow: clip;
 }
 
 .hero-plane-img {
@@ -135,11 +136,12 @@
       linear-gradient(180deg, rgba(7, 8, 10, 0.55) 0%, rgba(7, 8, 10, 0.35) 35%, rgba(7, 8, 10, 0.92) 100%);
   }
 
-  /* Syne is wide: keep "Marcello" inside the padded frame on iPhone widths */
+  /* Syne is wide + has glyph overhang: keep ink inside the frame on iPhone */
   .hero-brand {
-    font-size: clamp(2.6rem, 11.2vw, 3.5rem);
-    letter-spacing: -0.06em;
+    font-size: clamp(2.45rem, 10.6vw, 3.25rem);
+    letter-spacing: -0.065em;
     max-width: 100%;
+    padding-right: 0.06em;
   }
 
   .hero-corner {
