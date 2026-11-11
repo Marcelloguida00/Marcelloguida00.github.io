@@ -35,7 +35,7 @@
 }
 
 .nav-logo span {
-  color: var(--muted);
+  color: color-mix(in srgb, var(--ink) 72%, var(--muted));
   font-weight: 500;
 }
 
