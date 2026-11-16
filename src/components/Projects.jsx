@@ -7,29 +7,24 @@ export default function Projects() {
   const { t, lang } = useLanguage()
   const p = t.projects
   const [active, setActive] = useState(0)
-  const [cursor, setCursor] = useState({ x: 0, y: 0, visible: false })
-  const listRef = useRef(null)
+  const [previewVisible, setPreviewVisible] = useState(false)
+  const stageRef = useRef(null)
 
   useEffect(() => {
-    const list = listRef.current
-    if (!list) return undefined
+    const stage = stageRef.current
+    if (!stage) return undefined
 
-    const onMove = (e) => {
+    const onMove = () => {
       if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return
-      const rect = list.getBoundingClientRect()
-      setCursor({
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top,
-        visible: true,
-      })
+      setPreviewVisible(true)
     }
-    const onLeave = () => setCursor((c) => ({ ...c, visible: false }))
+    const onLeave = () => setPreviewVisible(false)
 
-    list.addEventListener('pointermove', onMove)
-    list.addEventListener('pointerleave', onLeave)
+    stage.addEventListener('pointermove', onMove)
+    stage.addEventListener('pointerleave', onLeave)
     return () => {
-      list.removeEventListener('pointermove', onMove)
-      list.removeEventListener('pointerleave', onLeave)
+      stage.removeEventListener('pointermove', onMove)
+      stage.removeEventListener('pointerleave', onLeave)
     }
   }, [])
 
@@ -54,7 +49,7 @@ export default function Projects() {
           </a>
         </div>
 
-        <div className="projects-stage" ref={listRef}>
+        <div className="projects-stage" ref={stageRef}>
           <ul className="projects-index" role="list">
             {p.items.map((project, index) => {
               const isActive = index === active
@@ -64,7 +59,11 @@ export default function Projects() {
                     href={project.link}
                     className={`project-row ${isActive ? 'is-active' : ''}`}
                     onPointerEnter={() => setActive(index)}
-                    onFocus={() => setActive(index)}
+                    onFocus={() => {
+                      setActive(index)
+                      setPreviewVisible(true)
+                    }}
+                    onBlur={() => setPreviewVisible(false)}
                     data-cursor={lang === 'it' ? 'Apri' : 'Open'}
                   >
                     <span className="project-row-index" aria-hidden="true">
@@ -88,10 +87,7 @@ export default function Projects() {
           </ul>
 
           <aside
-            className={`project-preview ${cursor.visible ? 'is-on' : ''}`}
-            style={{
-              transform: `translate3d(${cursor.x}px, ${cursor.y}px, 0)`,
-            }}
+            className={`project-preview ${previewVisible ? 'is-on' : ''}`}
             aria-hidden="true"
           >
             <div className="project-preview-inner">
