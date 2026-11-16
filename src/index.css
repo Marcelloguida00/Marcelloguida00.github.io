@@ -157,11 +157,7 @@ section[id] {
   transform-origin: left center;
 }
 
-/* Only hide scroll-reveals before paint; intro starts visible enough for LCP/brand */
-html.motion [data-reveal]:not(.is-revealed) {
-  opacity: 0;
-}
-
+/* Intro starts visible enough for LCP/brand */
 html.motion [data-intro]:not(.is-revealed) {
   opacity: 0.001; /* keep layout + near-LCP text present for crawlers/QA */
 }
